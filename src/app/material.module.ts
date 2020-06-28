@@ -17,13 +17,13 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
-    
+    MatCardModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -58,6 +58,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTooltipModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCardModule
   ],
 })
 export class MyMaterialModule {}

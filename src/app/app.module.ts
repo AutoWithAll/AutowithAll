@@ -9,6 +9,7 @@ import { RegistrationComponentComponent } from './registration-component/registr
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,19 +17,20 @@ import { RouterModule, Routes } from '@angular/router';
     DashboardComponent,
     RegistrationComponentComponent,
     LoginComponentComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: 'register', component: RegistrationComponentComponent },
-      { path: 'login', component: LoginComponentComponent },
+    // RouterModule.forRoot([
+    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
+    //   // { path: 'register', component: RegistrationComponentComponent },
+    //   // { path: 'login', component: LoginComponentComponent },
        
      
-    ]),
+    // ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
