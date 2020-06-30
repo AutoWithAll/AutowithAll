@@ -10,6 +10,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     RegistrationComponentComponent,
     LoginComponentComponent,
     NavbarComponent,
+    ForgetPasswordComponent,
   ],
   imports: [
     BrowserModule,
