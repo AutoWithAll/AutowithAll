@@ -1,52 +1,56 @@
-<mat-toolbar>
-  <span>Registration</span>
-</mat-toolbar>
-<mat-card class="my-card">
-  <mat-card-content>
-    <form class="my-form">
-      <mat-form-field class="full-width">
-        <mat-label>First Name</mat-label>
-        <input matInput placeholder="First name" name="fname" required />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" name="lname" required />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Telephone Number</mat-label>
-        <input
-          matInput
-          placeholder="Telephone number"
-          name="tnumber"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>NIC</mat-label>
-        <input matInput placeholder="NIC" name="nic" required />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" name="email" required />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" name="Password" required />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Confrim Password</mat-label>
-        <input
-          matInput
-          placeholder="Confrim Password"
-          name="cPassword"
-          required
-        />
-      </mat-form-field>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" class="button">
-          REGISTER
-        </button>
-      </mat-card-actions>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="col-md-6 aaa">
+  <mat-card class="my-card">
+     <mat-card-content>
+        <mat-toolbar>
+           <span style="float: left;">AutoWithAll</span>
+           <div class="awall">
+              <span>Register</span>
+           </div>
+           
+        </mat-toolbar>
+        <form class="my-form">
+          <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First name" name="fname" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" name="lname" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Telephone Number</mat-label>
+            <input matInput placeholder="Telephone number" name="tnumber" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>NIC</mat-label>
+            <input matInput placeholder="NIC" name="nic" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" name="Password" required />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Confrim Password</mat-label>
+            <input matInput placeholder="Confrim Password" name="cPassword" required />
+          </mat-form-field>
+          <mat-card-actions>
+            <a class="txt1">
+              Already have an account?
+           </a>
+           <a routerLink="/login">
+            Login
+         </a>
+            <button mat-raised-button color="primary" class="button">
+              REGISTER
+            </button>
+          </mat-card-actions>
+        </form>
+     </mat-card-content>
+     <mat-card-actions>
+     </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,14 +1,36 @@
-.my-form {
+.my-form{
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+   
+  .full-width {
+    width: 100%;
+  }
+  .my-card{
+  /* margin-top:150px; */
+  height: 555px
+  
+  } 
+  /* gsgsgsg */
+  
+  .aaa{
+  /* margin: auto; */
+  }
+  .button{
+  float: right;
+  }
+  .txt1{
+    padding-left: 25px;
+  }
+.mat-card-content{
   min-width: 150px;
   max-width: 500px;
   width: 100%;
   margin: auto;
+  padding-bottom: 50px;
+  border: 2px solid;
 }
-
-.full-width {
-  width: 100%;
-}
-
-.button{
+.awall{
   float: right;
+  padding-left: 280px;
 }
