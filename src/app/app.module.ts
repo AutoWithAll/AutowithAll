@@ -10,13 +10,10 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-<<<<<<< HEAD
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-=======
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
->>>>>>> prabath
 
 @NgModule({
   declarations: [
@@ -25,13 +22,10 @@ import { FooterComponent } from './shared/footer/footer.component';
     RegistrationComponentComponent,
     LoginComponentComponent,
     NavbarComponent,
-<<<<<<< HEAD
     ForgetPasswordComponent,
-=======
     HeaderComponent,
     FooterComponent,
     
->>>>>>> prabath
   ],
   imports: [
     BrowserModule,
