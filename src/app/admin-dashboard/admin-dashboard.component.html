@@ -1,0 +1,152 @@
+ <mat-sidenav-container class="sidenav-container">
+
+        <mat-sidenav #drawer class="sidenav" fixedInViewport
+            [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+            [mode]="(isHandset$ | async) ? 'over' : 'side'"
+            [opened]="(isHandset$ | async) === false">
+          <mat-toolbar>Profile</mat-toolbar>
+      
+          <mat-list id="menus">
+            <!-- <mat-card>
+              <mat-card-header>
+                <div 
+                  mat-card-avatar 
+                  class="avatar"></div>
+      
+                <mat-card-title>Amalia Peter</mat-card-title>
+                <mat-card-subtitle>Admin</mat-card-subtitle>
+                <mat-card-subtitle> <img src="assets/img/Admin1.jpg" ></mat-card-subtitle>
+              </mat-card-header>
+            </mat-card> -->
+            <mat-list-item>
+              <button 
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>account_circle</mat-icon>
+              Users</button>
+            </mat-list-item>
+      
+            <mat-list-item>
+                <button 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>tab</mat-icon>
+                Advertisements</button>
+              </mat-list-item>
+      
+              <mat-list-item>
+                <button 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>directions_car</mat-icon>
+                Insurance Companies</button>
+              </mat-list-item>
+      
+              <mat-list-item>
+                <button 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>directions_car</mat-icon>
+                Leasing Companies </button>
+              </mat-list-item>
+      
+            </mat-list>
+        </mat-sidenav>
+      
+        <mat-sidenav-content>
+          <mat-toolbar color="primary">
+            <button
+             type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>AutoWithAll</span>
+            <span class="fill-space"></span>
+            <mat-icon
+          class="toolbar-icon"
+          matBadge="8"
+          matBadgePosition="after"
+          matBadgeColor="accent"
+        >notifications</mat-icon>
+        <a mat-button routerLink="login">Log out</a>
+          </mat-toolbar>
+          <mat-grid-list cols="2" rowHeight="2:1">
+              <mat-grid-tile>
+                  <mat-card>
+                      <mat-card-header>
+                        <div 
+                          mat-card-avatar 
+                          class="avatar"></div>
+              
+                        <mat-card-title>Amalia Peter</mat-card-title>
+                        <mat-card-subtitle>Admin</mat-card-subtitle>
+                        <mat-card-subtitle> <img class="a" src="assets/img/Admin1.jpg" ></mat-card-subtitle>
+                      </mat-card-header>
+                    </mat-card>
+
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <img  class="img1" src="assets/img/mysales.png"  > </mat-grid-tile>
+                
+               
+            </mat-grid-list>
+          <mat-toolbar color="Basic">
+              <mat-toolbar-row>
+                <span>New Users</span>
+                <!-- <span class="example-spacer"></span> -->
+                <p>
+                    <span matBadge="4" matBadgeOverlap="false"></span>
+                  </p>
+              </mat-toolbar-row>
+            
+              <mat-toolbar-row>
+                <span>New Advertisements</span>
+                <p>
+                    <span matBadge="4" matBadgeOverlap="false"></span>
+                  </p>
+                 
+                </mat-toolbar-row>
+            
+              <mat-toolbar-row>
+                <span>New Leasing Companies</span>
+                <p>
+                    <span matBadge="4" matBadgeOverlap="false"></span>
+                  </p>
+                 
+                
+              </mat-toolbar-row>
+              <mat-toolbar-row>
+                  <span>New Insurance Companies</span>
+                  <p>
+                      <span matBadge="4" matBadgeOverlap="false"></span>
+                    </p>
+                   
+                  
+                </mat-toolbar-row>
+                
+            </mat-toolbar>
+            
+              
+           
+           
+             
+
+          
+         
+            
+          <!-- Add Content Here -->
+        </mat-sidenav-content>
+      
+      </mat-sidenav-container>
+       
+      
+       
+       
+      
+      
+      
+     
+  

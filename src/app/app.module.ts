@@ -11,6 +11,7 @@ import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     LoginComponentComponent,
     NavbarComponent,
     ForgetPasswordComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
