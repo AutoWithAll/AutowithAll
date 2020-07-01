@@ -4,7 +4,7 @@
             [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
             [mode]="(isHandset$ | async) ? 'over' : 'side'"
             [opened]="(isHandset$ | async) === false">
-          <mat-toolbar>Profile</mat-toolbar>
+          <mat-toolbar style="text-align: center;">Profile</mat-toolbar>
       
           <mat-list id="menus">
             <!-- <mat-card>
@@ -33,6 +33,15 @@
                   <mat-icon>tab</mat-icon>
                 Advertisements</button>
               </mat-list-item>
+
+              <mat-list-item>
+                <button 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>directions_car</mat-icon>
+                Payings</button>
+              </mat-list-item>
+      
       
               <mat-list-item>
                 <button 
@@ -84,50 +93,86 @@
                         <mat-card-title>Amalia Peter</mat-card-title>
                         <mat-card-subtitle>Admin</mat-card-subtitle>
                         <mat-card-subtitle> <img class="a" src="assets/img/Admin1.jpg" ></mat-card-subtitle>
+                        
                       </mat-card-header>
+                      <mat-card-content>
+                          <button mat-raised-button color="primary">Edit Details</button>
+
+                      </mat-card-content>
                     </mat-card>
 
               </mat-grid-tile>
               <mat-grid-tile>
                 <img  class="img1" src="assets/img/mysales.png"  > </mat-grid-tile>
                 
-               
-            </mat-grid-list>
-          <mat-toolbar color="Basic">
-              <mat-toolbar-row>
-                <span>New Users</span>
-                <!-- <span class="example-spacer"></span> -->
-                <p>
-                    <span matBadge="4" matBadgeOverlap="false"></span>
-                  </p>
-              </mat-toolbar-row>
-            
-              <mat-toolbar-row>
-                <span>New Advertisements</span>
-                <p>
-                    <span matBadge="4" matBadgeOverlap="false"></span>
-                  </p>
+                 </mat-grid-list>
+                 <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'50px'">
+                  <mat-grid-tile class="gl2">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                      <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                    
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                      </ng-container>
+                    
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Agent </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Agent}} </td>
+                      </ng-container>
+                    
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef> Income </th>
+                        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                      </ng-container>
+                    
+                      <!-- Symbol Column -->
+                      <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Addcount </th>
+                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    
+                    
+                  </mat-grid-tile>
+                  <mat-grid-tile class="gl2" >
+                    
+                    
+                  </mat-grid-tile></mat-grid-list>
+                 <mat-card style="text-align: center;">New Requests</mat-card>
                  
-                </mat-toolbar-row>
-            
-              <mat-toolbar-row>
-                <span>New Leasing Companies</span>
-                <p>
-                    <span matBadge="4" matBadgeOverlap="false"></span>
-                  </p>
+                 <mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'70px'">
+                  <mat-grid-tile  class="gl1" >New Users
+                    <span matBadge="2" matBadgeOverlap="false"> </span>
+                  </mat-grid-tile>
+                  <mat-grid-tile  class="gl1" >New Advertisements
+                    <span matBadge="6" matBadgeOverlap="false"> </span>
+                  </mat-grid-tile>
+                  <mat-grid-tile  class="gl1" >New Leasing Companies
+                    <span matBadge="3" matBadgeOverlap="false"> </span>
+                  </mat-grid-tile>
+                  <mat-grid-tile  class="gl1" >New Advertisements
+                    <span matBadge="9" matBadgeOverlap="false"> </span>
+                  </mat-grid-tile>
+                 </mat-grid-list>
+                 <mat-card style="background: whitesmoke"></mat-card>
+
                  
-                
-              </mat-toolbar-row>
-              <mat-toolbar-row>
-                  <span>New Insurance Companies</span>
-                  <p>
-                      <span matBadge="4" matBadgeOverlap="false"></span>
-                    </p>
                    
-                  
-                </mat-toolbar-row>
                 
-            </mat-toolbar>
+                
+            
+               
+            
+               
             
               
            
