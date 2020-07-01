@@ -10,6 +10,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+// import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
@@ -21,8 +22,9 @@ import { FooterComponent } from './shared/footer/footer.component';
     RegistrationComponentComponent,
     LoginComponentComponent,
     NavbarComponent,
+    
     HeaderComponent,
-    FooterComponent,
+    
     
   ],
   imports: [
