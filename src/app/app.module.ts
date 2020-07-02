@@ -14,6 +14,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     HeaderComponent,
     FooterComponent,
     
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,

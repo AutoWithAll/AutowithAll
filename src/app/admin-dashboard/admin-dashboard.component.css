@@ -1,0 +1,45 @@
+/* mat-grid-tile {
+    background: rgb(221, 198, 213);
+  } */
+
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 260px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .fill-space {
+      flex: 1 1 auto;
+  }
+  
+  .a {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+    .gl1{
+      background: lightblue;
+      
+    }
+
+    .gl2{
+      
+      background: rgb(57, 96, 109);
+    }
+    table {
+      width: 100%;
+    }

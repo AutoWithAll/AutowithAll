@@ -5,6 +5,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: HeaderComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponentComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
+  { path:'adminDashboard',component:AdminDashboardComponent},
 ];
 
 @NgModule({
