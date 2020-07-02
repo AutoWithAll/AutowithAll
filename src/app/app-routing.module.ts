@@ -6,9 +6,11 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { HomeComponent} from "./home/home.component";
+import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: '', component: HomeComponent},
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
