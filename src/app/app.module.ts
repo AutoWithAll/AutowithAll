@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,13 +10,12 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-<<<<<<< HEAD
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-=======
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
->>>>>>> prabath
 
 @NgModule({
   declarations: [
@@ -25,19 +24,19 @@ import { FooterComponent } from './shared/footer/footer.component';
     RegistrationComponentComponent,
     LoginComponentComponent,
     NavbarComponent,
-<<<<<<< HEAD
     ForgetPasswordComponent,
-=======
     HeaderComponent,
     FooterComponent,
+    HomeComponent,
     
->>>>>>> prabath
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
+    OwlModule,
+    NgbModule,
     // RouterModule.forRoot([
     //   // { path: '', redirectTo: '/', pathMatch: 'full' },
     //   // { path: 'register', component: RegistrationComponentComponent },
