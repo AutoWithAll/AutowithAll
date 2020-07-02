@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+// import { MaterialModule } from '@angular/material'
 
 @Component({
   selector: 'app-home',

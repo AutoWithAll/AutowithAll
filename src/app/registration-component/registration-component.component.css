@@ -1,20 +1,19 @@
 .my-form{
   padding-left: 30px;
   padding-right: 30px;
+  
   }
    
   .full-width {
     width: 100%;
   }
   .my-card{
-  /* margin-top:150px; */
-  height: 555px
+  height: auto;
   
   } 
-  /* gsgsgsg */
   
   .aaa{
-  /* margin: auto; */
+  margin: auto;
   }
   .button{
   float: right;
@@ -27,7 +26,7 @@
   max-width: 500px;
   width: 100%;
   margin: auto;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   border: 2px solid;
 }
 .awall{
