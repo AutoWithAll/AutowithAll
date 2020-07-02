@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
 
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
 
     HeaderComponent,
     
+    AdminDashboardComponent,
 
   ],
   imports: [
@@ -46,7 +47,6 @@ import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
-    OwlModule,
     NgbModule,
     // RouterModule.forRoot([
     //   // { path: '', redirectTo: '/', pathMatch: 'full' },

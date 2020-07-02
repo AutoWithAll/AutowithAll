@@ -5,6 +5,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { HomeComponent} from "./home/home.component";
 import {LeasevehicleComponent} from "./leasevehicle/leasevehicle.component";
 import { from } from 'rxjs';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
+  { path:'adminDashboard',component:AdminDashboardComponent},
 ];
 
 @NgModule({
