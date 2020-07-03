@@ -10,6 +10,8 @@ import { HomeComponent} from "./home/home.component";
 import {LeasevehicleComponent} from "./leasevehicle/leasevehicle.component";
 import { from } from 'rxjs';
 
+import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
+ 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent },
@@ -18,6 +20,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
   { path:'adminDashboard',component:AdminDashboardComponent},
+  {path : 'leasingDash', component: LeasingDashboardComponent},
 ];
 
 @NgModule({
