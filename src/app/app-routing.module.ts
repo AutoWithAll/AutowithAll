@@ -10,7 +10,7 @@ import { HomeComponent} from "./home/home.component";
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
