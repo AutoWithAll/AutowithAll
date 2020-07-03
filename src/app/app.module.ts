@@ -18,6 +18,16 @@ import { UserService } from './service/user.service';
 import { ToastrModule } from 'ngx-toastr';
 
 
+
+
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
+
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +36,18 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponentComponent,
     NavbarComponent,
     ForgetPasswordComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    LeasevehicleComponent,
+    
+
+    ForgetPasswordComponent,
+
+    HeaderComponent,
+    
+    AdminDashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +61,15 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut : 1000,
       positionClass : 'toast-top-right'
     }),
+    NgbModule,
+    
+    // RouterModule.forRoot([
+    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
+    //   // { path: 'register', component: RegistrationComponentComponent },
+    //   // { path: 'login', component: LoginComponentComponent },
+       
+     
+    // ]),
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
