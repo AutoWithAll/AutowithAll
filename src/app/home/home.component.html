@@ -5,13 +5,15 @@
   </div> -->
 <div class="abc">
   <mat-grid-list cols="1" rowHeight="6:1">
-
     <mat-grid-tile>
-      <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
-        [showNavigationIndicators]="showNavigationIndicators">
+      <ngb-carousel
+        *ngIf="images"
+        [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators"
+      >
         <ng-template ngbSlide *ngFor="let image of images">
           <div class="picsum-img-wrapper">
-            <img [src]="image" alt="Random slide">
+            <img [src]="image" alt="Random slide" />
           </div>
           <!-- <div class="carousel-caption">
           <h3>No mouse navigation</h3>
@@ -20,89 +22,63 @@
         </ng-template>
       </ngb-carousel>
     </mat-grid-tile>
-
   </mat-grid-list>
 </div>
 
+<!-- Advertiesment -->
+<ul>
+  <li *ngFor="let item of data">
+    <mat-grid-list cols="1" rowHeight="7:1">
+      <mat-grid-tile>
+        <mat-card class="wrapper">
+          <!-- <mat-card-title>one</mat-card-title> -->
+          <mat-grid-list cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+              <mat-card class="one">
+                <img
+                  mat-card-image
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
+                  alt="test"
+                />
+              </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+              <mat-card class="one">
+                <h4>
+                  <b>{{ item.name }} </b>
+                </h4>
+                {{ item.date }} <br />
+                <label style="font-size: medium;">LKR-{{ item.price }}</label>
+                <br />
 
-<mat-grid-list cols="1" rowHeight="7:1">
-  <mat-grid-tile>
-    <mat-card class="wrapper">
-      <!-- <mat-card-title>one</mat-card-title> -->
-      <mat-grid-list cols="4" rowHeight="2:1">
+                from - {{ item.from }} <br />
+                model year - {{ item.year }} <br />
+              </mat-card>
+            </mat-grid-tile>
+            <!-- <mat-grid-tile>
+          <mat-card class="one"> </mat-card>
+        </mat-grid-tile> -->
+            <mat-grid-tile>
+              <mat-card class="one">
+                <mat-grid-list cols="2" rowHeight="2:1" gutterSize="5px">
+                  <mat-grid-tile colspan="2">
+                    <mat-card class="two">
+                      <button mat-button color="primary">Leasing Plan</button>
+                    </mat-card>
+                  </mat-grid-tile>
+                  <mat-grid-tile colspan="2">
+                    <mat-card class="two">
+                      <button mat-button color="primary">Insure Plan</button>
+                    </mat-card>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </li>
+</ul>
 
-        <mat-grid-tile>
-          <mat-card class="one">
-            <img mat-card-image
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
-              alt="test">
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-            <h2><b>Audi A4 </b></h2>
-            2020/05/22 <br>
-            LKR 8,254,000 <br>
-            from - colombo
-            model year - 2018 <br>
-
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-            <button mat-button>leasing</button><br>
-            <mat-divider></mat-divider>
-            <button mat-button>insure</button>
-          </mat-card>
-        </mat-grid-tile>
-
-
-       </mat-grid-list>
-    <!-- </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-card class="wrapper">
-      <mat-card-title>one</mat-card-title> 
-      <mat-grid-list cols="4" rowHeight="2:1">
-
-        <mat-grid-tile>
-          <mat-card class="one">
-            simple2
-
-            <img mat-card-image
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
-              alt="test">
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-            simple1 <br>
-            simple1 <br>
-            simple1 <br>
-            simple1 <br>
-
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-            simple2
-
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card class="one">
-            simple2
-          </mat-card>
-        </mat-grid-tile>
-
-
-      </mat-grid-list> -->
-    </mat-card>
-  </mat-grid-tile>
-
-</mat-grid-list>
+<!-- Advertiesment -->

@@ -1,18 +1,22 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <!--  <span>HOME</span> -->
-      <span><a href="/">AutoWithAll</a></span>
-      
-      <div class="search-container">
-        <form class= "form" action="/">
-          <input class="search" type="text" placeholder="Search.." name="search">
-          <button class="btn" type="submit"><mat-icon>search</mat-icon></button>
-        </form>
-      </div>
-      
-      <a mat-button routerLink="../register">Register</a>
-      <a mat-button routerLink="../login">Login</a>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span><a href="/">AutoWithAll</a></span>
 
+    <div class="search-container">
+      <form class="form" action="/">
+        <input
+          class="search"
+          type="text"
+          placeholder="Search.."
+          name="search"
+        />
+        <button class="btn" type="submit"><mat-icon>search</mat-icon></button>
+      </form>
+    </div>
+
+    <a mat-button routerLink="../register">Register</a>
+    <a mat-button routerLink="../login">Login</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
