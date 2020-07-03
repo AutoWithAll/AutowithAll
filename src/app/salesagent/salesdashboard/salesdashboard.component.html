@@ -2,7 +2,7 @@
 
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Welcome!</mat-toolbar>
+    <mat-toolbar style="color:blue"><span class="title-center">Welcome!</span></mat-toolbar>
 
     <mat-list id="menus">
       <mat-card>
@@ -109,12 +109,13 @@
         <mat-card>
           <p>
             
-            <span style="font-size: 150%">Your status : ACTIVE</span>
+            <span style="font-size: 150%; color:green" >Your status : ACTIVE</span>
             <span>You membership will expire in 5 days </span>
           </p>
           <mat-card-actions>
-            <button mat-raised-button color="primary">Click To Pay</button>
-            <button mat-raised-button color="primary">Click To Pay</button>
+            <button mat-raised-button color="primary" style="margin-right: 50px; margin-left:50px">Click To PAY</button>
+
+            <button mat-raised-button color="primary">Click To UPGRADE</button>
           </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
