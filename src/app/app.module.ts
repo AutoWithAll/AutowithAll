@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,10 @@ import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { from } from 'rxjs';
+import { UserService } from './service/user.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -26,15 +32,15 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
-    // RouterModule.forRoot([
-    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
-    //   // { path: 'register', component: RegistrationComponentComponent },
-    //   // { path: 'login', component: LoginComponentComponent },
-       
-     
-    // ]),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut : 1000,
+      positionClass : 'toast-top-right'
+    }),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
