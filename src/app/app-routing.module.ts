@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HomeComponent} from "./home/home.component";
 import {LeasevehicleComponent} from "./leasevehicle/leasevehicle.component";
 import { from } from 'rxjs';
+import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
 
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
  
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'leasevehicle', component: LeasevehicleComponent },
   { path:'adminDashboard',component:AdminDashboardComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent},
+  { path: 'salesagentdash', component: SalesdashboardComponent },
 ];
 
 @NgModule({

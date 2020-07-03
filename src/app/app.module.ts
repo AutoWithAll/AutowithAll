@@ -16,6 +16,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { from } from 'rxjs';
 import { UserService } from './service/user.service';
 import { ToastrModule } from 'ngx-toastr';
+import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
 
 
 
@@ -56,6 +57,7 @@ import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.comp
 
     LeasingDashboardComponent,
     LeasingDashboardDialog,
+    SalesdashboardComponent,
   ],
   imports: [
     BrowserModule,
