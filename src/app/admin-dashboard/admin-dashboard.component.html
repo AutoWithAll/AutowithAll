@@ -103,7 +103,14 @@
 
               </mat-grid-tile>
               <mat-grid-tile>
-                <img  class="img1" src="assets/img/mysales.png"  > </mat-grid-tile>
+                  <!-- <img  class="img1" src="assets/img/mysales.png"  >  -->
+                   <mat-card>
+                      <mat-card-title>Trending</mat-card-title>
+                      <img mat-card-image src="https://www.toyota.lk/wp-content/uploads/2019/04/Camry-frount.jpg" style="height: 170px;">
+                      <mat-card-content><button mat-raised-button color="primary">View</button></mat-card-content>
+                   </mat-card>
+                 </mat-grid-tile>  
+           
                 
                  </mat-grid-list>
                  <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'50px'">
@@ -145,9 +152,19 @@
                   </mat-grid-tile>
                   <mat-grid-tile class="gl2" >
                     
+                    <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
+                    <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Sellers Count</h1></mat-card-content>
+                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">45</button>
+                     
+                    </mat-card>
+                    <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 
+                      <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Agents Count</h1></mat-card-content>
+                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">45</button>
+                    </mat-card>
+                      
                     
                   </mat-grid-tile></mat-grid-list>
-                 <mat-card style="text-align: center;">New Requests</mat-card>
+                 <mat-card style="text-align: center;background-color: rgb(105, 105, 197);margin-bottom: 20px;"><h1>New Requests</h1></mat-card>
                  
                  <mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'70px'">
                   <mat-grid-tile  class="gl1" >New Users
