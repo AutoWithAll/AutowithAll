@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +13,10 @@ import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { from } from 'rxjs';
+import { UserService } from './service/user.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -17,9 +24,12 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
+
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +42,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    LeasevehicleComponent,
     
 
     ForgetPasswordComponent,
@@ -42,13 +53,22 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     
     AdminUsersComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut : 1000,
+      positionClass : 'toast-top-right'
+    }),
     NgbModule,
+    
     // RouterModule.forRoot([
     //   // { path: '', redirectTo: '/', pathMatch: 'full' },
     //   // { path: 'register', component: RegistrationComponentComponent },
@@ -57,7 +77,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
      
     // ]),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
