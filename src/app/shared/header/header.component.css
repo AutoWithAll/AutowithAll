@@ -15,5 +15,8 @@
 .btn {
   border-radius: 10px;
 }
-
-
+.mat-raised-button {
+  margin: 5px;
+  width: 100px;
+  text-decoration: none;
+}
