@@ -8,6 +8,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { HomeComponent} from "./home/home.component";
 import { from } from 'rxjs';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path:'adminDashboard',component:AdminDashboardComponent},
+  { path:'adminUsers',component:AdminUsersComponent},
+
 ];
 
 @NgModule({

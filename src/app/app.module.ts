@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     HeaderComponent,
     
     AdminDashboardComponent,
+    
+    AdminUsersComponent,
 
   ],
   imports: [
