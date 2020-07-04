@@ -16,6 +16,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { from } from 'rxjs';
 import { UserService } from './service/user.service';
 import { ToastrModule } from 'ngx-toastr';
+import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
 
 
 
@@ -31,6 +32,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
+import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
+//import { LeasingDashboardDialogComponent } from './leasing-dashboard/leasing-dashboard-dialog.component';
+import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +58,9 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     AdminUsersComponent,
 
 
+    LeasingDashboardComponent,
+    LeasingDashboardDialog,
+    SalesdashboardComponent,
   ],
   imports: [
     BrowserModule,
