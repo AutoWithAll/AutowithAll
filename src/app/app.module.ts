@@ -71,8 +71,8 @@ import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.comp
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut : 1000,
-      positionClass : 'toast-top-right'
+      timeOut : 2000,
+      positionClass : 'toast-top-center'
     }),
     NgbModule,
     

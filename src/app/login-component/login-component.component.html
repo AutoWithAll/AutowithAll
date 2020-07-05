@@ -8,7 +8,7 @@
           <span>Login</span>
         </div>
       </mat-toolbar>
-      <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
           <input
@@ -16,7 +16,13 @@
             placeholder="Email"
             formControlName="email"
             name="email"
+            [ngClass]="{ 'is-invalid': f.email.errors }"
           />
+          <div *ngIf="f.email.errors" class="invalid-feedback">
+            <div class="errormesg" *ngIf="f.email.errors.email">
+              Enter valid Email
+            </div>
+          </div>
         </mat-form-field>
         <mat-form-field class="full-width">
           <mat-label>Password</mat-label>
