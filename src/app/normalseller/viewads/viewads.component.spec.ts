@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewadsComponent } from './viewads.component';
+import { SellerViewadsComponent } from './viewads.component';
 
-describe('ViewadsComponent', () => {
-  let component: ViewadsComponent;
-  let fixture: ComponentFixture<ViewadsComponent>;
+describe('SellerViewadsComponent', () => {
+  let component: SellerViewadsComponent;
+  let fixture: ComponentFixture<SellerViewadsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewadsComponent ]
+      declarations: [ SellerViewadsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewadsComponent);
+    fixture = TestBed.createComponent(SellerViewadsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

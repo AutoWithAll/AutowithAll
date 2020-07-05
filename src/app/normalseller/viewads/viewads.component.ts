@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './viewads.component.html',
   styleUrls: ['./viewads.component.css']
 })
-export class ViewadsComponent implements OnInit {
+export class SellerViewadsComponent implements OnInit {
 
   constructor() { }
 

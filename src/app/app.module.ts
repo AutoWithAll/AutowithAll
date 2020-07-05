@@ -17,7 +17,9 @@ import {EditprofileComponent} from './salesagent/editprofile/editprofile.compone
 import {PostadsComponent} from './salesagent/postads/postads.component';
 import {SellerdashComponent} from './normalseller/sellerdash/sellerdash.component';
 import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
-
+import {SellerEditprofileComponent} from './normalseller/editprofile/editprofile.component';
+import {SellerPostadsComponent} from './normalseller/postads/postads.component';
+import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,10 @@ import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
     EditprofileComponent,
     PostadsComponent,
     SellerdashComponent,
-    SellerSidebarComponent
+    SellerSidebarComponent,
+    SellerEditprofileComponent,
+    SellerPostadsComponent,
+    SellerViewadsComponent,
   ],
   imports: [
     BrowserModule,
