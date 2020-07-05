@@ -13,6 +13,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
 
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
+import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'leasevehicle', component: LeasevehicleComponent },
   { path:'adminDashboard',component:AdminDashboardComponent},
   { path:'adminUsers',component:AdminUsersComponent},
+  { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
+  
 
   {path : 'leasingDash', component: LeasingDashboardComponent},
   { path: 'salesagentdash', component: SalesdashboardComponent },

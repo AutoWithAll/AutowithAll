@@ -35,6 +35,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
 //import { LeasingDashboardDialogComponent } from './leasing-dashboard/leasing-dashboard-dialog.component';
 import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
+import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.comp
     LeasingDashboardComponent,
     LeasingDashboardDialog,
     SalesdashboardComponent,
+    AdminAdvertisementsComponent,
   ],
   imports: [
     BrowserModule,
