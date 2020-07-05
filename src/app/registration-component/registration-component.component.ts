@@ -111,7 +111,7 @@ export class RegistrationComponentComponent implements OnInit {
       password: this.password.value,
       role: this.role.value,
     };
-
+    console.log(user);
     this.auth.register(user);
     this.registerForm.reset();
     this.showSuccess();

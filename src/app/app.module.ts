@@ -29,6 +29,7 @@ import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
 
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
@@ -53,6 +54,8 @@ import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.comp
     HeaderComponent,
     
     AdminDashboardComponent,
+    
+    AdminUsersComponent,
 
 
     LeasingDashboardComponent,
@@ -68,8 +71,8 @@ import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.comp
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut : 1000,
-      positionClass : 'toast-top-right'
+      timeOut : 2000,
+      positionClass : 'toast-top-center'
     }),
     NgbModule,
     
