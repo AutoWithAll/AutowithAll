@@ -63,8 +63,7 @@ export class LoginComponentComponent implements OnInit {
       password: this.password.value,
     };
 
-    // console.log(login);
-    // this.authService.authenticateUser(login);
+
 
     this.authService.loginUser(login).subscribe({
       next: (res) => {
