@@ -1,0 +1,29 @@
+
+
+    .profileimg {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  
+
+  
+  .example-card {
+    max-width: 400px;
+  }
+
+ 
+  mat-grid-tile {
+    background: white;
+  }
+
+  p span { 
+    display: block; 
+    margin-bottom: 10px;
+  } 
+    
+  mat-card {
+    width: calc(100% - 60px);
+    height: calc(100% - 70px);
+   }     
