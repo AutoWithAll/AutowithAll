@@ -1,5 +1,5 @@
 <app-sidebar></app-sidebar>
-<mat-grid-list cols="7" gutterSize="30px" rowHeight='870px'>
+<mat-grid-list cols="7"  gutterSize="30px" rowHeight='870px'>
 
    <mat-grid-tile colspan='5'>
       <mat-card class="my-card">
@@ -66,12 +66,66 @@
       <mat-card>
          <img src="assets/img/download.jpg" class="profileimg">
          <mat-card-actions>
-            <button mat-raised-button color="primary" style="margin-left: 50px;">CHANGE PROFILE PICTURE</button>
-            <button mat-raised-button color="primary" style="margin-top:50px;margin-left:50px">CHANGE PROFILE PICTURE</button>
+            <button mat-raised-button color="primary" style="margin-left: 50px;">CHANGE PROFILE PHOTO</button>
+            <button mat-raised-button color="primary" style="margin-top:50px;margin-left:50px">CHANGE PROFILE PHOTO</button>
          </mat-card-actions>
       </mat-card>
-      
    </mat-grid-tile> 
+
+   <mat-divider></mat-divider>
+
+   <mat-grid-tile colspan="7">
+      <mat-card>
+         <mat-card-content>
+            <form class="my-form">
+               <span style="font-size: 150%">Display Details</span>
+               <span style="font-size: 150%">These are details that will be showed to your customer
+                  <button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
+                  <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button></span>
+
+                  <mat-form-field class="full-width">
+                     <textarea matInput>Saman Perera</textarea>
+                     <mat-hint>Your name is required</mat-hint>
+                     <mat-label>Display Name</mat-label>
+                  </mat-form-field>
+      
+                  <mat-form-field class="full-width">
+                     <textarea matInput>Contact Number</textarea>
+                     <mat-hint>Give contact number so that your customer can contact you</mat-hint>
+                     <mat-icon matSuffix>phone</mat-icon>
+                     <mat-label>Name</mat-label>
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width">
+                     <textarea matInput>Address</textarea>
+                     <mat-hint>Your name is required</mat-hint>
+                     <mat-label>Display Name</mat-label>
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width">
+                     <textarea matInput>sammsdj.facebook.com</textarea>
+                     <mat-hint>Facebook, Twitter or any other</mat-hint>
+                     <mat-label>External links</mat-label>
+                  </mat-form-field>
+
+                  <mat-card class="description">
+                        <span>Discription</span>
+                         <textarea matInput>I am a 5 years of working experience in THILINA AutoMobile company, Nugegoda.I am trustworthy and and capable of doing any finance work. Contact me at any time for your convenience </textarea>
+                 </mat-card>
+
+                   <mat-card >
+                     <span>Upload photos of you to let customer know you</span>
+                     <button class="button" mat-raised-button color="primary" style="margin-left: 450px">UPLOAD</button>
+                     
+                   </mat-card>
+                   <button class="button" mat-raised-button color="primary" style="margin-left: 150px; margin-top:60px">PREIVEIW</button>
+                   <button class="button" mat-raised-button color="primary" style="margin-left: 150px; margin-top:60px">VIEW YOUR DISPLAY DETAILS</button>
+                   
+               </form>
+            </mat-card-content>
+               
+      </mat-card>
+   </mat-grid-tile>
 
 
 
