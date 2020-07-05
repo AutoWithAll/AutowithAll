@@ -60,7 +60,10 @@ mat-grid-tile {
          
       } 
   
-      mat-card {
+      /* mat-card {
         width: calc(100% - 60px);
         height: calc(100% - 70px);
-      }     
+      }      */
+.package{
+  height: auto;
+}
