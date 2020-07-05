@@ -7,6 +7,9 @@ import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 import {ViewadsComponent} from './salesagent/viewads/viewads.component';
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
 import {PostadsComponent} from './salesagent/postads/postads.component';
+import {SellerdashComponent} from './normalseller/sellerdash/sellerdash.component';
+import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -17,6 +20,8 @@ const routes: Routes = [
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
+  {path: 'sidebarn',component: SellerSidebarComponent},
+  {path: 'sellerdash',component:SellerdashComponent},
 ];
 
 @NgModule({

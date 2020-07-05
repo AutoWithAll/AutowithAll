@@ -1,0 +1,65 @@
+.sidenav-container {
+    height: 0%;
+  }
+  
+  .sidenav {
+    width: 270px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  .title-center {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .fill-space {
+    flex: 1 1 auto;
+  }
+
+  .girl {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .profileimg {
+    width: 160px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .logo {
+    width: 150px;
+    height: 75px;
+    
+   
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+
+ 
+  mat-grid-tile {
+    background: white;
+  }
+
+  
+  p span { 
+    display: block; 
+    margin-bottom: 10px;
+  } 
+    
+  mat-card {
+    width: calc(100% - 60px);
+    height: calc(100% - 70px);
+  }     
