@@ -11,6 +11,10 @@ import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
+import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
+import {ViewadsComponent} from './salesagent/viewads/viewads.component';
+import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
+import {PostadsComponent} from './salesagent/postads/postads.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboar
     LoginComponentComponent,
     NavbarComponent,
     SalesdashboardComponent,
+    SidebarComponent,
+    ViewadsComponent,
+    EditprofileComponent,
+    PostadsComponent,
   ],
   imports: [
     BrowserModule,
