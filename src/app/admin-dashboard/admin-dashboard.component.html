@@ -41,19 +41,11 @@
       
       
               <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>directions_car</mat-icon>
-                Insurance Companies</button>
+                <a class="nav-link btn btn-default" href [routerLink]="['/adminLeasings']">  <mat-icon>directions_car</mat-icon>Leasing Companies</a>
               </mat-list-item>
       
               <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>directions_car</mat-icon>
-                Leasing Companies </button>
+                <a class="nav-link btn btn-default" href [routerLink]="['/adminInsurance']">  <mat-icon>directions_car</mat-icon>Insurance Companies</a>
               </mat-list-item>
       
             </mat-list>
