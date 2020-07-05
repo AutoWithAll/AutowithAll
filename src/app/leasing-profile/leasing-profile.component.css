@@ -1,0 +1,110 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+  .row{
+    color:rgb(32, 95, 178);
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+  }
+
+  .inner img{
+    width: 200px;
+    height:60px
+  }
+
+  .search-box{
+     
+    background-color: lightslategrey;
+    border-radius: 40px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+
+  .search-box:hover .search-txt{
+    width: 240px;
+    padding: 0 6px;
+  }
+
+  .search-box:hover .search-btn{
+    color: white;
+  }
+
+  .search-btn{
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: lightslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+  }
+
+  .view-txt{
+    color:orange;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 240px;
+    padding: 0  0;
+  }
+
+  .view-btn{
+    color: orange;
+    width: 150px;
+    height: 1000px;
+    border-radius: 50%;
+  }
+  .list-item:hover {
+    color: orangered;
+
+  }
+
+  .custom-toolbar1{
+    background: white;
+  }
+
+  .custom-toolbar2{
+    background: rgb(221, 118, 15);
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .who{
+    text-align: center;
+  }
+
+  .content{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    font-size: 14pt;
+    text-align: justify !important;
+    color: rgb(7, 51, 51);
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-top: 15px;
+    line-height: 1;
+  }
+
+  .status{
+    color: rgb(27, 27, 161);
+    margin-top: none;
+    margin-left: 20px;
+}

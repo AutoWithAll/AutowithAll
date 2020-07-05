@@ -1,0 +1,91 @@
+<html>
+    <head>
+         
+        <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+    
+    
+
+.price{
+        color: rgb(6, 79, 88);
+        font-size: large;
+
+    }
+ 
+  
+ 
+</style>
+        
+    </head>
+
+    <body>
+     
+        <h2 mat-dialog-title style="color: blue; text-align: center;">
+            Latest Advertisements
+        </h2>
+         
+        <div class="card" >
+            <img style="width: 300px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/2017_Honda_Civic_SR_VTEC_1.0_Front.jpg">
+            <h1>
+                HONDA CIVIC 1233
+            </h1>
+         
+            <p class="title">
+                5000km
+            </p>
+            <p>
+                Gampaha Cars
+            </p>
+            <div class="price">
+            Rs.2,990,000
+            </div>
+            <p> 
+                <button>
+                    Post Insurance Plan
+                </button>
+            </p>
+
+        </div>
+         
+        <button mat-raised-button mat-dialog-close color="primary">Close</button>
+         
+    </body>
+    
+        
+    
+    </html>

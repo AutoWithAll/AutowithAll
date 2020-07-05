@@ -30,6 +30,8 @@ import { AdminAdvertisementsComponent } from './admin-advertisements/admin-adver
 import { AdminLeasingsComponent } from './admin-leasings/admin-leasings.component';
 import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
+import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -58,6 +60,9 @@ const routes: Routes = [
   {path: 'editprofilen',component:SellerEditprofileComponent},
   {path: 'postadsn',component:SellerPostadsComponent},
   {path: 'viewadsn',component:SellerViewadsComponent},
+  { path : 'leasingDash', component: LeasingDashboardComponent},
+  { path : 'insuranceDash', component: InsuranceDashboardComponent},
+  { path : 'leaseProfile', component: LeasingProfileComponent},
 ];
 
 @NgModule({

@@ -33,7 +33,6 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
-//import { LeasingDashboardDialogComponent } from './leasing-dashboard/leasing-dashboard-dialog.component';
 import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 import {ViewadsComponent} from './salesagent/viewads/viewads.component';
@@ -47,6 +46,9 @@ import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
 import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
 import { AdminLeasingsComponent } from './admin-leasings/admin-leasings.component';
 import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.component';
+import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
+import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
+import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +87,9 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
     AdminAdvertisementsComponent,
     AdminLeasingsComponent,
     AdminInsuranceComponent,
+    InsuranceDashboardComponent,
+    InsuranceDashboardDialog,
+    LeasingProfileComponent
   ],
   imports: [
     BrowserModule,
