@@ -1,12 +1,14 @@
 <app-sidebar></app-sidebar>
-<mat-grid-list cols="7" guttersize="30px" rowHeight='870px'>
+<mat-grid-list cols="7" gutterSize="30px" rowHeight='870px'>
 
    <mat-grid-tile colspan='5'>
+      <mat-card class="my-card">
       <mat-card-content>
-         <form class="my form">
+         <form class="my-form">
             <span style="font-size: 150%">Edit Your Details Here<button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
                <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button></span>
             <span style="font-size: 150%">Basic Details</span>
+
             <mat-form-field class="full-width">
                <textarea matInput>Saman Perera</textarea>
                <mat-hint>Your name is required</mat-hint>
@@ -14,15 +16,53 @@
             </mat-form-field>
 
             <mat-form-field class="full-width">
-               <textarea matInput>Saman Perera</textarea>
-               <mat-hint>Your name is required</mat-hint>
+               <textarea matInput>Contact Number</textarea>
+               <mat-hint>Your contact number is required</mat-hint>
+               <mat-icon matSuffix>phone</mat-icon>
                <mat-label>Name</mat-label>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+               <textarea matInput>Address</textarea>
+                  <mat-label>No 171, Welihena Road, Kandawala, Katana</mat-label>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+               <textarea matInput>Birthday</textarea>
+               <mat-hint></mat-hint>
+               <mat-label>1990-03-06</mat-label>
+            </mat-form-field>
+
+
+            <span ></span>
+            <span style="font-size: 150%">Security Details</span>
+
+            <mat-form-field class="full-width">
+               <textarea matInput>Enter Your Password</textarea>
+               <mat-hint>Enter your current password</mat-hint>
+               <mat-label></mat-label>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+               <textarea matInput>Enter New Password</textarea>
+               <mat-hint>Give strong password</mat-hint>
+               <mat-label></mat-label>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+               <textarea matInput>Confirm Password</textarea>
+               <mat-hint></mat-hint>
+               <mat-label></mat-label>
             </mat-form-field>
          </form>
       </mat-card-content>
+      <button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
+                  <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button>
+                  <mat-card-actions></mat-card-actions>
+                 </mat-card>
    </mat-grid-tile>
 
-   <mat-grid-tile>
+   <mat-grid-tile colspan="2">
       <mat-card>
          <img src="assets/img/download.jpg" class="profileimg">
          <mat-card-actions>
@@ -30,6 +70,7 @@
             <button mat-raised-button color="primary" style="margin-top:50px;margin-left:50px">CHANGE PROFILE PICTURE</button>
          </mat-card-actions>
       </mat-card>
+      
    </mat-grid-tile> 
 
 
