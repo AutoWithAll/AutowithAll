@@ -12,10 +12,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
- 
 import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
+import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboar
     LeasingDashboardComponent,
     LeasingDashboardDialog,
     InsuranceDashboardComponent,
-    InsuranceDashboardDialog
+    InsuranceDashboardDialog,
+    LeasingProfileComponent
   ],
   imports: [
     BrowserModule,
