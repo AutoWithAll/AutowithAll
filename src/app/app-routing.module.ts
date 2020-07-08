@@ -6,6 +6,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
+import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path : 'leasingDash', component: LeasingDashboardComponent},
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
+  { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
 ];
 
 @NgModule({
