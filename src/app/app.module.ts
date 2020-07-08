@@ -17,6 +17,7 @@ import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-das
 import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { LeasingEditProfileComponent } from './leasing-edit-profile/leasing-edit-profile.component';
+import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { LeasingEditProfileComponent } from './leasing-edit-profile/leasing-edit
     InsuranceDashboardComponent,
     InsuranceDashboardDialog,
     LeasingProfileComponent,
-    LeasingEditProfileComponent
+    LeasingEditProfileComponent,
+    LeaseViewAdsComponent
   ],
   imports: [
     BrowserModule,
