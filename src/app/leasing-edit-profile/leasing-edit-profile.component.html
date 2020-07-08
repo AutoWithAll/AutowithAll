@@ -25,7 +25,8 @@
 
                 <mat-form-field appearance="outline" class="field">
                     <mat-label><mat-icon> create</mat-icon>Email</mat-label>
-                    <input matInput>  
+                    <input matInput placeholder="pat@example.com" [formControl]="email" required>  
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <br>
          
@@ -71,11 +72,16 @@
                     <input matInput>  
                 </mat-form-field>
                 <br>
-         
+                
+                
          
             </div>
+            
 
         </form>
+
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary">Clear</button>
 
     </div>
       
