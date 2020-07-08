@@ -19,6 +19,7 @@ import { LeasingProfileComponent } from './leasing-profile/leasing-profile.compo
 import { LeasingEditProfileComponent } from './leasing-edit-profile/leasing-edit-profile.component';
 import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component';
 import { LeaseComponent } from './lease/lease.component';
+import { LeaseNavbarComponent } from './lease-navbar/lease-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { LeaseComponent } from './lease/lease.component';
     LeasingProfileComponent,
     LeasingEditProfileComponent,
     LeaseViewAdsComponent,
-    LeaseComponent
+    LeaseComponent,
+    LeaseNavbarComponent
   ],
   imports: [
     BrowserModule,
