@@ -7,6 +7,7 @@ import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboar
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
+import { LeaseComponent} from './lease/lease.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
+  { path : 'lease', component:LeaseComponent},
 ];
 
 @NgModule({

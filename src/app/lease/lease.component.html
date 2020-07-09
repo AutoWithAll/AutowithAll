@@ -1,1 +1,12 @@
-<p>lease works!</p>
+ 
+<app-lease-navbar (toggleSideBarForMe)="sideBarToggler( )"></app-lease-navbar>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened] = "sideBarOpen">
+        <app-lease-sidebar (childEvent)="selectedComponent=$event"></app-lease-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <app-leasing-dashboard *ngif= "selectedComponent === 0"></app-leasing-dashboard>
+    </mat-drawer-content>
+</mat-drawer-container>
