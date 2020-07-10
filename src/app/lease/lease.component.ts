@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaseComponent implements OnInit {
   sideBarOpen = true;
-  public selectedComponent = 1;
+  public selectedComponent = 0;
   constructor() { }
 
   ngOnInit(): void {
