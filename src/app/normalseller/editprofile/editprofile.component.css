@@ -6,10 +6,6 @@
     object-fit: cover;
   }
 
-  .car{
-   
-    object-fit: cover;
-  }
   mat-card {
     width: calc(100% - 60px);
     height: calc(100% - 70px);
@@ -22,7 +18,11 @@
    
   .full-width {
     width: 80%;
-    margin-top: 15px;
+    margin-top: 20px;
+  }
+
+  .textgap {
+    height: 15px;
   }
 
  span { 

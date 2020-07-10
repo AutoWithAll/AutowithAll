@@ -1,65 +1,68 @@
 <app-sellersidebar></app-sellersidebar>
-<mat-grid-list cols="7"  gutterSize="30px" rowHeight='870px'>
+<mat-grid-list cols="7" gutterSize="30px" rowHeight='820px'>
 
    <mat-grid-tile colspan='5'>
       <mat-card class="my-card">
-      <mat-card-content>
-         <form class="my-form">
-            <span style="font-size: 150%">Edit Your Details Here<button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
-               <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button></span>
-            <span style="font-size: 150%">Basic Details</span>
+         <mat-card-content>
+            <form class="my-form">
+               <span style="font-size: 150%">Edit Your Details Here<button class="button" mat-raised-button
+                     color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
+                  <button class="button" mat-raised-button color="primary"
+                     style="margin-left: 50px">SAVE</button></span>
+               <span style="font-size: 150%">Basic Details</span>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Kasun Bandara</textarea>
-               <mat-hint>Your name is required</mat-hint>
-               <mat-label>Name</mat-label>
-            </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Name</mat-label>
+                  <textarea matInput class="textgap">Kasun Bandara</textarea>
+                  <mat-hint>Your Name is required</mat-hint>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>0712323234</textarea>
-               <mat-hint>Your contact number is required</mat-hint>
-               <mat-icon matSuffix>phone</mat-icon>
-               <mat-label>Contact Number</mat-label>
-            </mat-form-field>
+               </mat-form-field>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Address</textarea>
-                  <mat-label>No 171, Welihena Road, Kandawala, Katana</mat-label>
-            </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <textarea matInput class="textgap">0712345672</textarea>
+                  <mat-hint>Your contact number is required</mat-hint>
+                  <mat-icon matSuffix>phone</mat-icon>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Birthday</textarea>
-               <mat-hint></mat-hint>
-               <mat-label>1990-03-06</mat-label>
-            </mat-form-field>
+               </mat-form-field>
+
+               <mat-form-field class="full-width">
+                  <mat-label>Address</mat-label>
+                  <textarea matInput class="textgap">No 171, Welihena Road, Kandawala, Katana</textarea>
+               </mat-form-field>
+
+               <mat-form-field class="full-width">
+                  <mat-label>Birthday</mat-label>
+                  <textarea matInput class="textgap">1990-04-06</textarea>
+               </mat-form-field>
 
 
-            <span ></span>
-            <span style="font-size: 150%">Security Details</span>
+               <span></span>
+               <span style="font-size: 150%">Security Details</span>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Enter Your Password</textarea>
-               <mat-hint>Enter your current password</mat-hint>
-               <mat-label></mat-label>
-            </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Current Password</mat-label>
+                  <textarea matInput class="textgap"></textarea>
+                  <mat-hint>Enter your current password</mat-hint>
+               </mat-form-field>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Enter New Password</textarea>
-               <mat-hint>Give strong password</mat-hint>
-               <mat-label></mat-label>
-            </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>New Password</mat-label>
+                  <textarea matInput class="textgap"></textarea>
+                  <mat-hint>Enter new strong password</mat-hint>
+               </mat-form-field>
 
-            <mat-form-field class="full-width">
-               <textarea matInput>Confirm Password</textarea>
-               <mat-hint></mat-hint>
-               <mat-label></mat-label>
-            </mat-form-field>
-         </form>
-      </mat-card-content>
-      <button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
-                  <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button>
-                  <mat-card-actions></mat-card-actions>
-                 </mat-card>
+               <mat-form-field class="full-width">
+                  <mat-label>Confirm Password</mat-label>
+                  <textarea matInput class="textgap"></textarea>
+               </mat-form-field>
+            </form>
+         </mat-card-content>
+         <button class="button" mat-raised-button color="primary"
+            style="margin-left:550px">CANCEL</button>
+         <button class="button" mat-raised-button color="primary" style="margin-left: 100px">SAVE</button>
+         <mat-card-actions></mat-card-actions>
+      </mat-card>
    </mat-grid-tile>
 
    <mat-grid-tile colspan="2">
@@ -67,10 +70,11 @@
          <img src="assets/img/normalseller.jpg" class="profileimg">
          <mat-card-actions>
             <button mat-raised-button color="primary" style="margin-left: 50px;">CHANGE PROFILE PHOTO</button>
-            <button mat-raised-button color="primary" style="margin-top:50px;margin-left:50px">CHANGE PROFILE PHOTO</button>
+            <button mat-raised-button color="primary" style="margin-top:50px;margin-left:50px">REMOVE PROFILE
+               PHOTO</button>
          </mat-card-actions>
       </mat-card>
-   </mat-grid-tile> 
+   </mat-grid-tile>
 
    <mat-divider></mat-divider>
 
@@ -80,54 +84,59 @@
             <form class="my-form">
                <span style="font-size: 150%">Display Details</span>
                <span style="font-size: 150%">These are details that will be showed to your customer
-                  <button class="button" mat-raised-button color="primary" style="margin-right: 50px; margin-left:200px">CANCEL</button>
-                  <button class="button" mat-raised-button color="primary" style="margin-left: 50px">SAVE</button></span>
+                  <button class="button" mat-raised-button color="primary"
+                     style="margin-right: 50px; margin-left:200px">CANCEL</button>
+                  <button class="button" mat-raised-button color="primary"
+                     style="margin-left: 50px">SAVE</button></span>
 
-                  <mat-form-field class="full-width">
-                     <textarea matInput>Kasun Bandara</textarea>
-                     <mat-hint>Your name is required</mat-hint>
-                     <mat-label>Display Name</mat-label>
-                  </mat-form-field>
-      
-                  <mat-form-field class="full-width">
-                     <textarea matInput></textarea>
-                     <mat-hint>Give contact number so that your customer can contact you</mat-hint>
-                     <mat-icon matSuffix>phone</mat-icon>
-                     <mat-label>Phone Number</mat-label>
-                  </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Name</mat-label>
+                  <textarea matInput class="textgap">Kasun Bndara</textarea>
+                  <mat-hint>Your Name is required</mat-hint>
 
-                  <mat-form-field class="full-width">
-                     <textarea matInput></textarea>
-                     <mat-hint>Your name is required</mat-hint>
-                     <mat-label>Address</mat-label>
-                  </mat-form-field>
+               </mat-form-field>
 
-                  <mat-form-field class="full-width">
-                     <textarea matInput>sammsdj.facebook.com</textarea>
-                     <mat-hint>Facebook, Twitter or any other</mat-hint>
-                     <mat-label>External links</mat-label>
-                  </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Contact Number</mat-label>
+                  <textarea matInput class="textgap">0712345672</textarea>
+                  <mat-hint>Your contact number is required</mat-hint>
+                  <mat-icon matSuffix>phone</mat-icon>
+               </mat-form-field>
 
-                  <mat-card class="description">
-                        <span>Discription</span>
-                         <textarea matInput>I am a 5 years of working experience in LEADER AutoMobile company, Nugegoda.I am trustworthy and and capable of doing any finance work. Contact me at any time for your convenience </textarea>
-                 </mat-card>
+               <mat-form-field class="full-width">
+                  <mat-label>Address</mat-label>
+                  <textarea matInput class="textgap">No 171, Welihena Road, Kandawala, Katana</textarea>
+               </mat-form-field>
 
-                   <mat-card >
-                     <span>Upload photos of you to let customer know you</span>
-                     <button class="button" mat-raised-button color="primary" style="margin-left: 450px">UPLOAD</button>
-                     
-                   </mat-card>
-                   <button class="button" mat-raised-button color="primary" style="margin-left: 150px; margin-top:60px">PREIVEIW</button>
-                   <button class="button" mat-raised-button color="primary" style="margin-left: 150px; margin-top:60px">VIEW YOUR DISPLAY DETAILS</button>
-                   
-               </form>
-            </mat-card-content>
-               
+               <mat-form-field class="full-width">
+                  <mat-label>External links</mat-label>
+                  <textarea matInput class="textgap">kammsdj.facebook.com</textarea>
+                  <mat-hint>Facebook, Twitter or any other</mat-hint>
+               </mat-form-field>
+
+               <mat-card class="description" margin-top="20px">
+                  <span>Discription</span>
+                  <textarea
+                     matInput>I have 5 years of working experience in SATHIRA AutoMobile company, Nugegoda. 
+                     Contact me at any time for your convenience </textarea>
+               </mat-card>
+
+               <mat-card>
+                  <span>Upload photos of you to let customer know you</span>
+                  <button class="button" mat-raised-button color="primary" style="margin-left: 450px">UPLOAD</button>
+               </mat-card>
+
+               <button class="button" mat-raised-button color="primary"
+                  style="margin-left: 550px; margin-top:60px">PREIVEIW</button>
+               <button class="button" mat-raised-button color="primary" style="margin-left: 50px; margin-top:60px">VIEW
+                  YOUR DISPLAY DETAILS</button>
+
+            </form>
+         </mat-card-content>
+
       </mat-card>
    </mat-grid-tile>
 
 
 
 </mat-grid-list>
-

@@ -19,11 +19,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent },
+  
   { path: 'salesagentdash', component: SalesdashboardComponent },
   {path: 'sidebar',component: SidebarComponent},
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
+
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'sellerdash',component:SellerdashComponent},
   {path: 'editprofilen',component:SellerEditprofileComponent},
