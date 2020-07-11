@@ -9,22 +9,22 @@
     <!--Step 1- Basic details form-->
     <mat-step label="Basic Details" [stepControl]="formGroup1" >
 
-        <form [formGroup]="formGroup1" class="my-form">
+        <form [formGroup]="formGroup1" class="my-form" >
             <span style="font-size: 150%">Enter Basic Details Here</span>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Display Name" formControlName="ctrl1" required>
+                <input matInput placeholder="Display Name" formControlName="dname" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Display Telephone Number" formControlName="ctrl2" required>
+                <input matInput placeholder="Display Telephone Number" formControlName="dphn" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Display Email" formControlName="ctrl3" required>
+                <input matInput placeholder="Display Email" formControlName="demail" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Enter Location" formControlName="ctrl4" required>
+                <input matInput placeholder="Enter Location" formControlName="dlocation" required>
             </mat-form-field>
 
             <div>
@@ -36,51 +36,59 @@
     </mat-step>
 
     <!--step 2 Primary Details form-->
-    <mat-step label="Primary Details" [stepControl]="formGroup2">
-        <form [formGroup]="formGroup2" class="my-form">
+    <mat-step label="Primary Details" [stepControl]="formGroup2" >
+        <form [formGroup]="formGroup2" class="my-form"  >
             <span style="font-size: 150%">Enter Primary Details Here</span>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Title" formControlName="sctrl2" required>
+                <input matInput placeholder="Title" formControlName="vtitle" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Price" formControlName="sctrl3" required>
+                <input matInput placeholder="Price" formControlName="vprice" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Vehicle Type" formControlName="sctrl4" required>
+                <input matInput placeholder="Vehicle Type" formControlName="vtype" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Manufacturer" formControlName="sctrl5" required>
+                <input matInput placeholder="Manufacturer" formControlName="vmanufac" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Model" formControlName="sctrl6" required>
+                <input matInput placeholder="Model" formControlName="vmodel" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Vehicle Condition" formControlName="sctrl7" required>
+                <input matInput placeholder="Vehicle Condition" formControlName="vcondition" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Model Year" formControlName="sctrl8" required>
+                <input matInput placeholder="Model Year" formControlName="vmodelyear" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Mileage" formControlName="sctrl9" required>
+                <input matInput placeholder="Registered Year" formControlName="vregyear" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Transmission" formControlName="sctrl10" required>
+                <input matInput placeholder="Mileage" formControlName="vmileage" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Fuel Type" formControlName="sctrl11" required>
+                <input matInput placeholder="Engine Capacity" formControlName="venginecapacity" required>
             </mat-form-field>
 
             <mat-form-field class="full-width">
-                <input matInput placeholder="Color" formControlName="sctrl12" required>
+                <input matInput placeholder="Transmission" formControlName="vtransmission" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Fuel Type" formControlName="vfuel" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Color" formControlName="vcolor" required>
             </mat-form-field>
 
             <div>
@@ -93,17 +101,17 @@
 
     <!--Step 3 - description and photo uploading-->
     <mat-step label="Description and Upload Photos" [stepControl]="formGroup3">
-        <form [formGroup]="formGroup3" class="my-form">
+        <form [formGroup]="formGroup3" class="my-form" (ngSubmit)="onSubmit()">
 
             <span style="font-size: 150%">Enter a Description and upload photos here</span>
             <mat-form-field class="full-width">
                 <mat-label>Description</mat-label>
-                <textarea class="textarea" matInput formControlName="thirdCtrl" required></textarea>
+                <textarea class="textarea" matInput formControlName="description" required></textarea>
             </mat-form-field>
 
             <mat-form-field class="full-width">
                 <mat-label>Upload Photos</mat-label>
-                <textarea class="textarea" matInput formControlName="thirdCtrl" required></textarea>
+                <textarea class="textarea" matInput  required></textarea>
                 <button mat-raised-button color="primary"> + Upload</button>
             </mat-form-field>
 
@@ -127,22 +135,22 @@
                         <tr>
                             <td style="text-align: left;">Name</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.dname.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Telephone Number</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.dphn.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Email</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx@gmail.com</td>
+                            <td style="text-align: left;">{{this.demail.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Location</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.dlocation.value}}</td>
                         </tr>
                     </table>
                 </div>
@@ -155,67 +163,63 @@
                         <tr>
                             <td style="text-align: left;">Title</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vtitle.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Price(LKR)</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vprice.value}}</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left;">Vehicle Typeo</td>
+                            <td style="text-align: left;">Vehicle Type</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vtype.value}}</td>
                         </tr>
-                        <tr>
-                            <td style="text-align: left;">Body Type</td>
-                            <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
-                        </tr>
+                        
                         <tr>
                             <td style="text-align: left;">Manufacturer</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vmanufac.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Model</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vmodel.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Model Year</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vmodelyear.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Registereted Year</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vregyear.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Engine Capacity</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.venginecapacity.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Mileage</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vmileage.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Vehicle Condition</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vcondition.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Transmission</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vtransmission.value}}</td>
                         </tr>
                         <tr>
                             <td style="text-align: left;">Fuel Type</td>
                             <td style="text-align: center;">:</td>
-                            <td style="text-align: left;">xxxxxxxxxx</td>
+                            <td style="text-align: left;">{{this.vfuel.value}}</td>
                         </tr>
 
                     </table>
@@ -230,11 +234,7 @@
 
                     <mat-card-content>
                         <p>
-                            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from
-                            Japan.
-                            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-                            originally
-                            bred for hunting.
+                            {{this.description.value}}
                         </p>
                     </mat-card-content>
                 </mat-card>

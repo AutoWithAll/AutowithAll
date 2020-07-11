@@ -1,0 +1,22 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.search-container {
+  float: right;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  margin: 10px;
+}
+.search {
+  padding-top: 2px;
+  border-radius: 10px;
+}
+.btn {
+  border-radius: 10px;
+}
+.mat-raised-button {
+  margin: 5px;
+  width: 100px;
+  text-decoration: none;
+}

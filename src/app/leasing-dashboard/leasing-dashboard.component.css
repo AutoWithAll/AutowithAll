@@ -1,0 +1,89 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: block;
+    height: 100%;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 1000px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .icon{
+    color: white;
+    margin-right: 20px;
+  }
+
+  .profile-card {
+    text-align: center;
+    padding: 0 10px 20px 20px;
+       
+  }
+  
+  .logo img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+  } 
+
+  .row{
+    color:rgb(32, 95, 178);
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+  }
+
+  .inner img{
+    width: 200px;
+    height:60px
+  }
+
+   
+  .list-item:hover {
+    color: orangered;
+
+  }
+
+  .image  {
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 80px;
+    
+     
+     
+  }
+
+   .profile{
+     
+    margin-left: 50px;
+    font-size: larger;
+    color: rgb(3, 38, 54);
+    line-height: 1.5;
+    margin-top: 50px;
+   }
+
+   .status{
+     text-align: center;
+   }
+
+  .t1{
+    justify-content: center;
+  }
+
+   
+  

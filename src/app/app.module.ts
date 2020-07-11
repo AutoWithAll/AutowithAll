@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,28 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { MyMaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { from } from 'rxjs';
+import { UserService } from './service/user.service';
+import { ToastrModule } from 'ngx-toastr';
 import {SalesdashboardComponent} from './salesagent/salesdashboard/salesdashboard.component';
+
+
+
+
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LeasevehicleComponent } from './leasevehicle/leasevehicle.component';
+
+
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+
+
+import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
+import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 import {ViewadsComponent} from './salesagent/viewads/viewads.component';
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
@@ -20,6 +43,12 @@ import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
 import {SellerEditprofileComponent} from './normalseller/editprofile/editprofile.component';
 import {SellerPostadsComponent} from './normalseller/postads/postads.component';
 import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
+import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
+import { AdminLeasingsComponent } from './admin-leasings/admin-leasings.component';
+import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.component';
+import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
+import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
+import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +56,24 @@ import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
     RegistrationComponentComponent,
     LoginComponentComponent,
     NavbarComponent,
+    ForgetPasswordComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    LeasevehicleComponent,
+    
+
+    ForgetPasswordComponent,
+
+    HeaderComponent,
+    
+    AdminDashboardComponent,
+    
+    AdminUsersComponent,
+
+
+    LeasingDashboardComponent,
+    LeasingDashboardDialog,
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
@@ -37,12 +84,27 @@ import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
     SellerEditprofileComponent,
     SellerPostadsComponent,
     SellerViewadsComponent,
+    AdminAdvertisementsComponent,
+    AdminLeasingsComponent,
+    AdminInsuranceComponent,
+    InsuranceDashboardComponent,
+    InsuranceDashboardDialog,
+    LeasingProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut : 2000,
+      positionClass : 'toast-top-center'
+    }),
+    NgbModule,
+    
     // RouterModule.forRoot([
     //   // { path: '', redirectTo: '/', pathMatch: 'full' },
     //   // { path: 'register', component: RegistrationComponentComponent },
@@ -51,7 +113,7 @@ import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
      
     // ]),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
