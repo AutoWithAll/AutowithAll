@@ -21,6 +21,7 @@ export class HomeComponent {
 
   data = [
     {
+      img :"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jLXzmSlWvqTQfAThdKlqwQHaEK%26pid%3DApi&f=1",
       name:"BMW i8",
       date:"2018/03/05",
       from: "Colombo",
@@ -28,6 +29,7 @@ export class HomeComponent {
       price: "1,000,000"
     },
     {
+      img :"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sY0mdfPhrpzC34tGFmTm6gHaEK%26pid%3DApi&f=1",
       name:"Mustang",
       date:"2019/05/22",
       from: "Colombo",
@@ -35,7 +37,16 @@ export class HomeComponent {
       price: "1,540,000"
     },
     {
+      img :"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eo05gBUIgP0A-fozya348AHaFS%26pid%3DApi&f=1",
       name:"Audi A4",
+      date:"2020/01/08",
+      from: "Colombo",
+      year:"2018",
+      price: "1,635,000"
+    },
+    {
+      img :"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.qVIqjfzT8T6d0etdS1ybMQHaFj%26pid%3DApi&f=1",
+      name:"Porche",
       date:"2020/01/08",
       from: "Colombo",
       year:"2018",
