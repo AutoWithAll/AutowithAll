@@ -5,7 +5,7 @@
     Post Your New Advertisement here within Four steps!
 </span>
 
-<mat-horizontal-stepper linear>
+<mat-horizontal-stepper [linear] = "!isLinear">
     <!--Step 1- Basic details form-->
     <mat-step label="Basic Details" [stepControl]="formGroup1" >
 
@@ -101,7 +101,7 @@
 
     <!--Step 3 - description and photo uploading-->
     <mat-step label="Description and Upload Photos" [stepControl]="formGroup3">
-        <form [formGroup]="formGroup3" class="my-form" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formGroup3" class="my-form">
 
             <span style="font-size: 150%">Enter a Description and upload photos here</span>
             <mat-form-field class="full-width">
@@ -109,11 +109,25 @@
                 <textarea class="textarea" matInput formControlName="description" required></textarea>
             </mat-form-field>
 
-            <mat-form-field class="full-width">
-                <mat-label>Upload Photos</mat-label>
-                <textarea class="textarea" matInput  required></textarea>
-                <button mat-raised-button color="primary"> + Upload</button>
-            </mat-form-field>
+            
+            <h3>Upload Photo</h3>            
+            <div class="form-group">
+                <input type="file" name="image" (change)="fileProgress($event)" />
+            </div>
+            <div *ngIf="fileUploadProgress">
+                Upload progress: {{ fileUploadProgress }}
+            </div>
+            <div class="image-preview mb-3" *ngIf="previewUrl">
+                <img [src]="previewUrl" height="300" />                 
+            </div>
+ 
+            <div class="mb-3" *ngIf="uploadedFilePath">
+                {{uploadedFilePath}}
+            </div>
+             
+            <div class="form-group">
+                <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
+            </div>
 
             <div>
                 <button mat-raised-button matStepperPrevious color="accent" style='margin-left:100px'>Previous</button>
@@ -242,15 +256,16 @@
 
             <mat-grid-tile>
                <div class="images">
-                   <div class="image"><img mat-card-image src="assets/img/car.jpg" ></div> 
-                   <div class="image"><img mat-card-image src="assets/img/car.jpg" ></div>
+                   <div class="image"><img mat-card-image src="{{previewUrl}}" ></div> 
+                   <div class="image"><img mat-card-image src="{{previewUrl}}" ></div>
                 </div>        
             </mat-grid-tile>
         </mat-grid-list>
+        
 
         <button mat-raised-button matStepperPrevious color="accent"
             style='margin-top:25px; margin-left:150px'>Previous</button>
-        <button mat-raised-button color="primary" style='margin-top:25px;margin-left:850px'>Submit</button>
+        <button mat-raised-button color="primary" style='margin-top:25px;margin-left:850px' (click)= "onSubmit();">Submit</button>
     </mat-step>
 
 </mat-horizontal-stepper>

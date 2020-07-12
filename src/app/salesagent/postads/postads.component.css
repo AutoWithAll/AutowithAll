@@ -50,4 +50,5 @@ span {
   .image {
     flex: 33.33%;
     padding: 5px;
+    margin: 2px;
   }
