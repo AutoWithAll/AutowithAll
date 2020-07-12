@@ -37,6 +37,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent },
+  
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
+
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'sellerdash',component:SellerdashComponent},
   {path: 'editprofilen',component:SellerEditprofileComponent},

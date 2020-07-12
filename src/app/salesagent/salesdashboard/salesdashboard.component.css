@@ -24,30 +24,7 @@
     max-width: 400px;
   }
 
-
-.example-card {
-  max-width: 400px;
-}
-
-
-mat-grid-tile {
-  background: white;
-}
-
-
-   p span { 
-          display: block; 
-          margin-bottom: 10px;
-         
-      } 
-  
-      /* mat-card {
-        width: calc(100% - 60px);
-        height: calc(100% - 70px);
-      }      */
-.package{
-  height: auto;
-}
+ 
   mat-grid-tile {
     background: white;
   }
@@ -58,6 +35,6 @@ mat-grid-tile {
   } 
     
   mat-card {
-    width: calc(100% - 60px);
-    height: calc(100% - 70px);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
    }     

@@ -5,6 +5,7 @@ import { Login } from '../models/login.model';
 import { Observable, throwError } from 'rxjs';
 import { retry , catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import { Ad } from '../models/ad.model';
 
 // import { appconfig } from '../config/appconfig'
 
@@ -64,5 +65,15 @@ export class UserService {
         next: (res) => console.log(JSON.stringify(res)),
         error: (err) => console.error('There was an error.', err),
       });
+  }
+
+  postAd(ad: Ad) {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    console.log(ad);
+    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
+    return this.http
+      .post<Ad>('http://localhost:8080/post_add', ad);
+      
   }
 }

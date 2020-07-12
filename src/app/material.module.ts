@@ -17,6 +17,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+
+import {MatStepperModule} from '@angular/material/stepper';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TextFieldModule } from '@angular/cdk/text-field';
 
@@ -42,6 +46,11 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatTableModule,
     MatPaginatorModule,
     MatCheckboxModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatProgressBarModule,
+    
     TextFieldModule,
   ],
   exports: [
@@ -64,7 +73,11 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatPaginatorModule,
     MatCardModule,
     MatCheckboxModule,
-    TextFieldModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatProgressBarModule
+    
   ],
 })
 export class MyMaterialModule {}
