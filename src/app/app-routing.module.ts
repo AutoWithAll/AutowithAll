@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
-  { path:'adminDashboard',component:AdminDashboardComponent},
+  { path:'adminDashboard',component: AdminDashboardComponent},
   { path:'adminUsers',component:AdminUsersComponent},
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
   { path:'adminLeasings',component:AdminLeasingsComponent},
@@ -61,8 +61,6 @@ const routes: Routes = [
   {path: 'sellerdash',component:SellerdashComponent},
   {path: 'editprofilen',component:SellerEditprofileComponent},
   {path: 'postadsn',component:SellerPostadsComponent},
-  {path: 'viewadsn',component:SellerViewadsComponent},
-  { path : 'leasingDash', component: LeasingDashboardComponent},
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
 ];

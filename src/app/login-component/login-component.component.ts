@@ -30,15 +30,13 @@ export class LoginComponentComponent implements OnInit {
     private toaster: ToastrService
   ) {}
 
-  
-  get f(){
+  get f() {
     return this.loginForm.controls;
   }
-  
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['',[Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: [''],
     });
   }
@@ -63,8 +61,6 @@ export class LoginComponentComponent implements OnInit {
       password: this.password.value,
     };
 
-
-
     this.authService.loginUser(login).subscribe({
       next: (res) => {
         console.log(res);
@@ -72,13 +68,21 @@ export class LoginComponentComponent implements OnInit {
           this.showSuccess();
           switch (res.role) {
             case <any>'lcompany':
+              console.log('lcompany');
               this.router.navigate(['/leasingDash']);
               break;
             case <any>'agent':
               this.router.navigate(['/salesagentdash']);
               break;
             case <any>'admin':
+              console.log('admin');
               this.router.navigate(['/adminDashboard']);
+              break;
+            case <any>'nuser':
+              this.router.navigate(['/sellerdash']);
+              break;
+            case <any>'icompany':
+              this.router.navigate(['insuranceDash']);
               break;
           }
         }
