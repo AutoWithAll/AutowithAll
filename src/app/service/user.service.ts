@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Login } from '../models/login.model';
 import { Observable, throwError } from 'rxjs';
-import { retry , catchError } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
 
@@ -19,7 +19,7 @@ import { Ad } from '../models/ad.model';
 export class UserService {
   public baseUrl = 'http://localhost:8080';
 
-  constructor(private http: HttpClient , private toaster: ToastrService) {}
+  constructor(private http: HttpClient, private toaster: ToastrService) {}
 
   loginUser(user: Login) {
     const headers = new HttpHeaders();
@@ -27,10 +27,8 @@ export class UserService {
     console.log(user);
     // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
     return this.http
-      .post<User>('http://localhost:8080/login', user).pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
+      .post<User>('http://localhost:8080/login', user)
+      .pipe(retry(1), catchError(this.handleError));
   }
 
   handleError(error) {
@@ -42,13 +40,10 @@ export class UserService {
       // server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log('ERROR' + errorMessage)
-  
+    console.log('ERROR' + errorMessage);
+
     return throwError(errorMessage);
-
   }
-
-  
 
   // logOut() {
   //   sessionStorage.removeItem('username');
@@ -68,12 +63,34 @@ export class UserService {
   }
 
   postAd(ad: Ad) {
+    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
+    // const uploadImageData = new FormData();
+    // uploadImageData.append('imageFile', image, image.name);
+
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     console.log(ad);
-    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
-    return this.http
-      .post<Ad>('http://localhost:8080/post_add', ad);
-      
+    return this.http.post<Ad>('http://localhost:8080/post_add', ad);
+  }
+
+  image(image) {
+    console.log("1")
+    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
+    const uploadImageData = new FormData();
+    uploadImageData.append('imageFile', image, image.name);
+    console.log("2")
+    console.log(uploadImageData)
+
+    this.http
+      .post('http://localhost:8080/upload', uploadImageData, {
+        observe: 'response',
+      })
+      .subscribe((response) => {
+        if (response.status === 200) {
+          console.log('Working image');
+        } else {
+          console.log('eror image');
+        }
+      });
   }
 }
