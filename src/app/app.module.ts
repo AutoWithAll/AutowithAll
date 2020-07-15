@@ -49,6 +49,13 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
+import { LeasingEditProfileComponent } from './leasing-edit-profile/leasing-edit-profile.component';
+import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component';
+import { LeaseComponent } from './lease/lease.component';
+import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.component';
+import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +96,12 @@ import { LeasingProfileComponent } from './leasing-profile/leasing-profile.compo
     AdminInsuranceComponent,
     InsuranceDashboardComponent,
     InsuranceDashboardDialog,
-    LeasingProfileComponent
+    LeasingProfileComponent,
+    LeasingEditProfileComponent,
+    LeaseViewAdsComponent,
+    LeaseComponent,
+    LeaseNavbarComponent,
+    LeaseSidebarComponent
   ],
   imports: [
     BrowserModule,
