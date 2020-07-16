@@ -6,6 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry , catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
+import { Lease} from '../models/lease.model'
 
 // import { appconfig } from '../config/appconfig'
 
@@ -75,5 +76,12 @@ export class UserService {
     return this.http
       .post<Ad>('http://localhost:8080/post_add', ad);
       
+  }
+
+  postLease(lease : Lease){
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    console.log(lease);
+
   }
 }
