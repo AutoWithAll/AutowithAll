@@ -1,0 +1,32 @@
+.abc {
+    padding-top: 25px;
+}
+.one {
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.two {
+    width: 100%;
+    align-items: flex-end;
+    
+    
+}
+.wrapper {
+    width: 90%;
+    
+    border-bottom: 1px slateblue;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    list-style-type: none;
+}
+.button:hover{
+    font-size: 30px;
+}
+
+
+

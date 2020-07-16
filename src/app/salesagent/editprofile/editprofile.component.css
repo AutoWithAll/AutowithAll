@@ -1,0 +1,32 @@
+
+
+  .profileimg {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  mat-card {
+    width: calc(100% - 40px);
+    height: calc(100% - 50px);
+   }  
+
+   .my-form{
+    padding-top: 10px;
+    padding-left: 140px;
+  }
+   
+  .full-width {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .textgap {
+    height: 15px;
+  }
+
+ span { 
+    display: block; 
+    margin-bottom: 10px;
+
+  } 
