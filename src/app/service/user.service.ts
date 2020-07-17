@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
 export class UserService {
   public baseUrl = 'http://localhost:8080';
 
-  constructor(private http: HttpClient , private toaster: ToastrService) {}
+  constructor(private http: HttpClient) {}
 
   loginUser(user: Login) {
     const headers = new HttpHeaders();

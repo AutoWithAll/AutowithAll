@@ -21,7 +21,6 @@ export class LoginComponentComponent implements OnInit {
   login: Login = new Login();
   data: User = new User();
   loginForm: FormGroup;
-  x: string;
 
   constructor(
     private formBuilder: FormBuilder,
