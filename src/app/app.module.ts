@@ -34,7 +34,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
-import {PostLeasingPlanDialog} from './lease-view-ads/lease-view-ads.component';
+ 
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 import {ViewadsComponent} from './salesagent/viewads/viewads.component';
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
@@ -55,6 +55,7 @@ import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component
 import { LeaseComponent } from './lease/lease.component';
 import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.component';
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
+import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
  
 
 @NgModule({
@@ -81,7 +82,7 @@ import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sideba
 
 
     LeasingDashboardComponent,
-    PostLeasingPlanDialog,
+     
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
@@ -102,7 +103,8 @@ import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sideba
     LeaseViewAdsComponent,
     LeaseComponent,
     LeaseNavbarComponent,
-    LeaseSidebarComponent
+    LeaseSidebarComponent,
+    PostLeasingPlanDialogComponent
      
   ],
   imports: [

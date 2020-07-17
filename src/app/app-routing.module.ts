@@ -34,12 +34,13 @@ import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashb
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
 import { LeaseComponent} from './lease/lease.component';
+import { PostLeasingPlanDialogComponent} from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent },
   { path: 'login', component: LoginComponentComponent },
-  
+  { path: 'postlease', component:PostLeasingPlanDialogComponent},
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
@@ -67,6 +68,7 @@ const routes: Routes = [
   { path : 'leaseProfile', component: LeasingProfileComponent},
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   { path : 'lease', component:LeaseComponent},
+
 ];
 
 @NgModule({

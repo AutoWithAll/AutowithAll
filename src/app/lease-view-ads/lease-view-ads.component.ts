@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PostLeasingPlanDialogComponent} from 'src/app/post-leasing-plan-dialog/post-leasing-plan-dialog.component'
 import { MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -10,13 +11,7 @@ export class LeaseViewAdsComponent   {
 
   constructor(public dialog:MatDialog) { }
 
-  openDialog(){
-    const dialogRef = this.dialog.open(PostLeasingPlanDialog );
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+   
 
   data = [
     {
@@ -49,12 +44,13 @@ export class LeaseViewAdsComponent   {
     }
   ];
 
+  openPostLeasingPlanDialog(){
+    // console.log(details);
+    this.dialog.open(PostLeasingPlanDialogComponent);
+  }
+
 }
 
 
-@Component({
-  selector: 'post-leasing-plan-dialog',
-  templateUrl: './post-leasing-plan-dialog.html',
-})
-export class PostLeasingPlanDialog  {}
+ 
 
