@@ -69,6 +69,8 @@ export class PostLeasingPlanDialogComponent implements OnInit {
     }
 
     onSubmit(){
+ console.log("Working")
+
       const lease = {
 
         ramount: this.ramount.value,
