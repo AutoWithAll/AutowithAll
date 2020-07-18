@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Login } from '../models/login.model';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
@@ -71,6 +71,11 @@ export class UserService {
     headers.append('Content-Type', 'application/json');
     console.log(ad);
     return this.http.post<Ad>('http://localhost:8080/post_add', ad);
+  }
+
+  getimage(image){
+    console.log("2")
+    return this.http.get('http://localhost:8080/get/{{image}}',{ observe: 'response'})
   }
 
   image(image) {

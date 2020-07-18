@@ -49,7 +49,7 @@ export class PostadsComponent implements OnInit {
  }
 
   fileProgress(fileInput) {
-    this.getBase64(fileInput);
+    //this.getBase64(fileInput);
     this.fileData = fileInput.target.files[0];
     this.preview();
   }
@@ -67,8 +67,9 @@ export class PostadsComponent implements OnInit {
     reader.readAsDataURL(this.fileData);
     reader.onload = (_event) => {
       this.previewUrl = reader.result;
-      console.log("type" + this.previewUrl)
+      //console.log("type" + this.previewUrl)
     };
+    
   }
 
   get f1() {
@@ -178,6 +179,13 @@ export class PostadsComponent implements OnInit {
     this.toast.error('some Eror Found');
   }
 
+  public image;
+
+ getimage(){
+   console.log("1")
+   this.adservice.getimage(this.previewUrl).subscribe(res => {this.image = res})
+  }
+
   onSubmit() {
     const ad = {
       dname: this.dname.value,
@@ -216,5 +224,6 @@ export class PostadsComponent implements OnInit {
     });
     console.log(this.fileData)
     this.adservice.image(this.fileData);
+    this.getimage();
   }
 }
