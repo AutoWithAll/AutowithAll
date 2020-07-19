@@ -67,7 +67,8 @@
             mat-raised-button
             color="primary"
             class="button1"
-            mat-dialog-close 
+            (click) = "onClose()"
+            type="button"
              
             >
                 Cancel
@@ -80,6 +81,7 @@
             [disabled]="leaseForm.invalid"
             mat-dialog-close
             type="submit"
+            (click) = "onClose()"
             
             >
                 Submit
