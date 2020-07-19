@@ -1,13 +1,189 @@
 <app-agentsidebar></app-agentsidebar>
+<mat-grid-list cols="3" rows="12" rowHeight="100px" >
+  <mat-grid-tile colspan="3">
+<mat-card class=title>View all of your advertisements here</mat-card>
+</mat-grid-tile>
+<mat-grid-tile rowspan="5" colspan="3">
+  <mat-card>
 
-<mat-grid-list cols="1" rowHeight="300px">
-    <mat-grid-tile>
-        <mat-card class= "my-card"></mat-card>
-    </mat-grid-tile>
-   
+ 
+      <mat-form-field >
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
     
-</mat-grid-list>
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Ad Reference Column -->
+      <ng-container matColumnDef="adnumber">
+        <th mat-header-cell *matHeaderCellDef> Ad Reference </th>
+        <td mat-cell *matCellDef="let element"> {{element.adnumber}} </td>
+      </ng-container>
+  
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
 
+       <!-- Views Column -->
+       <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let element"> <img class="tableimg"[src]="element.imageUrl" /> </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="postdate">
+        <th mat-header-cell *matHeaderCellDef> Posted Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.postdate}} </td>
+      </ng-container>
+
+       <!-- Views Column -->
+       <ng-container matColumnDef="validdate">
+        <th mat-header-cell *matHeaderCellDef> Valid Till </th>
+        <td mat-cell *matCellDef="let element"> {{element.validdate}} </td>
+      </ng-container>
+  
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+  
+     
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions </th>
+        <td mat-cell *matCellDef="let row"> <a pageScroll href="viewads#pagedown">
+            <button mat-raised-button >VIEW</button> </a></td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell *matCellDef="let row">  <button mat-raised-button color="primary" [routerLink]="['/updateagentads']"
+         >UPDATE</button> </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let row">  <button mat-raised-button color="warn" (click)="openDialog()">DELETE</button> </td>
+      </ng-container>
+      
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[3]" showFirstLastButtons></mat-paginator>
+ 
+</mat-card>
+  </mat-grid-tile>
+
+  <div >
+  <mat-grid-tile  >
+    <mat-card class=title>Your Selected Advertisement</mat-card>
+    </mat-grid-tile>
+ 
+    <mat-grid-tile  rowspan="6" colspan="2">
+    <mat-card>
+      <table class="profile">
+        <caption style="caption-side:top">BMW A4</caption>
+        <tr>
+          <td style="text-align: left;">Ad reference</td>
+          <td style="text-align: center;">:</td>
+          <td style="text-align: left;">BMW</td>
+      </tr>
+       <tr>
+            <td style="text-align: left;">Price(LKR)</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">1000</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Vehicle Type</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">A4</td>
+        </tr>
+        
+        <tr>
+            <td style="text-align: left;">Manufacturer</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">BMW</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Model</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">JSJ</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Model Year</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">43536</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Registereted Year</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">6272</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Engine Capacity</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">HJDJD</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Mileage</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">JHSJJSJS</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Vehicle Condition</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">NNNJDJD</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Transmission</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">GWHHNNNS</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Fuel Type</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">FGSHNNSN</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Colour</td>
+          <td style="text-align: center;">:</td>
+          <td style="text-align: left;">FGSHNNSN</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; color: blue;">Posted On</td>
+        <td style="text-align: center;color: blue;">:</td>
+        <td style="text-align: left;color: blue;">FGSHNNSN</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;color: red;">Valid Till</td>
+      <td style="text-align: center;color: red;">:</td>
+      <td style="text-align: left;color: red;">FGSHNNSN</td>
+  </tr>
+
+    </table>
+    </mat-card>
+  </mat-grid-tile>
+</div>
+  <mat-grid-tile  rowspan="3">
+    <mat-card>
+   
+         <img class="car" src="assets/img/car.jpg" > 
+   
+  </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile  rowspan="2">
+    <mat-card id="pagedown">
+     Discription
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
 
 
 

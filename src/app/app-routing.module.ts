@@ -22,7 +22,7 @@ import {SellerdashComponent} from './normalseller/sellerdash/sellerdash.componen
 import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
 import {SellerEditprofileComponent} from './normalseller/editprofile/editprofile.component';
 import {SellerPostadsComponent} from './normalseller/postads/postads.component';
-import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
+import {SellerViewadsComponent} from './normalseller/viewadsn/viewadsn.component';
 
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
 //Admindashboard
@@ -32,6 +32,8 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
+import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,7 +58,8 @@ const routes: Routes = [
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
-
+  {path: 'updateagentads',component: EditagentadsComponent},
+  {path: 'updatesellerads',component: EditnselleradsComponent},
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'sellerdash',component:SellerdashComponent},
   {path: 'editprofilen',component:SellerEditprofileComponent},
