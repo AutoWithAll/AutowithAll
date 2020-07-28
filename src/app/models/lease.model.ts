@@ -1,5 +1,7 @@
+ 
+
 export class Lease{
-    ramount: String;
+    ramount: String
     interest: String;
     years: String;
     iamount: String;

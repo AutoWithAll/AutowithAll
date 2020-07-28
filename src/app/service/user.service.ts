@@ -83,5 +83,8 @@ export class UserService {
     headers.append('Content-Type', 'application/json');
     console.log(lease);
 
+    return this.http
+      .post<Lease>('http://localhost:8080/postlease', lease);
+
   }
 }

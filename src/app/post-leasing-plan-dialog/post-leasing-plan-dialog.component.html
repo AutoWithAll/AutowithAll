@@ -7,7 +7,7 @@
 </h2>
  
 <div class="card" >
-    <form class="form" [formGroup]="leaseForm" >
+    <form class="form" [formGroup]="leaseForm" (ngSubmit)="onSubmit()">
          
         <mat-form-field class="full-width">
             <mat-label>Lease Rental Amount</mat-label>
@@ -79,8 +79,8 @@
             class="button2"
             [disabled]="leaseForm.invalid"
             mat-dialog-close
+            
             type="submit"
-            (ngSubmit)="onSubmit()"
             >
                 Submit
             </button>
