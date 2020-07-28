@@ -26,7 +26,6 @@ export class PostadsComponent implements OnInit {
   previewUrl: any = null;
   fileUploadProgress: string = null;
   uploadedFilePath: string = null;
-  base64Data: any;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -34,19 +33,6 @@ export class PostadsComponent implements OnInit {
     private toast: ToastrService
   ) {}
 
-  getBase64(event) {
-    let me = this;
-    let file = event.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      //me.modelvalue = reader.result;
-      console.log(reader.result);
-    };
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
- }
 
   fileProgress(fileInput) {
     //this.getBase64(fileInput);
@@ -179,12 +165,7 @@ export class PostadsComponent implements OnInit {
     this.toast.error('some Eror Found');
   }
 
-  public image;
 
- getimage(){
-   console.log("1")
-   this.adservice.getimage(this.previewUrl).subscribe(res => {this.image = res})
-  }
 
   onSubmit() {
     const ad = {
@@ -222,8 +203,5 @@ export class PostadsComponent implements OnInit {
         console.log(err);
       },
     });
-    console.log(this.fileData)
-    this.adservice.image(this.fileData);
-    this.getimage();
   }
 }

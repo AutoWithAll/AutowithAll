@@ -73,12 +73,21 @@ export class UserService {
     return this.http.post<Ad>('http://localhost:8080/post_add', ad);
   }
 
+  getads() : Observable<any> {
+    
+    console.log("get 1")
+    // const headers = new HttpHeaders();
+    // headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:8080/ads');
+  }
+
   getimage(image){
     console.log("2")
     return this.http.get('http://localhost:8080/get/{{image}}',{ observe: 'response'})
   }
 
   image(image) {
+    
     console.log("1")
     //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
