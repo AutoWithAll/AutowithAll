@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpEventType } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Login } from '../models/login.model';
 import { Observable, throwError, observable } from 'rxjs';
@@ -87,24 +87,8 @@ export class UserService {
   }
 
   image(image) {
+    console.log("work image")
+    return this.http.post('http://localhost:8080/upload', image ,{ observe: 'response' } );
     
-    console.log("1")
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', image, image.name);
-    console.log("2")
-    console.log(uploadImageData)
-
-    this.http
-      .post('http://localhost:8080/upload', uploadImageData, {
-        observe: 'response',
-      })
-      .subscribe((response) => {
-        if (response.status === 200) {
-          console.log('Working image');
-        } else {
-          console.log('eror image');
-        }
-      });
   }
 }

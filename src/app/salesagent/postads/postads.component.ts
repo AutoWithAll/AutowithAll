@@ -9,6 +9,7 @@ import {
 import { Ad } from 'src/app/models/ad.model';
 import { UserService } from './../../service/user.service';
 import { ToastrService } from 'ngx-toastr';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-postads',
@@ -22,10 +23,12 @@ export class PostadsComponent implements OnInit {
   formGroup3: FormGroup;
   isLinear = true;
 
+
   fileData: File = null;
   previewUrl: any = null;
   fileUploadProgress: string = null;
   uploadedFilePath: string = null;
+  massege: string ;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -35,9 +38,24 @@ export class PostadsComponent implements OnInit {
 
 
   fileProgress(fileInput) {
-    //this.getBase64(fileInput);
     this.fileData = fileInput.target.files[0];
     this.preview();
+  }
+
+  onUpload(){
+    console.log(this.fileData);
+
+    const uploadImageData = new FormData();
+    uploadImageData.append('imageFile', this.fileData, this.fileData.name);
+
+    this.adservice.image(uploadImageData).subscribe(async(response) => {
+      if (response.status === 200){
+        this.massege = 'Image uploaded successfully';
+      }else {
+        this.massege = 'Image not uploaded successfully ----------------------';
+      }
+    });
+    console.log(this.massege);
   }
 
 
@@ -53,7 +71,7 @@ export class PostadsComponent implements OnInit {
     reader.readAsDataURL(this.fileData);
     reader.onload = (_event) => {
       this.previewUrl = reader.result;
-      //console.log("type" + this.previewUrl)
+      console.log("image prabath" + this.previewUrl)
     };
     
   }
