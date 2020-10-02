@@ -14,12 +14,12 @@
           <input
             matInput
             placeholder="Email"
-            formControlName="email"
-            name="email"
-            [ngClass]="{ 'is-invalid': f.email.errors }"
+            formControlName="username"
+            name="username"
+            [ngClass]="{ 'is-invalid': f.username.errors }"
           />
-          <div *ngIf="f.email.errors" class="invalid-feedback">
-            <div class="errormesg" *ngIf="f.email.errors.email">
+          <div *ngIf="f.username.errors" class="invalid-feedback">
+            <div class="errormesg" *ngIf="f.username.errors.email">
               Enter valid Email
             </div>
           </div>

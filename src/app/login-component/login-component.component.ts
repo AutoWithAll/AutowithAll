@@ -36,13 +36,13 @@ export class LoginComponentComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.email]],
       password: [''],
     });
   }
 
-  get email() {
-    return this.loginForm.get('email');
+  get username() {
+    return this.loginForm.get('username');
   }
   get password() {
     return this.loginForm.get('password');
@@ -57,9 +57,11 @@ export class LoginComponentComponent implements OnInit {
   // }
   onLoginSubmit() {
     const login = {
-      email: this.email.value,
+      username: this.username.value,
       password: this.password.value,
     };
+
+    console.log(login)
 
     this.authService.loginUser(login).subscribe({
       next: (res) => {

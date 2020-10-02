@@ -27,7 +27,7 @@ export class UserService {
     console.log(user);
     // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
     return this.http
-      .post<User>('http://localhost:8080/login', user).pipe(
+      .post<User>('http://localhost:8080/api/auth/signin', user).pipe(
         retry(1),
         catchError(this.handleError)
       )
