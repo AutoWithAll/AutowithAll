@@ -29,5 +29,9 @@ export class UserService {
     console.log(ad)
     return this.http.post('http://localhost:8080/advertisement/postadd', ad);
   }   // Post Add By Sales Agent
+
+  uploadImage(image){
+    return this.http.post('http://localhost:8080/advertisement/uploadImage' , image);
+  } //Add 5 images With Add
   
 }

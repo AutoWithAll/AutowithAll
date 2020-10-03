@@ -39,12 +39,16 @@ export class PostadsComponent implements OnInit {
     this.preview();
   }
 
-  onUpload(){
+  onUpload() {
+    this.adservice.uploadImage(this.fileData).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
 
-    // this.adservice.image(this.previewUrl).subscribe(res=>{
-    //   console.log(res);
-    // })
-    
+      error: (err) => {
+        console.log(err + "error Image");
+      },
+    });
   }
 
   preview() {
@@ -95,11 +99,9 @@ export class PostadsComponent implements OnInit {
       vcolor: ['', Validators.required],
     });
     this.formGroup3 = this._formBuilder.group({
-
       description: ['', Validators.required],
     });
   }
-
 
   get dname() {
     return this.formGroup1.get('dname');
@@ -164,7 +166,7 @@ export class PostadsComponent implements OnInit {
     this.toast.error('some Eror Found');
   }
 
-   onSubmit() {
+  onSubmit() {
     const ad = {
       name: this.dname.value,
       t_number: this.dphn.value,
@@ -200,5 +202,5 @@ export class PostadsComponent implements OnInit {
         console.log(err);
       },
     });
-   }
+  }
 }
