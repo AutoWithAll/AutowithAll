@@ -9,7 +9,7 @@ import {
 import { Ad } from 'src/app/models/ad.model';
 import { UserService } from './../../service/user.service';
 import { ToastrService } from 'ngx-toastr';
-import { async } from '@angular/core/testing';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-postads',
@@ -23,12 +23,10 @@ export class PostadsComponent implements OnInit {
   formGroup3: FormGroup;
   isLinear = true;
 
-
   fileData: File = null;
   previewUrl: any = null;
   fileUploadProgress: string = null;
   uploadedFilePath: string = null;
-  massege: string ;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -36,29 +34,18 @@ export class PostadsComponent implements OnInit {
     private toast: ToastrService
   ) {}
 
-
-  fileProgress(fileInput) {
+  fileChangeEvent(fileInput: any) {
     this.fileData = fileInput.target.files[0];
     this.preview();
   }
 
-  onUpload(){
-    console.log(this.fileData);
+  // onUpload(){
 
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.fileData, this.fileData.name);
-
-    this.adservice.image(uploadImageData).subscribe(async(response) => {
-      if (response.status === 200){
-        this.massege = 'Image uploaded successfully';
-      }else {
-        this.massege = 'Image not uploaded successfully ----------------------';
-      }
-    });
-    console.log(this.massege);
-  }
-
-
+  //   this.adservice.image(this.previewUrl).subscribe(res=>{
+  //     console.log(res);
+  //   })
+    
+  // }
 
   preview() {
     // Show preview
@@ -71,9 +58,8 @@ export class PostadsComponent implements OnInit {
     reader.readAsDataURL(this.fileData);
     reader.onload = (_event) => {
       this.previewUrl = reader.result;
-      console.log("image prabath" + this.previewUrl)
+      //console.log("image prabath" + this.previewUrl)
     };
-    
   }
 
   get f1() {
@@ -109,16 +95,14 @@ export class PostadsComponent implements OnInit {
       vcolor: ['', Validators.required],
     });
     this.formGroup3 = this._formBuilder.group({
-      //image:['', Validators.required],
+
       description: ['', Validators.required],
     });
   }
 
-  
   // get image() {
   //   return this.formGroup3.get('image');
   // }
-  
 
   get dname() {
     return this.formGroup1.get('dname');
@@ -183,43 +167,40 @@ export class PostadsComponent implements OnInit {
     this.toast.error('some Eror Found');
   }
 
+   onSubmit() {
+  //   const ad = {
+  //     dname: this.dname.value,
+  //     dphn: this.dphn.value,
+  //     demail: this.demail.value,
+  //     dlocation: this.dlocation.value,
+  //     vtitle: this.vtitle.value,
+  //     vprice: this.vprice.value,
+  //     vtype: this.vtype.value,
+  //     vmanufac: this.vmanufac.value,
+  //     vmodel: this.vmodel.value,
+  //     vcondition: this.vcondition.value,
+  //     vmodelyear: this.vmodelyear.value,
+  //     vregyear: this.vregyear.value,
+  //     vmileage: this.vmileage.value,
+  //     venginecapacity: this.venginecapacity.value,
+  //     vtransmission: this.vtransmission.value,
+  //     vfuel: this.vfuel.value,
+  //     vcolor: this.vcolor.value,
+  //     description: this.description.value,
+  //   };
 
+  //   console.log(this.fileData);
 
-  onSubmit() {
-    const ad = {
-      dname: this.dname.value,
-      dphn: this.dphn.value,
-      demail: this.demail.value,
-      dlocation: this.dlocation.value,
-      vtitle: this.vtitle.value,
-      vprice: this.vprice.value,
-      vtype: this.vtype.value,
-      vmanufac: this.vmanufac.value,
-      vmodel: this.vmodel.value,
-      vcondition: this.vcondition.value,
-      vmodelyear: this.vmodelyear.value,
-      vregyear: this.vregyear.value,
-      vmileage: this.vmileage.value,
-      venginecapacity: this.venginecapacity.value,
-      vtransmission: this.vtransmission.value,
-      vfuel: this.vfuel.value,
-      vcolor: this.vcolor.value,
-      description: this.description.value,
-      imgname: this.fileData.name
-    };
-
-    console.log(this.fileData);
-    
-    console.log(ad);
-    this.adservice.postAd(ad).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.showSuccess();
-        this.formGroup3.reset();
-      },  
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  //   console.log(ad);
+  //   this.adservice.postAd(ad).subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //       this.showSuccess();
+  //       this.formGroup3.reset();
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //   });
+   }
 }

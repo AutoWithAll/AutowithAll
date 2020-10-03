@@ -1,5 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -35,8 +37,8 @@ import { LeasingProfileComponent } from './leasing-profile/leasing-profile.compo
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'register', component: RegistrationComponentComponent },
-  { path: 'login', component: LoginComponentComponent },
+  { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
   
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
@@ -51,7 +53,7 @@ const routes: Routes = [
   
 
   {path : 'leasingDash', component: LeasingDashboardComponent},
-  { path: 'salesagentdash', component: SalesdashboardComponent },
+  { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},

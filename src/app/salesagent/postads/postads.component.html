@@ -207,10 +207,10 @@
 
       <h3>Upload Photo</h3>
       <div class="form-group">
-        <input type="file" name="image" (change)="fileProgress($event)" />
+        <input type="file" name="image" (change)="fileChangeEvent($event)" />
       </div>
       <div >
-        <input type="button" (click)="onUpload()" value="upload" />
+        <input type="button"value="upload" />
       </div>
       <div *ngIf="fileUploadProgress">
         Upload progress: {{ fileUploadProgress }}

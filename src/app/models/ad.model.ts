@@ -18,5 +18,5 @@ export class Ad {
     vfuel: string;
     vcolor: string;
     description:string;
-    imgname:string;
+
   }

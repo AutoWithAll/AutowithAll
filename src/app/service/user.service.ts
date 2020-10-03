@@ -1,94 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Login } from '../models/login.model';
-import { Observable, throwError, observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
+import { TokenStorageService } from "./token-storage.service";
 
-// import { appconfig } from '../config/appconfig'
 
-// const headeroption = {
-//   headers: new HttpHeaders({'Content-Type': 'application/json'})
-// };
+const headeroption = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  public baseUrl = 'http://localhost:8080';
+  
 
-  constructor(private http: HttpClient, private toaster: ToastrService) {}
+  constructor(private http : HttpClient) {}
 
-  loginUser(user: Login) {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    console.log(user);
-    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
-    return this.http
-      .post<User>('http://localhost:8080/login', user)
-      .pipe(retry(1), catchError(this.handleError));
+  getads(){
+    return this.http.get('http://localhost/advertisement/getallad');
   }
 
-  handleError(error) {
-    let errorMessage = 'error';
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log('ERROR' + errorMessage);
-
-    return throwError(errorMessage);
-  }
-
-  // logOut() {
-  //   sessionStorage.removeItem('username');
-  // }
-
-  register(user: User) {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    console.log(user);
-    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
-    return this.http
-      .post<User>('http://localhost:8080/register', user)
-      .subscribe({
-        next: (res) => console.log(JSON.stringify(res)),
-        error: (err) => console.error('There was an error.', err),
-      });
-  }
-
-  postAd(ad: Ad) {
-    //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
-    // const uploadImageData = new FormData();
-    // uploadImageData.append('imageFile', image, image.name);
-
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    console.log(ad);
-    return this.http.post<Ad>('http://localhost:8080/post_add', ad);
-  }
-
-  getads() : Observable<any> {
-    
-    console.log("get 1")
-    // const headers = new HttpHeaders();
-    // headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:8080/ads');
-  }
-
-  getimage(image){
-    console.log("2")
-    return this.http.get('http://localhost:8080/get/{{image}}',{ observe: 'response'})
-  }
-
-  image(image) {
-    console.log("work image")
-    return this.http.post('http://localhost:8080/upload', image ,{ observe: 'response' } );
-    
-  }
+  
 }
