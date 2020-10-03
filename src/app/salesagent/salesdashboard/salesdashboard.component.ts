@@ -20,11 +20,5 @@ export class SalesdashboardComponent implements OnInit {
     this.user = this.tokenService.getUser();
   }
 
-  logout(){
-    this.tokenService.signOut();
-  }
-
-  
-
 
 }
