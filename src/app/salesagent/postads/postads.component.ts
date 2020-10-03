@@ -39,13 +39,13 @@ export class PostadsComponent implements OnInit {
     this.preview();
   }
 
-  // onUpload(){
+  onUpload(){
 
-  //   this.adservice.image(this.previewUrl).subscribe(res=>{
-  //     console.log(res);
-  //   })
+    // this.adservice.image(this.previewUrl).subscribe(res=>{
+    //   console.log(res);
+    // })
     
-  // }
+  }
 
   preview() {
     // Show preview
@@ -100,9 +100,6 @@ export class PostadsComponent implements OnInit {
     });
   }
 
-  // get image() {
-  //   return this.formGroup3.get('image');
-  // }
 
   get dname() {
     return this.formGroup1.get('dname');
@@ -168,39 +165,40 @@ export class PostadsComponent implements OnInit {
   }
 
    onSubmit() {
-  //   const ad = {
-  //     dname: this.dname.value,
-  //     dphn: this.dphn.value,
-  //     demail: this.demail.value,
-  //     dlocation: this.dlocation.value,
-  //     vtitle: this.vtitle.value,
-  //     vprice: this.vprice.value,
-  //     vtype: this.vtype.value,
-  //     vmanufac: this.vmanufac.value,
-  //     vmodel: this.vmodel.value,
-  //     vcondition: this.vcondition.value,
-  //     vmodelyear: this.vmodelyear.value,
-  //     vregyear: this.vregyear.value,
-  //     vmileage: this.vmileage.value,
-  //     venginecapacity: this.venginecapacity.value,
-  //     vtransmission: this.vtransmission.value,
-  //     vfuel: this.vfuel.value,
-  //     vcolor: this.vcolor.value,
-  //     description: this.description.value,
-  //   };
+    const ad = {
+      name: this.dname.value,
+      t_number: this.dphn.value,
+      email: this.demail.value,
+      location: this.dlocation.value,
+      title: this.vtitle.value,
+      price: this.vprice.value,
+      v_type: this.vtype.value,
+      manufacturer: this.vmanufac.value,
+      model: this.vmodel.value,
+      v_condition: this.vcondition.value,
+      m_year: this.vmodelyear.value,
+      r_year: this.vregyear.value,
+      mileage: this.vmileage.value,
+      e_capacity: this.venginecapacity.value,
+      transmission: this.vtransmission.value,
+      fuel_type: this.vfuel.value,
+      colour: this.vcolor.value,
+      description: this.description.value,
+      flag: 1,
+    };
 
-  //   console.log(this.fileData);
+    console.log(this.fileData);
 
-  //   console.log(ad);
-  //   this.adservice.postAd(ad).subscribe({
-  //     next: (res) => {
-  //       console.log(res);
-  //       this.showSuccess();
-  //       this.formGroup3.reset();
-  //     },
-  //     error: (err) => {
-  //       console.log(err);
-  //     },
-  //   });
+    console.log(ad);
+    this.adservice.postAd(ad).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.showSuccess();
+        this.formGroup3.reset();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
    }
 }

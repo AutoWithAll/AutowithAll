@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-agentsidebar',
@@ -17,11 +18,17 @@ export class SidebarComponent {
     shareReplay()
   );
 
+  user : User;
+
 constructor(
   private breakpointObserver: BreakpointObserver, 
   private tokenStorageService : TokenStorageService,
   private router: Router
   ) {}
+
+ngOnInit(){
+  this.user = this.tokenStorageService.getUser();
+}
 
 logout(){
   console.log("logout");

@@ -47,10 +47,7 @@ const routes: Routes = [
   { path:'adminUsers',component:AdminUsersComponent},
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
   { path:'adminLeasings',component:AdminLeasingsComponent},
-  { path:'adminInsurance',component:AdminInsuranceComponent},
-
-  
-  
+  { path:'adminInsurance',component:AdminInsuranceComponent},  
 
   {path : 'leasingDash', component: LeasingDashboardComponent},
   { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},

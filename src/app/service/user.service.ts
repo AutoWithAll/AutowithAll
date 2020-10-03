@@ -22,8 +22,12 @@ export class UserService {
   constructor(private http : HttpClient) {}
 
   getads(){
-    return this.http.get('http://localhost/advertisement/getallad');
-  }
+    return this.http.get('http://localhost:8080/advertisement/getallad');
+  }   //Home Component
 
+  postAd(ad : Ad){
+    console.log(ad)
+    return this.http.post('http://localhost:8080/advertisement/postadd', ad);
+  }   // Post Add By Sales Agent
   
 }

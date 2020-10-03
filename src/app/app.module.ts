@@ -49,6 +49,7 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
+import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,16 +105,8 @@ import { LeasingProfileComponent } from './leasing-profile/leasing-profile.compo
       positionClass : 'toast-top-center'
     }),
     NgbModule,
-    
-    // RouterModule.forRoot([
-    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
-    //   // { path: 'register', component: RegistrationComponentComponent },
-    //   // { path: 'login', component: LoginComponentComponent },
-       
-     
-    // ]),
   ],
-  providers: [UserService],
+  providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
