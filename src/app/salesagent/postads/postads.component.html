@@ -5,7 +5,7 @@
   Post Your New Advertisement here within Four steps!
 </span>
 
-<mat-horizontal-stepper [linear]="!isLinear">
+<mat-horizontal-stepper [linear]="isLinear">
   <!--Step 1- Basic details form-->
   <mat-step label="Basic Details" [stepControl]="formGroup1">
     <form [formGroup]="formGroup1" class="my-form">
@@ -47,14 +47,7 @@
       </mat-form-field>
 
       <div>
-        <button
-          mat-raised-button
-          matStepperPrevious
-          color="accent"
-          style="margin-left: 100px;"
-        >
-          Previous
-        </button>
+        
         <button
           mat-raised-button
           matStepperNext
@@ -217,7 +210,7 @@
       </div>
       <div class="image-preview mb-3" *ngFor="let previewUrl of previewUrls; let elemIndex=index;">
         <button (click)="removeImage(elemIndex)">close</button>
-        <img [src]="previewUrl" height="300" />
+        <img height="150" width="300" [src]="previewUrl" />
       </div>
 
       <div class="mb-3" *ngIf="uploadedFilePath">
