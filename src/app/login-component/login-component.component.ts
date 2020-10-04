@@ -59,7 +59,7 @@ export class LoginComponentComponent implements OnInit {
 
     this.authService.loginUser(logindata).subscribe(
       (data) => {
-        console.log(data);
+        console.log(data.token);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
 
@@ -67,7 +67,7 @@ export class LoginComponentComponent implements OnInit {
         this.isLoggedIn = true;
         this.role = this.tokenStorage.getUser().roles;
 
-        this.toster.success('Login Successfully as' + this.role);
+        this.toster.success('Login Successfully');
         console.log(this.role + 'login role');
 
         setTimeout(() => {

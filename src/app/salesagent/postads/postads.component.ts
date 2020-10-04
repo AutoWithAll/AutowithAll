@@ -24,7 +24,7 @@ export class PostadsComponent implements OnInit {
   isLinear = true;
 
   fileData: File = null;
-  previewUrl: any = null;
+  previewUrls: any[] = [];
   fileUploadProgress: string = null;
   uploadedFilePath: string = null;
 
@@ -39,17 +39,17 @@ export class PostadsComponent implements OnInit {
     this.preview();
   }
 
-  onUpload() {
-    this.adservice.uploadImage(this.fileData).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
+  // onUpload() {
+  //   this.adservice.uploadImage(this.fileData).subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //     },
 
-      error: (err) => {
-        console.log(err + "error Image");
-      },
-    });
-  }
+  //     error: (err) => {
+  //       console.log(err + "error Image");
+  //     },
+  //   });
+  // }
 
   preview() {
     // Show preview
@@ -61,9 +61,20 @@ export class PostadsComponent implements OnInit {
     var reader = new FileReader();
     reader.readAsDataURL(this.fileData);
     reader.onload = (_event) => {
-      this.previewUrl = reader.result;
-      //console.log("image prabath" + this.previewUrl)
+      console.log(reader.result)
+      this.previewUrls.push(reader.result);
     };
+  }
+
+  removeImage(index) {
+    console.log(index);
+    let images = this.previewUrls ? [...this.previewUrls] : []
+
+    if (index > -1 && index < images.length) {
+      images.splice(index, 1);
+    }
+
+    this.previewUrls = images;
   }
 
   get f1() {
@@ -186,6 +197,7 @@ export class PostadsComponent implements OnInit {
       fuel_type: this.vfuel.value,
       colour: this.vcolor.value,
       description: this.description.value,
+      images : this.previewUrls,
       flag: 1,
     };
 

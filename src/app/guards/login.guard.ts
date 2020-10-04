@@ -23,6 +23,7 @@ export class LoginGuard implements CanActivate {
       const role = this.tokenStorageService.getUser().roles;
 
       if (role == 'ROLE_ADMIN') {
+        console.log(role)
         this.router.navigate(['/adminDashboard']);
       } else if (role == 'ROLE_AGENT') {
         this.router.navigate(['/salesagentdash']);
@@ -32,6 +33,7 @@ export class LoginGuard implements CanActivate {
         this.router.navigate(['/sellerdash']);
       }else if (role == 'ROLE_ICOMPANY') {
         this.router.navigate(['/insuranceDash']);
+        console.log(role)
       }
     }
   }

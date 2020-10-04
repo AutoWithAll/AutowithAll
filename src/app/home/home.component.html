@@ -36,17 +36,17 @@
           <mat-grid-list cols="4" rowHeight="2:1">
             <mat-grid-tile>
               <mat-card class="one">
-                <img mat-card-image src="{{ item.imgname }}" alt="test" />
+                <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + item.image1}}" alt="test" />
               </mat-card>
             </mat-grid-tile>
             <mat-grid-tile colspan="2">
               <mat-card class="one">
                 <h4>
-                  <b>{{ item.dname }} </b>
+                  <b>{{ item.name }} </b>
                 </h4>
-                <label style="font-size: medium;">LKR-{{ item.vprice }}</label>
+                <label style="font-size: medium;">LKR-{{ item.price }}</label>
                 <br />
-                model year - {{ item.vmodelyear }} <br />
+                model year - {{ item.m_year }} <br />
               </mat-card>
             </mat-grid-tile>
             <!-- <mat-grid-tile>

@@ -13,6 +13,7 @@ import {UserService  } from "../service/user.service";
 export class HomeComponent implements OnInit {
 
   list : any;
+  img;
   showNavigationArrows = false;
   showNavigationIndicators = false;
   images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
@@ -26,9 +27,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.service.getads().subscribe(res=>{
-      console.log("oninit" + res);
+      console.log(res);
       this.list = res;
-      
+      console.log();
     })
 
   }

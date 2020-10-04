@@ -210,12 +210,13 @@
         <input type="file" name="image" (change)="fileChangeEvent($event)" />
       </div>
       <div >
-        <input type="button"value="upload" />
+        <!-- <input type="button"value="upload" /> -->
       </div>
       <div *ngIf="fileUploadProgress">
         Upload progress: {{ fileUploadProgress }}
       </div>
-      <div class="image-preview mb-3" *ngIf="previewUrl">
+      <div class="image-preview mb-3" *ngFor="let previewUrl of previewUrls; let elemIndex=index;">
+        <button (click)="removeImage(elemIndex)">close</button>
         <img [src]="previewUrl" height="300" />
       </div>
 
@@ -362,7 +363,7 @@
 
       <mat-grid-tile>
         <div class="images">
-          <div class="image"><img mat-card-image src="{{ previewUrl }}" /></div>
+          <!-- <div class="image"><img mat-card-image src="{{ previewUrl }}" /></div> -->
         </div>
       </mat-grid-tile>
     </mat-grid-list>
