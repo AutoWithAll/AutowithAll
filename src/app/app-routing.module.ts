@@ -1,5 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './guards/login.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -34,30 +36,28 @@ import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashb
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
 import { LeaseComponent} from './lease/lease.component';
+import { AdminGuard } from './guards/admin.guard';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'register', component: RegistrationComponentComponent },
-  { path: 'login', component: LoginComponentComponent },
+  { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
   
   { path: 'forgetpassword', component: ForgetPasswordComponent },
-  { path: 'dashboard', component: DashboardComponent  },
-  { path: 'leasevehicle', component: LeasevehicleComponent },
-  { path:'adminDashboard',component: AdminDashboardComponent},
-  { path:'adminUsers',component:AdminUsersComponent},
-  { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
-  { path:'adminLeasings',component:AdminLeasingsComponent},
-  { path:'adminInsurance',component:AdminInsuranceComponent},
+  { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
+  { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
+  { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
+  { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
+  { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
+  { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
+  { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
 
-  
-  
-
-  {path : 'leasingDash', component: LeasingDashboardComponent},
-  { path: 'salesagentdash', component: SalesdashboardComponent },
+  {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
+  { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
-  {path: 'viewads',component:ViewadsComponent},
-  {path: 'editprofile',component:EditprofileComponent},
-  {path: 'postads',component:PostadsComponent},
+  {path: 'viewads',component:ViewadsComponent, canActivate: [AuthGuard]},
+  {path: 'editprofile',component:EditprofileComponent, canActivate: [AuthGuard]},
+  {path: 'postads',component:PostadsComponent , canActivate: [AuthGuard]},
 
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'sellerdash',component:SellerdashComponent},
@@ -67,6 +67,11 @@ const routes: Routes = [
   { path : 'leaseProfile', component: LeasingProfileComponent},
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   { path : 'lease', component:LeaseComponent},
+  {path: 'sellerdash',component:SellerdashComponent , canActivate: [AuthGuard]},
+  {path: 'editprofilen',component:SellerEditprofileComponent, canActivate: [AuthGuard]},
+  {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
+  { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
+  { path : 'leaseProfile', component: LeasingProfileComponent , canActivate: [AuthGuard]},
 ];
 
 @NgModule({

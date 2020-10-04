@@ -1,5 +1,7 @@
 import { Component, } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { TokenStorageService } from '../service/token-storage.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-insurance-dashboard',
@@ -8,7 +10,21 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class InsuranceDashboardComponent {
 
-  constructor(public dialog:MatDialog ) { }
+  user : User
+
+  constructor(
+    public dialog:MatDialog , 
+    private tokenStorageService : TokenStorageService,
+     ) { }
+
+     ngOnInit(){
+       this.user = this.tokenStorageService.getUser();
+     }
+
+  logOut(){
+    this.tokenStorageService.signOut();
+
+  }
 
   openDialog(){
     const dialogRef = this.dialog.open(InsuranceDashboardDialog );

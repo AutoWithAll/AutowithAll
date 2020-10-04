@@ -56,6 +56,7 @@ import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.c
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
  
 
+import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,16 +117,8 @@ import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sideba
       positionClass : 'toast-top-center'
     }),
     NgbModule,
-    
-    // RouterModule.forRoot([
-    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
-    //   // { path: 'register', component: RegistrationComponentComponent },
-    //   // { path: 'login', component: LoginComponentComponent },
-       
-     
-    // ]),
   ],
-  providers: [UserService],
+  providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -9,7 +9,9 @@ import { ToastrService } from 'ngx-toastr';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 import { User } from '../models/user.model';
-import { UserService } from '../service/user.service';
+
+import { AuthenticationService } from '../service/authentication.service';
+import { Router } from '@angular/router';
 
 // custom validator to check that two fields match
 export function MustMatch(controlName: string, matchingControlName: string) {
@@ -39,11 +41,13 @@ export function MustMatch(controlName: string, matchingControlName: string) {
 export class RegistrationComponentComponent implements OnInit {
   user: User = new User();
   registerForm: FormGroup;
+  error = null;
 
   constructor(
     private formBuilder: FormBuilder,
-    private auth: UserService,
-    private toastr: ToastrService
+    private auth: AuthenticationService,
+    private toastr: ToastrService,
+    private router : Router
   ) {}
   get f() {
     return this.registerForm.controls;
@@ -53,7 +57,7 @@ export class RegistrationComponentComponent implements OnInit {
       {
         fname: ['', [Validators.required]],
         lname: ['', [Validators.required]],
-        email: ['', [Validators.required, Validators.email]],
+        username: ['', [Validators.required, Validators.email]],
         tnumber: [
           '',
           [
@@ -72,9 +76,6 @@ export class RegistrationComponentComponent implements OnInit {
     );
   }
 
-  showSuccess() {
-    this.toastr.success('Register Success !');
-  }
 
   get fname() {
     return this.registerForm.get('fname');
@@ -82,8 +83,8 @@ export class RegistrationComponentComponent implements OnInit {
   get lname() {
     return this.registerForm.get('lname');
   }
-  get email() {
-    return this.registerForm.get('email');
+  get username() {
+    return this.registerForm.get('username');
   }
   get tnumber() {
     return this.registerForm.get('tnumber');
@@ -105,15 +106,26 @@ export class RegistrationComponentComponent implements OnInit {
     const user = {
       fname: this.fname.value,
       lname: this.lname.value,
-      email: this.email.value,
+      username: this.username.value,
       tnumber: this.tnumber.value,
       nic: this.nic.value,
       password: this.password.value,
-      role: this.role.value,
+      role: [this.role.value],
     };
     console.log(user);
-    this.auth.register(user);
-    this.registerForm.reset();
-    this.showSuccess();
+    this.auth.registerUser(user).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.toastr.success("User Registerd Successfully");
+        this.router.navigateByUrl('/login');
+      },
+      error: (err) => {
+        if (err && err.error) {
+          this.error = err.error.message;
+          this.toastr.error(err.error.message);
+        }
+        console.log(err);
+      },
+    });
   }
 }

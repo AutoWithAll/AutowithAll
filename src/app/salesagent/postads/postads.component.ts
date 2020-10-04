@@ -9,6 +9,7 @@ import {
 import { Ad } from 'src/app/models/ad.model';
 import { UserService } from './../../service/user.service';
 import { ToastrService } from 'ngx-toastr';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-postads',
@@ -23,7 +24,7 @@ export class PostadsComponent implements OnInit {
   isLinear = true;
 
   fileData: File = null;
-  previewUrl: any = null;
+  previewUrls: any[] = [];
   fileUploadProgress: string = null;
   uploadedFilePath: string = null;
 
@@ -33,10 +34,22 @@ export class PostadsComponent implements OnInit {
     private toast: ToastrService
   ) {}
 
-  fileProgress(fileInput: any) {
-    this.fileData = <File>fileInput.target.files[0];
+  fileChangeEvent(fileInput: any) {
+    this.fileData = fileInput.target.files[0];
     this.preview();
   }
+
+  // onUpload() {
+  //   this.adservice.uploadImage(this.fileData).subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //     },
+
+  //     error: (err) => {
+  //       console.log(err + "error Image");
+  //     },
+  //   });
+  // }
 
   preview() {
     // Show preview
@@ -48,8 +61,20 @@ export class PostadsComponent implements OnInit {
     var reader = new FileReader();
     reader.readAsDataURL(this.fileData);
     reader.onload = (_event) => {
-      this.previewUrl = reader.result;
+      console.log(reader.result)
+      this.previewUrls.push(reader.result);
     };
+  }
+
+  removeImage(index) {
+    console.log(index);
+    let images = this.previewUrls ? [...this.previewUrls] : []
+
+    if (index > -1 && index < images.length) {
+      images.splice(index, 1);
+    }
+
+    this.previewUrls = images;
   }
 
   get f1() {
@@ -154,26 +179,30 @@ export class PostadsComponent implements OnInit {
 
   onSubmit() {
     const ad = {
-      dname: this.dname.value,
-      dphn: this.dphn.value,
-      demail: this.demail.value,
-      dlocation: this.dlocation.value,
-      vtitle: this.vtitle.value,
-      vprice: this.vprice.value,
-      vtype: this.vtype.value,
-      vmanufac: this.vmanufac.value,
-      vmodel: this.vmodel.value,
-      vcondition: this.vcondition.value,
-      vmodelyear: this.vmodelyear.value,
-      vregyear: this.vregyear.value,
-      vmileage: this.vmileage.value,
-      venginecapacity: this.venginecapacity.value,
-      vtransmission: this.vtransmission.value,
-      vfuel: this.vfuel.value,
-      vcolor: this.vcolor.value,
-
+      name: this.dname.value,
+      t_number: this.dphn.value,
+      email: this.demail.value,
+      location: this.dlocation.value,
+      title: this.vtitle.value,
+      price: this.vprice.value,
+      v_type: this.vtype.value,
+      manufacturer: this.vmanufac.value,
+      model: this.vmodel.value,
+      v_condition: this.vcondition.value,
+      m_year: this.vmodelyear.value,
+      r_year: this.vregyear.value,
+      mileage: this.vmileage.value,
+      e_capacity: this.venginecapacity.value,
+      transmission: this.vtransmission.value,
+      fuel_type: this.vfuel.value,
+      colour: this.vcolor.value,
       description: this.description.value,
+      images : this.previewUrls,
+      flag: 1,
     };
+
+    console.log(this.fileData);
+
     console.log(ad);
     this.adservice.postAd(ad).subscribe({
       next: (res) => {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {UserService  } from "../service/user.service";
+
 // import { MaterialModule } from '@angular/material'
 
 @Component({
@@ -8,40 +10,31 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.css'],
   providers: [NgbCarouselConfig]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  list : any;
+  img;
   showNavigationArrows = false;
   showNavigationIndicators = false;
   images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig, private service: UserService) {
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
   }
 
-  data = [
-    {
-      name:"BMW i8",
-      date:"2018/03/05",
-      from: "Colombo",
-      year:"2018",
-      price: "1,000,000"
-    },
-    {
-      name:"Mustang",
-      date:"2019/05/22",
-      from: "Colombo",
-      year:"2019",
-      price: "1,540,000"
-    },
-    {
-      name:"Audi A4",
-      date:"2020/01/08",
-      from: "Colombo",
-      year:"2018",
-      price: "1,635,000"
-    }
-  ];
+  ngOnInit() {
+
+    this.service.getads().subscribe(res=>{
+      console.log(res);
+      this.list = res;
+      console.log();
+    })
+
+  }
+
+  
   }
 
 

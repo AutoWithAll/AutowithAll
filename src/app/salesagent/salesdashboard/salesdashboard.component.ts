@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
+import { User } from 'src/app/models/user.model';
 
 
 @Component({
@@ -9,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class SalesdashboardComponent implements OnInit {
 
-  constructor() { }
+  user : User;
+
+  constructor(private tokenService: TokenStorageService) { }
 
   ngOnInit(): void {
+    console.log(this.tokenService.getUser());
+    this.user = this.tokenService.getUser();
   }
+
 
 }
