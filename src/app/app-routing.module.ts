@@ -32,7 +32,7 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
-import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
@@ -58,7 +58,7 @@ const routes: Routes = [
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
-  {path: 'updateagentads',component: EditagentadsComponent},
+  
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'normalsellerdash',component:SellerdashComponent},
   {path: 'viewadsn',component:SellerViewadsComponent},

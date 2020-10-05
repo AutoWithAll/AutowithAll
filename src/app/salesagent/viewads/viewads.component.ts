@@ -31,7 +31,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./viewads.component.css']
 })
 export class ViewadsComponent implements OnInit {
-  displayedColumns: string[] = ['adnumber', 'title', 'imageUrl','postdate','validdate', 'price','actions','update','delete'];
+  displayedColumns: string[] = ['adnumber', 'title', 'imageUrl','postdate','validdate', 'price','actions','delete'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   applyFilter(filterValue: string) {

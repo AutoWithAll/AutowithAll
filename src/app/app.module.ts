@@ -50,7 +50,7 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { InsuranceDashboardComponent } from './insurance-dashboard/insurance-dashboard.component';
 import {InsuranceDashboardDialog} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
-import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 @NgModule({
@@ -94,7 +94,7 @@ import { ViewadsComponent } from './salesagent/viewads/viewads.component';
     InsuranceDashboardComponent,
     InsuranceDashboardDialog,
     LeasingProfileComponent,
-    EditagentadsComponent,
+    //EditagentadsComponent,
     //DeleteAdDialog,
     //EditnselleradsComponent
   ],
