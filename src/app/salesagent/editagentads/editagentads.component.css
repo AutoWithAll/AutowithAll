@@ -1,0 +1,12 @@
+.my-form{
+    padding-top: 100px;
+    
+  }  
+  .full-width {
+    width: 150%;
+    
+  }
+  mat-card {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+   }

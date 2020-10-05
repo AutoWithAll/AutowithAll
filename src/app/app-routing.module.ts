@@ -24,7 +24,7 @@ import {SellerdashComponent} from './normalseller/sellerdash/sellerdash.componen
 import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
 import {SellerEditprofileComponent} from './normalseller/editprofile/editprofile.component';
 import {SellerPostadsComponent} from './normalseller/postads/postads.component';
-import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
+import {SellerViewadsComponent} from './normalseller/viewadsn/viewadsn.component';
 
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
 //Admindashboard
@@ -37,6 +37,8 @@ import { LeasingProfileComponent } from './leasing-profile/leasing-profile.compo
 import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
 import { LeaseComponent} from './lease/lease.component';
 import { AdminGuard } from './guards/admin.guard';
+import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -55,12 +57,14 @@ const routes: Routes = [
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
   { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
-  {path: 'viewads',component:ViewadsComponent, canActivate: [AuthGuard]},
-  {path: 'editprofile',component:EditprofileComponent, canActivate: [AuthGuard]},
-  {path: 'postads',component:PostadsComponent , canActivate: [AuthGuard]},
-
+  {path: 'viewads',component:ViewadsComponent},
+  {path: 'editprofile',component:EditprofileComponent},
+  {path: 'postads',component:PostadsComponent},
+  {path: 'updateagentads',component: EditagentadsComponent},
+  {path: 'updatesellerads',component: EditnselleradsComponent},
   {path: 'sidebarn',component: SellerSidebarComponent},
-  {path: 'sellerdash',component:SellerdashComponent},
+  {path: 'normalsellerdash',component:SellerdashComponent},
+  {path: 'viewadsn',component:SellerViewadsComponent},
   {path: 'editprofilen',component:SellerEditprofileComponent},
   {path: 'postadsn',component:SellerPostadsComponent},
   { path : 'insuranceDash', component: InsuranceDashboardComponent},

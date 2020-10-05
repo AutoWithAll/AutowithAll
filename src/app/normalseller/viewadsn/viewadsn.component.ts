@@ -3,6 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
+
 export interface PeriodicElement {
   adnumber: number;
   title: string;
@@ -27,10 +28,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'app-viewads',
-  templateUrl: './viewads.component.html',
-  styleUrls: ['./viewads.component.css']
+  templateUrl: './viewadsn.component.html',
+  styleUrls: ['./viewadsn.component.css']
 })
-export class ViewadsComponent implements OnInit {
+export class SellerViewadsComponent implements OnInit {
+
   displayedColumns: string[] = ['adnumber', 'title', 'imageUrl','postdate','validdate', 'price','actions','update','delete'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
@@ -44,7 +46,7 @@ export class ViewadsComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
   openDialog() {
-     this.dialog.open(DeleteAdDialog);
+     this.dialog.open(DeleteAdNormalDialog);
   }
 
   ngOnInit(): void {
@@ -55,9 +57,7 @@ export class ViewadsComponent implements OnInit {
 
 }
 @Component({
-  selector: 'agentdeletead-dialog',
-  templateUrl: 'agentdeletead-dialog.html',
+  selector: 'nsellerdeletead-dialog',
+  templateUrl: 'nsellerdeletead-dialog.html',
 })
-export class DeleteAdDialog {}
-
-
+export class DeleteAdNormalDialog {}
