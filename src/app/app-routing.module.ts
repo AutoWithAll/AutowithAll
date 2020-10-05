@@ -33,7 +33,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
-import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -59,7 +59,6 @@ const routes: Routes = [
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
   {path: 'updateagentads',component: EditagentadsComponent},
-  {path: 'updatesellerads',component: EditnselleradsComponent},
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'normalsellerdash',component:SellerdashComponent},
   {path: 'viewadsn',component:SellerViewadsComponent},
