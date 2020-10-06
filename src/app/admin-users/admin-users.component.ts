@@ -7,11 +7,16 @@ import {UserService  } from "../service/user.service";
   styleUrls: ['./admin-users.component.css']
 })
 export class AdminUsersComponent implements OnInit {
-  data:any
+  users:any
 
   constructor(private service: UserService) { }
 
   ngOnInit(): void {
+    this.service.getAllUsers().subscribe(res=>{
+      console.log(res);
+      this.users = res;
+      console.log();
+    })
     
   }
 
