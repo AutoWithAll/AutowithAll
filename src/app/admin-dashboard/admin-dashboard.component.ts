@@ -29,6 +29,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AdminDashboardComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  users:any
+  userCount:number
    
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -39,6 +41,11 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver,private service: UserService) { }
 
   ngOnInit(): void {
+    this.service.getAllUsers().subscribe(res=>{
+      this.users = res;
+      this.userCount=this.users.length;
+      
+    })
     
   }
 
