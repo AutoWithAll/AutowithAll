@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TextFieldModule } from '@angular/cdk/text-field';
+// import { MatSort } from '@angular/material/sort';
 
 
 @NgModule({
@@ -50,8 +51,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     FormsModule,
     ReactiveFormsModule,
     MatProgressBarModule,
-    
-    TextFieldModule,
+    TextFieldModule
   ],
   exports: [
     CommonModule,
@@ -76,7 +76,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
     
   ],
 })
