@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {UserService  } from "../service/user.service";
 
 export interface PeriodicElement {
   Agent: string;
@@ -35,9 +36,10 @@ export class AdminDashboardComponent implements OnInit {
     shareReplay()
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver,private service: UserService) { }
 
   ngOnInit(): void {
+    
   }
 
 }
