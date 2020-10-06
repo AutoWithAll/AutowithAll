@@ -33,5 +33,9 @@ export class UserService {
   getImage(id){
     return this.http.get('http://localhost:8080/advertisement/getimage/{id}');
   }
+
+  getAllUsers(){
+    return this.http.get('http://localhost:8080/user/getallusers');
+  }
   
 }
