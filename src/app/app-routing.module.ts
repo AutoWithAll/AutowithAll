@@ -34,34 +34,29 @@ import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.compo
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
-import { LeasingEditProfileComponent} from './leasing-edit-profile/leasing-edit-profile.component';
-import { LeaseComponent} from './lease/lease.component';
-import { AdminGuard } from './guards/admin.guard';
-import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
-import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
-  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
   
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
   { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
-  { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
-  { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
-  { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
-  { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
-  { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
-
+ // { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
+ // { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
+ // { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
+ // { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
+ // { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
+ { path: 'home-view-ad', component: HomeViewadComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
   { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
-  {path: 'updateagentads',component: EditagentadsComponent},
-  {path: 'updatesellerads',component: EditnselleradsComponent},
+  
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'normalsellerdash',component:SellerdashComponent},
   {path: 'viewadsn',component:SellerViewadsComponent},
@@ -69,8 +64,8 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent},
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
-  { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
-  { path : 'lease', component:LeaseComponent},
+  //{ path : 'leaseEditProfile', component: LeasingEditProfileComponent },
+  //{ path : 'lease', component:LeaseComponent},
   {path: 'sellerdash',component:SellerdashComponent , canActivate: [AuthGuard]},
   {path: 'editprofilen',component:SellerEditprofileComponent, canActivate: [AuthGuard]},
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
