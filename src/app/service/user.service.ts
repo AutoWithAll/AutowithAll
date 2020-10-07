@@ -23,7 +23,7 @@ export class UserService {
   constructor(private http : HttpClient) {}
 
   getads(){
-    return this.http.get('http://localhost:8080/advertisement/getallad');
+    return this.http.get('http://localhost:8080/advertisement/getconfrimad');
   }   //Home Component
 
   postAd(ad : Ad){
