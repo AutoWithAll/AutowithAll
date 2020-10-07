@@ -61,6 +61,7 @@ import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+import { ReportComponent } from './report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,6 +109,7 @@ import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsell
     LeaseNavbarComponent,
     LeaseSidebarComponent,
     EditagentadsComponent,
+    ReportComponent,
   ],
   imports: [
     BrowserModule,

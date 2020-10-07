@@ -39,6 +39,8 @@ import { LeaseComponent} from './lease/lease.component';
 import { AdminGuard } from './guards/admin.guard';
 import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+//report
+import {ReportComponent} from './report/report.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -76,6 +78,7 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
   { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
   { path : 'leaseProfile', component: LeasingProfileComponent , canActivate: [AuthGuard]},
+  {path:'reportAd',component:ReportComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
