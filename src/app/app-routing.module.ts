@@ -40,6 +40,8 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
+
   
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
