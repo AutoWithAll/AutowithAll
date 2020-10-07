@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../models/login.model';
-import { UserService } from '../service/user.service';
-import { Router } from '@angular/router';
+import { AuthenticationService } from '../service/authentication.service';
+import { TokenStorageService } from '../service/token-storage.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-
-import {
-  FormControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-component',
@@ -18,16 +12,20 @@ import { User } from '../models/user.model';
   styleUrls: ['./login-component.component.css'],
 })
 export class LoginComponentComponent implements OnInit {
-  login: Login = new Login();
-  data: User = new User();
+  //form: any = {};
   loginForm: FormGroup;
-  x: string;
+  isLoggedIn = false;
+  roles: string[] = [];
+  isLoginFailed = false;
+  errorMessage = '';
+  role: string;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private authService: UserService,
-    private router: Router,
-    private toaster: ToastrService
+    private formbuilder: FormBuilder,
+    private authService: AuthenticationService,
+    private tokenStorage: TokenStorageService,
+    private toster: ToastrService,
+    private router: Router
   ) {}
 
   get f() {
@@ -35,68 +33,67 @@ export class LoginComponentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+    this.loginForm = this.formbuilder.group({
+      username: ['', [Validators.required, Validators.email]],
       password: [''],
     });
+
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
   }
 
-  get email() {
-    return this.loginForm.get('email');
+  get username() {
+    return this.loginForm.get('username');
   }
   get password() {
     return this.loginForm.get('password');
   }
 
-  // onSubmit() {
-  //   const login = {
-  //     email: this.email.value,
-  //     password: this.password.value,
-  //   };
-  //   console.log(login);
-  // }
   onLoginSubmit() {
-    const login = {
-      email: this.email.value,
+    const logindata = {
+      username: this.username.value,
       password: this.password.value,
     };
 
-    this.authService.loginUser(login).subscribe({
-      next: (res) => {
-        console.log(res);
-        if (res) {
-          this.showSuccess();
-          switch (res.role) {
-            case <any>'lcompany':
-              console.log('lcompany');
-              this.router.navigate(['/leasingDash']);
-              break;
-            case <any>'agent':
-              this.router.navigate(['/salesagentdash']);
-              break;
-            case <any>'admin':
-              console.log('admin');
-              this.router.navigate(['/adminDashboard']);
-              break;
-            case <any>'nuser':
-              this.router.navigate(['/sellerdash']);
-              break;
-            case <any>'icompany':
-              this.router.navigate(['insuranceDash']);
-              break;
+    this.authService.loginUser(logindata).subscribe(
+      (data) => {
+        console.log(data.token);
+        this.tokenStorage.saveToken(data.token);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.role = this.tokenStorage.getUser().roles;
+
+        this.toster.success('Login Successfully');
+        console.log(this.role + 'login role');
+
+        setTimeout(() => {
+          if (this.role == 'ROLE_ADMIN') {
+            this.router.navigate(['/adminDashboard']);
+          } else if (this.role == 'ROLE_AGENT') {
+            this.router.navigate(['/salesagentdash']);
+          } else if (this.role == 'ROLE_LCOMPANY') {
+            this.router.navigate(['/leasingDash']);
+          }else if (this.role == 'ROLE_USER') {
+            this.router.navigate(['/sellerdash']);
+          }else if (this.role == 'ROLE_ICOMPANY') {
+            this.router.navigate(['/insuranceDash']);
           }
-        }
+        }, 2000);
       },
-      error: (err) => {
-        this.showError();
-      },
-    });
+      (err) => {
+        console.log('eror genarate ' + err);
+        this.toster.error('Username or Passsword Incorrect');
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
 
-  showSuccess() {
-    this.toaster.success('Login Success !');
-  }
-  showError() {
-    this.toaster.error('Invalid Username Or Password');
+  reloadPage() {
+    window.location.reload();
   }
 }
