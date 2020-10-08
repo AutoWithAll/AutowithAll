@@ -105,14 +105,14 @@ export class EditprofileComponent implements OnInit {
     // this.previewUrls = images;
   }
 
-  ngOnInit(): void {
-    setInterval(() => {
-    //   this.userDetail = this.tokenService.getUser();
-    // console.log(this.userDetail.imgId)
-    // console.log(this.userDetail)
-    this.authService.getCurrentUser().subscribe(res => {
-      this.userDetail = res;
-    })
+  async ngOnInit(){
+    
+      this.userDetail = this.tokenService.getUser();
+    console.log(this.userDetail.imgId)
+    console.log(this.userDetail)
+    //  await this.authService.getCurrentUser().subscribe(res => {
+    //   this.userDetail = res;
+    // })
 
     this.editForm.patchValue({
       fname: this.userDetail.fname,
@@ -120,7 +120,7 @@ export class EditprofileComponent implements OnInit {
       t_number: this.userDetail.tnumber,
       adress: this.userDetail.address,
     });
-    }, 3000)
+ 
     
   }
 
