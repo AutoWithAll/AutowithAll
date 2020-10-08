@@ -203,7 +203,6 @@ export class PostadsComponent implements OnInit {
       iStatus: 0
     };
 
-    console.log(this.fileData);
 
     console.log(ad);
     this.adservice.postAd(ad).subscribe({

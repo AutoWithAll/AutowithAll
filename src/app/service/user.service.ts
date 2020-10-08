@@ -35,6 +35,9 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/getimage/{id}');
   }
 
+  getAllUsers(){
+    return this.http.get('http://localhost:8080/user/getallusers');
+  }
   getAddsByUser() : Observable<any>{
     return this.http.get('http://localhost:8080/advertisement/getAddsByCurrentUser');
   }
