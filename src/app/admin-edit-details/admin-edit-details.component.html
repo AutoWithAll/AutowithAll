@@ -1,1 +1,162 @@
-<p>admin-edit-details works!</p>
+ 
+ 
+     <div class="row">
+        <span style="font-size: 150%;margin-top:100px;margin-left: 50px;"
+                >Edit Your Details Here<button
+                  class="button"
+                  type="reset"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-right: 50px; margin-left: 200px"
+                >
+                  CANCEL
+                </button>
+                <button
+                  class="button"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-left: 50px;margin-right: 50px;"
+                >
+                  SAVE
+                </button></span
+              > 
+     </div>
+     <div>
+     <form class="my-form" [formGroup]="editForm" (ngSubmit)="onSubmit()" style="margin-left: 150px;">
+            
+        <div class="row">
+         <span style="font-size: 150%;margin-left: 50px;margin-bottom: 50px;margin-top: 50px; ">Basic Details</span></div>
+        <div>
+         <mat-form-field class="full-width" style="font-size: 120%;">
+           <input matInput placeholder="First Name" formControlName="fname" />
+         </mat-form-field>
+       </div>
+       <div>
+         <mat-form-field class="full-width" style="font-size: 120%;">
+           <input matInput placeholder="Last Name" formControlName="lname" />
+         </mat-form-field>
+       </div>
+       <div>
+         <mat-form-field class="full-width" style="font-size: 120%;">
+           <input
+             matInput
+             placeholder="Contact Number"
+             formControlName="t_number"
+           />
+         </mat-form-field>
+       </div>
+         <div>
+         <mat-form-field class="full-width"style="font-size: 120%;">
+           <input matInput placeholder="Address" formControlName="adress" />
+         </mat-form-field>
+       </div>
+       </form>
+    </div>
+<mat-grid-list cols="7" gutterSize="30px" rowHeight="820px">
+  <mat-grid-tile colspan="5">
+    <mat-card class="my-card">
+      <mat-card-content>
+        <form
+        class="my-form"
+        [formGroup]="Securityform"
+        (ngSubmit)="onChangePassword()"
+        style="margin-left: 50px;"
+      >
+      <div>
+        <span style="font-size: 150%">Security Details</span></div>
+     <div>
+        <mat-form-field class="full-width" style="font-size: 120%;">
+          <input
+            matInput
+            placeholder="Current Password"
+            formControlName="cur_password"
+          />
+        </mat-form-field>
+    </div>
+        <div>
+        <mat-form-field class="full-width" style="font-size: 120%;">
+          <input
+            matInput
+            placeholder="New Password"
+            formControlName="new_password"
+          />
+        </mat-form-field>
+    </div>
+        <div>
+        <mat-form-field class="full-width" style="font-size: 120%;">
+          <input
+            matInput
+            placeholder="Confirm Password"
+            formControlName="confirm_password"
+          />
+        </mat-form-field>
+    </div>
+
+        <button
+          class="button"
+          type="reset"
+          mat-raised-button
+          color="primary"
+          style="margin-left: 550px"
+        >
+          CANCEL
+        </button>
+        <button
+          class="button"
+          type="submit"
+          mat-raised-button
+          color="primary"
+          style="margin-left: 100px"
+        >
+          SAVE
+        </button>
+        <mat-card-actions></mat-card-actions>
+      </form>
+        <span></span>
+        
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2">
+    <mat-card>
+      <div *ngIf="previewUrls" class="image-preview mb-3">
+        <button (click)="removeImage()">close</button>
+        <img height="150" width="300" [src]="previewUrls" />
+      </div>
+      <div> 
+      <img
+        *ngIf="!previewUrls"
+        src="{{
+          'http://localhost:8080/advertisement/getimage/' + userDetail.imgId
+        }}"
+        class="profileimg"
+      />
+      </div>
+      <mat-card-actions>
+        <div class="form-group">
+          <input type="file" name="image" (change)="fileChangeEvent($event)" />
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="submitPhoto()"
+          style="margin-left: 50px"
+        >
+          CHANGE PROFILE PHOTO
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          style="margin-top: 50px; margin-left: 50px"
+          (click)="deletePhoto()"
+        >
+          REMOVE PROFILE PHOTO
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+  
+</mat-grid-list>
+ 

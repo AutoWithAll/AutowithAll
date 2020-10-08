@@ -40,6 +40,7 @@ import { LeaseComponent} from './lease/lease.component';
 import { PostLeasingPlanDialogComponent} from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { HomeViewadComponent} from './home-viewad/home-viewad.component';
 import {ReportComponent} from './report/report.component';
+import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-details.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -95,7 +96,8 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
   { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
   { path : 'leaseProfile', component: LeasingProfileComponent , canActivate: [AuthGuard]},
-  {path:'reportAd',component:ReportComponent,canActivate:[AuthGuard]}
+  {path:'reportAd',component:ReportComponent,canActivate:[AuthGuard]},
+  {path:'adminDetails',component:AdminEditDetailsComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

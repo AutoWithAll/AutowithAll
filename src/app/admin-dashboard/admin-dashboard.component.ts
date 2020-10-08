@@ -3,6 +3,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {UserService  } from "../service/user.service";
+import { User } from 'src/app/models/user.model';
+import { AuthenticationService } from 'src/app/service/authentication.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 export interface PeriodicElement {
   Agent: string;
@@ -31,6 +34,7 @@ export class AdminDashboardComponent implements OnInit {
   dataSource = ELEMENT_DATA;
   users:any
   userCount:number
+  userDetail: User = <User>{};
    
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -38,7 +42,8 @@ export class AdminDashboardComponent implements OnInit {
     shareReplay()
   );
 
-  constructor(private breakpointObserver: BreakpointObserver,private service: UserService) { }
+  constructor(private breakpointObserver: BreakpointObserver,private service: UserService, private tokenService: TokenStorageService,
+    private authService : AuthenticationService) { }
 
   ngOnInit(): void {
     this.service.getAllUsers().subscribe(res=>{
@@ -46,6 +51,7 @@ export class AdminDashboardComponent implements OnInit {
       this.userCount=this.users.length;
       
     })
+    this.userDetail = this.tokenService.getUser();
     
   }
 
