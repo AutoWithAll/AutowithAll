@@ -89,8 +89,8 @@ export class SellerEditprofileComponent implements OnInit {
       this.previewUrls = reader.result;
     };
   }
-  // removeImage(){
-  //   this.previewUrls.splice(0);
+  removeImage(){
+    this.previewUrls.splice(0);
   //   // console.log(index);
   //   // let images = this.previewUrls ? [...this.previewUrls] : []
 
@@ -99,7 +99,7 @@ export class SellerEditprofileComponent implements OnInit {
   //   // }
 
   //   // this.previewUrls = images;
-  // }
+  }
 
   ngOnInit(): void {
     setInterval(() => {
@@ -116,7 +116,7 @@ export class SellerEditprofileComponent implements OnInit {
         t_number: this.userDetail.tnumber,
         adress: this.userDetail.address,
       });
-      }, 3000)
+      }, 1000)
   }
 
   get fname() {
@@ -171,6 +171,7 @@ export class SellerEditprofileComponent implements OnInit {
   }
 
   onChangePassword() {
+    console.log("button")
     const sec_data = {
       fname : this.userDetail.fname,
       lname : this.userDetail.lname,
@@ -196,5 +197,6 @@ export class SellerEditprofileComponent implements OnInit {
       console.log(res)
     })
   }
+  deletePhoto(){}
 
 }
