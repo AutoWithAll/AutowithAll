@@ -63,6 +63,7 @@ import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+import { HomeReportadComponent } from './home-reportad/home-reportad.component';
 
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
@@ -108,6 +109,7 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     LeaseSidebarComponent,
     PostLeasingPlanDialogComponent,
     HomeViewadComponent,
+    HomeReportadComponent,
 
     
   ],
