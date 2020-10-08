@@ -24,7 +24,7 @@ const headeroption = {
 export class UserService {
   
 
-  constructor(private http : HttpClient) {}
+  constructor(private http : HttpClient , private toaster : ToastrService) {}
 
   getads(){
     return this.http.get('http://localhost:8080/advertisement/getconfrimad');
@@ -50,6 +50,35 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/getAdById/' + id);
   }
 
+  editProfile(editprofile){
+    return this.http.put('http://localhost:8080/user/editprofile/' , editprofile);
+  }
+  changePassword(secData, pwd){
+    return this.http.put('http://localhost:8080/user/changepassword/'+pwd , secData);
+  }
+
+  remainAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  }
+  remainpostAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countremainad');
+  }
+
+  showSuccess(msg){
+    this.toaster.success(msg);
+  }
+  shoeErr(err){
+    this.toaster.error(err);
+  }
+
+  changePhoto(image){
+    return this.http.put('http://localhost:8080/user/changephoto', image);
+  }
+
+  // getUser(): Observable<User[]> {
+  //   return this.http.get<User[]>(this.serviceUrl);
+  // }
+  
 
   postLease(lease : Lease){
     const headers = new HttpHeaders();
