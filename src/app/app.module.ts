@@ -33,7 +33,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
-import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
+//import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
@@ -87,7 +87,7 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 
     DeleteAdNormalDialog,
     LeasingDashboardComponent,
-    LeasingDashboardDialog,
+    
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
