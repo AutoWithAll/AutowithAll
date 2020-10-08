@@ -58,13 +58,6 @@ import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.c
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
 
 import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
-<<<<<<< HEAD
-=======
- 
-
- 
-
->>>>>>> master
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
@@ -110,19 +103,9 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
-<<<<<<< HEAD
     PostLeasingPlanDialogComponent,
     HomeViewadComponent,
     
-=======
-
-    PostLeasingPlanDialogComponent
-     
-
-    HomeViewadComponent,
-    
-
->>>>>>> master
   ],
   imports: [
     BrowserModule,
@@ -137,7 +120,6 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
       positionClass : 'toast-top-center'
     }),
     NgbModule,
-<<<<<<< HEAD
     
     // RouterModule.forRoot([
     //   // { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -146,8 +128,6 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
        
      
     // ]),
-=======
->>>>>>> master
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],

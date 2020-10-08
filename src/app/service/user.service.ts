@@ -6,18 +6,12 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
-<<<<<<< HEAD
-import { Lease} from '../models/lease.model'
-import { TokenStorageService } from "./token-storage.service";
-import { Identifiers } from '@angular/compiler';
-=======
 
 import { Lease} from '../models/lease.model'
 
 import { TokenStorageService } from "./token-storage.service";
 import { Identifiers } from '@angular/compiler';
 
->>>>>>> master
 
 
 const headeroption = {
@@ -56,10 +50,7 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/getAdById/' + id);
   }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
   postLease(lease : Lease){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -68,8 +59,5 @@ export class UserService {
     return this.http.post<Lease>('http://localhost:8080/postlease' , lease);
 
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 }
