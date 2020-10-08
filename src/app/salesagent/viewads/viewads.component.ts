@@ -48,7 +48,6 @@ export class ViewadsComponent implements OnInit {
     'validdate',
     'price',
     'actions',
-    'update',
     'delete',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>();
