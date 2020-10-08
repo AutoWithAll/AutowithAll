@@ -1,0 +1,151 @@
+<html>
+    <head>
+         
+        <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.button1{
+  float: left;
+  width: 60px;
+  height: 40px;
+  font-size: small;
+  text-align: center;
+}
+
+.button2{
+  float: right;
+  width: 60px;
+  height: 40px;
+  font-size: small;
+}
+.form{
+    width: 300px;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+}    
+ 
+.full-width{
+    width: 100%;
+}
+
+ 
+ 
+  
+ 
+</style>
+        
+    </head>
+
+    <body>
+     
+        <h2 mat-dialog-title style="color: blue; text-align: center;">
+            Post Leasing Plan
+        </h2>
+         
+        <div class="card" >
+            <form class="form">
+                 
+                <mat-form-field class="full-width">
+                    <mat-label>Lease Rental Amount</mat-label>
+                    <input
+                      matInput
+                      placeholder="Rental Amount"
+                       
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Number of Installments</mat-label>
+                    <input
+                      matInput
+                      placeholder="No of Installments"
+                       
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Interest Rate</mat-label>
+                    <input
+                      matInput
+                      placeholder="Rate"
+                       
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Installment Amount</mat-label>
+                    <input
+                      matInput
+                      placeholder="Installment Amount"
+                       
+                    />
+                </mat-form-field>
+                
+                <mat-card-actions>
+
+                    <button
+                    mat-raised-button
+                    color="primary"
+                    class="button1"
+                     
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                    mat-raised-button
+                    color="primary"
+                    class="button2"
+                     
+                    >
+                        Submit
+                    </button>
+            </mat-card-actions>
+            </form>
+             
+             
+        </div>
+         
+         
+         
+    </body>
+    
+        
+    
+    </html>
+
+ 

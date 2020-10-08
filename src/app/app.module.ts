@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+ 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -33,7 +34,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
-import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
+ 
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
@@ -55,13 +56,17 @@ import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component
 import { LeaseComponent } from './lease/lease.component';
 import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.component';
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
- 
 
+import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
-import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
-import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 import { ReportComponent } from './report/report.component';
+import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-details.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,19 +79,12 @@ import { ReportComponent } from './report/report.component';
     FooterComponent,
     HomeComponent,
     LeasevehicleComponent,
-    EditnselleradsComponent,
-
     ForgetPasswordComponent,
-
     HeaderComponent,
-    
     AdminDashboardComponent,
-    
     AdminUsersComponent,
-
     DeleteAdNormalDialog,
     LeasingDashboardComponent,
-    LeasingDashboardDialog,
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
@@ -108,8 +106,12 @@ import { ReportComponent } from './report/report.component';
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
-    EditagentadsComponent,
+   // EditagentadsComponent,
     ReportComponent,
+    PostLeasingPlanDialogComponent,
+    HomeViewadComponent,
+    AdminEditDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -124,6 +126,14 @@ import { ReportComponent } from './report/report.component';
       positionClass : 'toast-top-center'
     }),
     NgbModule,
+    
+    // RouterModule.forRoot([
+    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
+    //   // { path: 'register', component: RegistrationComponentComponent },
+    //   // { path: 'login', component: LoginComponentComponent },
+       
+     
+    // ]),
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],

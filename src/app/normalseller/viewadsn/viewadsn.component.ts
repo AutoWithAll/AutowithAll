@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class SellerViewadsComponent implements OnInit {
 
-  displayedColumns: string[] = ['adnumber', 'title', 'imageUrl','postdate','validdate', 'price','actions','update','delete'];
+  displayedColumns: string[] = ['adnumber', 'title', 'imageUrl','postdate','validdate', 'price','actions','delete'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   applyFilter(filterValue: string) {

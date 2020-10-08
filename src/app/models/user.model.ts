@@ -6,4 +6,8 @@ export class User {
   nic: string;
   password: string;
   role: string[];
+  cName: string;
+  address: string;
+  regNum: string;
+  imgId: string;
 }

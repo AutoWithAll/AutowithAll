@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditagentadsComponent } from './editagentads.component';
+import { HomeViewadComponent } from './home-viewad.component';
 
-describe('EditagentadsComponent', () => {
-  let component: EditagentadsComponent;
-  let fixture: ComponentFixture<EditagentadsComponent>;
+describe('HomeViewadComponent', () => {
+  let component: HomeViewadComponent;
+  let fixture: ComponentFixture<HomeViewadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditagentadsComponent ]
+      declarations: [ HomeViewadComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditagentadsComponent);
+    fixture = TestBed.createComponent(HomeViewadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

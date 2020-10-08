@@ -1,8 +1,10 @@
 <app-sellersidebar></app-sellersidebar>
 <mat-grid-list cols="3" rows="12" rowHeight="100px" >
+
     <mat-grid-tile colspan="3">
   <mat-card class=title>View all of your advertisements here</mat-card>
   </mat-grid-tile>
+
   <mat-grid-tile rowspan="5" colspan="3">
     <mat-card>
   
@@ -49,8 +51,7 @@
           <td mat-cell *matCellDef="let element"> {{element.validdate}} </td>
         </ng-container>
     
-         
-       
+      
   
         <!-- Actions  view Column -->
         <ng-container matColumnDef="actions">
@@ -59,13 +60,7 @@
               <button mat-raised-button >VIEW</button> </a></td>
         </ng-container>
   
-        <!-- Actions Update Column -->
-        <ng-container matColumnDef="update">
-          <th mat-header-cell *matHeaderCellDef> Update </th>
-          <td mat-cell *matCellDef="let row">  <button mat-raised-button color="primary" 
-            [routerLink]="['/updatesellerads']">UPDATE</button> </td>
-        </ng-container>
-  
+       
         <!-- Actions Delete Column -->
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef> Delete </th>
@@ -172,6 +167,7 @@
       </mat-card>
     </mat-grid-tile>
   </div>
+
     <mat-grid-tile  rowspan="3">
       <mat-card>
      
@@ -185,5 +181,6 @@
        Discription
       </mat-card>
     </mat-grid-tile>
+
   </mat-grid-list>
   
