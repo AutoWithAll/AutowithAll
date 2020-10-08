@@ -7,7 +7,7 @@
 </h2>
  
 <div class="card" >
-    <form class="form" [formGroup]="leaseForm" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="leaseForm" (ngSubmit)="onSubmit()" >
          
         <mat-form-field class="full-width">
             <mat-label>Lease Rental Amount</mat-label>
@@ -67,7 +67,8 @@
             mat-raised-button
             color="primary"
             class="button1"
-            mat-dialog-close 
+            (click) = "onClose()"
+            type="button"
              
             >
                 Cancel
@@ -81,6 +82,8 @@
             mat-dialog-close
             
             type="submit"
+            (click) = "onClose()"
+            
             >
                 Submit
             </button>
