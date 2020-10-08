@@ -6,10 +6,10 @@
             <div class="alert alert-light border text-center mt-3 mb-5" role="alert">
                 <h4>For further inquiries with regard to this advertisement,please fill in the form below,Administrators will get in touch with you.</h4>
             </div>
-            <form id="inquiry_form" class="form-row" method="post" action="">
+            <form id="inquiry_form" class="form-row"  [formGroup]="reportForm" (ngSubmit)="onSubmit">
                 <div class="form-group col-12">
                     <label for="Reason">Reason</label>
-                    <select name="reason" id="reason" class="form-control" required="required" title="Please select a reason">
+                    <select name="reason" id="reason" formControlName="reason" required="required" title="Please select a reason">
                         <option value="">Select Reason</option>
                         <option value="19">Wrong Information</option>
                         <option value="20">Seller Can't contact</option>
@@ -25,29 +25,29 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="first name">First Name</label>
-                    <input id="first_name" type="text" class="form-control" name="first_vaname" value="" required="">
+                    <input id="first_name" type="text"  formControlName="first_name" name="first_vaname" value="" required="">
                     <!-- <label for="firstname" id="firstnameeeror" class="error">Please enter your first name</label> -->
                 </div>
                 <div class="form-group col-md-6">
                     <label for="last name">Last Name</label>
-                    <input id="last_name" type="text" class="form-control" name="last_vaname" value="" required="">
+                    <input id="last_name" type="text"  formControlName="last_name" name="last_vaname" value="" required="">
                     <!-- <label for="firstname" id="firstnameeeror" class="error">Please enter your first name</label> -->
                 </div>
                 <div class="form-group col-md-6">
                     <label for="telephone">Telephone</label>
-                    <input id="telephone" class="form-control error" type="number" min="0" name="telephone" value="" required="">
+                    <input id="telephone"  formControlName="telephone" type="number" min="0" name="telephone" value="" required="">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control error" name="email" value="" required="">
+                    <input type="email" id="email"  formControlName="email" name="email" value="" required="">
                      
                 </div>
                 <div class="form-group col-md-12">
                     <label for="message">Message</label>
-                    <textarea name="message" id="message"  rows="4"></textarea>
+                    <textarea formControlName="message" name="message" id="message"  rows="4"></textarea>
                 </div>
                 <div class="form-group col-md-12 text-center">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
                 </div>
                 
             </form>

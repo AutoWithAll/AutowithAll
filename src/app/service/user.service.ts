@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Ad } from '../models/ad.model';
 import { TokenStorageService } from "./token-storage.service";
 import { Identifiers } from '@angular/compiler';
+import { Report } from '../models/report.model';
 
 
 const headeroption = {
@@ -30,6 +31,12 @@ export class UserService {
     console.log(ad)
     return this.http.post('http://localhost:8080/advertisement/postadd', ad);
   }   // Post Add By Sales Agent
+
+  postReport(report:Report,id){
+      console.log(id)
+      return this.http.post('http://localhost:8080/advertisement/reportad/{1}', report);
+
+  }
 
   getImage(id){
     return this.http.get('http://localhost:8080/advertisement/getimage/{id}');
