@@ -198,7 +198,9 @@ export class PostadsComponent implements OnInit {
       colour: this.vcolor.value,
       description: this.description.value,
       images : this.previewUrls,
-      flag: 1,
+      flag: 0,
+      lStatus: 0,
+      iStatus: 0
     };
 
     console.log(this.fileData);

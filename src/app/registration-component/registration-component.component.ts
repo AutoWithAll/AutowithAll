@@ -47,7 +47,7 @@ export class RegistrationComponentComponent implements OnInit {
     private formBuilder: FormBuilder,
     private auth: AuthenticationService,
     private toastr: ToastrService,
-    private router : Router
+    private router: Router
   ) {}
   get f() {
     return this.registerForm.controls;
@@ -69,13 +69,15 @@ export class RegistrationComponentComponent implements OnInit {
         password: ['', [Validators.required, Validators.minLength(6)]],
         cpassword: ['', [Validators.required]],
         role: ['', [Validators.required]],
+        cname: ['' ],
+        address: [''],
+        rno: [''],
       },
       {
         validator: MustMatch('password', 'cpassword'),
       }
     );
   }
-
 
   get fname() {
     return this.registerForm.get('fname');
@@ -101,6 +103,14 @@ export class RegistrationComponentComponent implements OnInit {
   get role() {
     return this.registerForm.get('role');
   }
+  get cname() {
+    return this.registerForm.get('cname');
+  }
+  get address() {
+    return this.registerForm.get('address');
+  }get rno() {
+    return this.registerForm.get('rno');
+  }
 
   onSubmit() {
     const user = {
@@ -111,12 +121,16 @@ export class RegistrationComponentComponent implements OnInit {
       nic: this.nic.value,
       password: this.password.value,
       role: [this.role.value],
+      cName: this.cname.value,
+      address: this.address.value,
+      regNum: this.rno.value,
+      imgId: "1"
     };
     console.log(user);
     this.auth.registerUser(user).subscribe({
       next: (res) => {
         console.log(res);
-        this.toastr.success("User Registerd Successfully");
+        this.toastr.success('User Registerd Successfully');
         this.router.navigateByUrl('/login');
       },
       error: (err) => {
