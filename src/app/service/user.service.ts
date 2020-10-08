@@ -30,7 +30,7 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/getconfrimad');
   }   //Home Component
 
-  postAd(ad : Ad){
+  postAd(ad){
     console.log(ad)
     return this.http.post('http://localhost:8080/advertisement/postadd', ad);
   }   // Post Add By Sales Agent
