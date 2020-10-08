@@ -11,37 +11,38 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 @Component({
   selector: 'app-agentsidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
 
-  user : User;
+  user: User;
 
-constructor(
-  private breakpointObserver: BreakpointObserver, 
-  private tokenStorageService : TokenStorageService,
-  private router: Router,
-  private authService : AuthenticationService
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private tokenStorageService: TokenStorageService,
+    private router: Router,
+    private authService: AuthenticationService
   ) {}
 
-ngOnInit(){
- 
+  ngOnInit() {
+    
+       this.authService.getCurrentUser().subscribe((res) => {
+        this.user = res;
+        console.log(res);
+       });
+     
     // this.user = this.tokenStorageService.getUser();
-    this.authService.getCurrentUser().subscribe(res => {
-      this.user = res;
-    })
-  
-}
+  }
 
-logout(){
-  console.log("logout");
-  this.tokenStorageService.signOut();
-  //this.router.navigateByUrl('/login');
-}
-
+  logout() {
+    console.log('logout');
+    this.tokenStorageService.signOut();
+    //this.router.navigateByUrl('/login');
+  }
 }
