@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+
 import {PostLeasingPlanDialogComponent} from 'src/app/post-leasing-plan-dialog/post-leasing-plan-dialog.component'
 import { MatDialog} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-lease-view-ads',
   templateUrl: './lease-view-ads.component.html',
   styleUrls: ['./lease-view-ads.component.css']
 })
+
 export class LeaseViewAdsComponent   {
 
   constructor(public dialog:MatDialog) { }
@@ -53,4 +56,5 @@ export class LeaseViewAdsComponent   {
 
 
  
+
 
