@@ -7,11 +7,8 @@
   <mat-grid-list cols="1" rowHeight="7:1">
     <!-- <mat-grid-tile></mat-grid-tile> -->
     <mat-grid-tile>
-      <ngb-carousel
-        *ngIf="images"
-        [showNavigationArrows]="showNavigationArrows"
-        [showNavigationIndicators]="showNavigationIndicators"
-      >
+      <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators">
         <ng-template ngbSlide *ngFor="let image of images">
           <div class="picsum-img-wrapper">
             <img [src]="image" alt="Random slide" />
@@ -27,54 +24,100 @@
 </div>
 
 <!-- Advertiesment -->
-<ul>
-  <li *ngFor="let item of list">
-    <mat-grid-list cols="1" rowHeight="7:1">
-      <mat-grid-tile>
-        <mat-card class="wrapper">
-          <!-- <mat-card-title>one</mat-card-title> -->
-          <mat-grid-list cols="4" rowHeight="2:1">
-            <mat-grid-tile>
-              <mat-card class="one">
-                <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + item.image1}}" alt="test" />
-              </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile colspan="2">
-              <mat-card class="one">
-                <h4>
-                  <b>{{ item.name }} </b>
-                </h4>
-                <label style="font-size: medium;">LKR-{{ item.price }}</label>
-                <br />
-                model year - {{ item.m_year }} <br />
-              </mat-card>
-            </mat-grid-tile>
-            <!-- <mat-grid-tile>
-          <mat-card class="one"> </mat-card>
-        </mat-grid-tile> -->
-            <mat-grid-tile>
-              <mat-card class="one">
-                <mat-grid-list cols="2" rowHeight="2:1" gutterSize="5px">
-                  <mat-grid-tile colspan="2">
-                    <mat-card class="two">
-                      <button mat-button color="primary">Leasing Plan</button>
-                    </mat-card>
-                  </mat-grid-tile>
-                  <mat-grid-tile colspan="2">
-                    <mat-card class="two">
-                      <button mat-button color="primary">Insure Plan</button>
-                    </mat-card>
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </li>
-</ul>
+
+<mat-grid-list cols="4" rows="4" rowHeight="250px">
+
+  <mat-grid-tile rowspan="4">
+    <mat-card class="two" style="background-color: #cedbdb;">
+      <mat-card-header>
+        <mat-card-title>SALES AGENTS</mat-card-title>
+        <mat-card-subtitle>Hire a Salesagent to post your Advertisement</mat-card-subtitle>
+      </mat-card-header>
+     
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Saman Bandara
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <p>Contact - 0718580598</p>
+          <p>Email - kasunbandara@gmail.com</p>
+          <p>Location - Katana</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br />
+
+    </mat-card>
+  </mat-grid-tile>
+
+  
+  <mat-grid-tile colspan="3" *ngFor="let item of list">
+    <mat-card class="wrapper">
+
+
+      <mat-grid-list cols="4">
+
+        <mat-grid-tile>
+          <mat-card class="one">
+            <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + item.image1}}" alt="test"
+              [routerLink]="['/home-view-ad']" />
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <mat-card class="one">
+            <h4>
+              <b style="font-size: larger;">{{ item.title }} </b><br />Posted on 2020/20/01
+            </h4>
+            <label style="font-size: large;color: blueviolet;">LKR - {{ item.price }}</label>
+            <br />
+            <table>
+              <tr>
+                <td style="text-align: left;">Model Year</td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">{{ item.m_year }}</td>
+
+              </tr>
+              <tr>
+                <td style="text-align: left;">Location</td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">{{ item.location }}</td>
+              </tr>
+            </table> <br />
+          </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-card class="one">
+            <mat-grid-list cols="2" rowHeight="2:1" gutterSize="5px">
+              <mat-grid-tile colspan="2">
+                <button mat-raised-button color="primary" class="button1">View Leasing Plans</button>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="2">
+                <button mat-raised-button color="primary" class="button1">View Insurance Plan</button>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
+    </mat-card>
+
+
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-paginator [length]="50" [pageSize]="3" [pageSizeOptions]="[3, 6, 9, 12]">
+    </mat-paginator>
+  </mat-grid-tile>
+  
+
+</mat-grid-list>
+
 
 <!-- Advertiesment -->
+
+
 
 <app-footer></app-footer>

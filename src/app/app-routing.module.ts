@@ -35,12 +35,13 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import {InsuranceDashboardComponent} from './insurance-dashboard/insurance-dashboard.component';
 import { LeasingProfileComponent } from './leasing-profile/leasing-profile.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
-  
+  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
   { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
@@ -50,6 +51,7 @@ const routes: Routes = [
  // { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
  // { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
  { path: 'home-view-ad', component: HomeViewadComponent},
+ 
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
   { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
