@@ -79,7 +79,7 @@ const routes: Routes = [
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
-  { path : 'lease', component:LeaseComponent},
+  { path : 'lease', component: LeaseComponent},
 
   //{ path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   //{ path : 'lease', component:LeaseComponent},
