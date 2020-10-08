@@ -40,7 +40,8 @@ import { LeaseComponent} from './lease/lease.component';
 import { PostLeasingPlanDialogComponent} from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { HomeViewadComponent} from './home-viewad/home-viewad.component';
 import { HomeReportadComponent } from './home-reportad/home-reportad.component';
-
+import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
+import { HomeFaqComponent } from './home-faq/home-faq.component';
 
  
 const routes: Routes = [
@@ -90,7 +91,8 @@ const routes: Routes = [
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   { path : 'lease', component:LeaseComponent},
   {path:'report-ad',component:HomeReportadComponent},
-
+  {path:'aboutus',component:HomeAboutUsComponent},
+  {path:'faq',component:HomeFaqComponent},
 
   //{ path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   //{ path : 'lease', component:LeaseComponent},
