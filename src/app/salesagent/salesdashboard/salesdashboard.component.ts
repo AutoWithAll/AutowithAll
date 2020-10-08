@@ -1,24 +1,35 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-
+import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/service/user.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-salesdashboard',
   templateUrl: './salesdashboard.component.html',
-  styleUrls: ['./salesdashboard.component.css']
+  styleUrls: ['./salesdashboard.component.css'],
 })
+export class SalesdashboardComponent implements OnInit {
+  user;
+  remainAd : any
+  postedAd  : any
 
-export class SalesdashboardComponent  {
+  constructor(private tokenService: TokenStorageService,private authService: AuthenticationService, private userService : UserService) {}
 
-  
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  ngOnInit(): void {
+    // console.log(this.tokenService.getUser());
+    // this.user = this.tokenService.getUser();
+    this.authService.getCurrentUser().subscribe(res => {
+      this.user = res;
+    })
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
+    this.userService.remainAdCount().subscribe(res => {
+      console.log(res)  
+      this.postedAd = res;
+    })
+    this.userService.remainpostAdCount().subscribe(res => {
+      console.log(res)
+      this.remainAd = res;
+    })
+  }
 }

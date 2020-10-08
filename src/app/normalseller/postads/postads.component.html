@@ -1,0 +1,256 @@
+<app-sellersidebar></app-sellersidebar>
+
+<!--Title of the Salesagent page-->
+<span class="title">
+    Post Your New Advertisement here within Four steps!
+</span>
+
+<mat-horizontal-stepper linear>
+    <!--Step 1- Basic details form-->
+    <mat-step label="Basic Details" [stepControl]="formGroup1" >
+
+        <form [formGroup]="formGroup1" class="my-form" >
+            <span style="font-size: 150%">Enter Basic Details Here</span>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Display Name" formControlName="dname" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Display Telephone Number" formControlName="dphn" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Display Email" formControlName="demail" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Enter Location" formControlName="dlocation" required>
+            </mat-form-field>
+
+            <div>
+                <button mat-raised-button matStepperPrevious color="accent" style='margin-left:100px'>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" style='margin-left:450px'>Next</button>
+            </div>
+        </form>
+
+    </mat-step>
+
+    <!--step 2 Primary Details form-->
+    <mat-step label="Primary Details" [stepControl]="formGroup2" >
+        <form [formGroup]="formGroup2" class="my-form"  >
+            <span style="font-size: 150%">Enter Primary Details Here</span>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Title" formControlName="vtitle" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Price" formControlName="vprice" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Vehicle Type" formControlName="vtype" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Manufacturer" formControlName="vmanufac" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Model" formControlName="vmodel" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Vehicle Condition" formControlName="vcondition" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Model Year" formControlName="vmodelyear" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Registered Year" formControlName="vregyear" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Mileage" formControlName="vmileage" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Engine Capacity" formControlName="venginecapacity" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Transmission" formControlName="vtransmission" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Fuel Type" formControlName="vfuel" required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Color" formControlName="vcolor" required>
+            </mat-form-field>
+
+            <div>
+                <button mat-raised-button matStepperPrevious color="accent" style='margin-left:100px'>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" style='margin-left:450px'>Next</button>
+            </div>
+        </form>
+
+    </mat-step>
+
+    <!--Step 3 - description and photo uploading-->
+    <mat-step label="Description and Upload Photos" [stepControl]="formGroup3">
+        <form [formGroup]="formGroup3" class="my-form" (ngSubmit)="onSubmit()">
+
+            <span style="font-size: 150%">Enter a Description and upload photos here</span>
+            <mat-form-field class="full-width">
+                <mat-label>Description</mat-label>
+                <textarea class="textarea" matInput formControlName="description" required></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Upload Photos</mat-label>
+                <textarea class="textarea" matInput  required></textarea>
+                <button mat-raised-button color="primary"> + Upload</button>
+            </mat-form-field>
+
+            <div>
+                <button mat-raised-button matStepperPrevious color="accent" style='margin-left:100px'>Previous</button>
+                <button mat-raised-button matStepperNext color="primary" style='margin-left:450px'>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!--Preview and submition-->
+
+    <mat-step label="Preview and Submit" completed=false>
+        <span style="font-size: 150%">Preview And Post Your Advertisement</span>
+        <mat-grid-list cols="2" rows="3" gutterSize="30px" rowHeight='160px'>
+
+            <mat-grid-tile>
+
+                <div class="profile">
+                    <table class="profile">
+                        <tr>
+                            <td style="text-align: left;">Name</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.dname.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Telephone Number</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.dphn.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Email</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.demail.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Location</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.dlocation.value}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </mat-grid-tile>
+
+            <mat-grid-tile rowspan="3">
+                <div class="profile">
+                    <table class="profile">
+                        <tr>
+                            <td style="text-align: left;">Title</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vtitle.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Price(LKR)</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vprice.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Vehicle Type</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vtype.value}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="text-align: left;">Manufacturer</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vmanufac.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Model</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vmodel.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Model Year</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vmodelyear.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Registereted Year</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vregyear.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Engine Capacity</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.venginecapacity.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Mileage</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vmileage.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Vehicle Condition</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vcondition.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Transmission</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vtransmission.value}}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Fuel Type</td>
+                            <td style="text-align: center;">:</td>
+                            <td style="text-align: left;">{{this.vfuel.value}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Description</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <p>
+                            {{this.description.value}}
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+               <div class="images">
+                   <div class="image"><img mat-card-image src="assets/img/car.jpg" ></div> 
+                   <div class="image"><img mat-card-image src="assets/img/car.jpg" ></div>
+                </div>        
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <button mat-raised-button matStepperPrevious color="accent"
+            style='margin-top:25px; margin-left:150px'>Previous</button>
+        <button mat-raised-button color="primary" style='margin-top:25px;margin-left:850px'>Submit</button>
+    </mat-step>
+
+</mat-horizontal-stepper>

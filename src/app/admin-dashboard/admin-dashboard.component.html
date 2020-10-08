@@ -19,19 +19,16 @@
               </mat-card-header>
             </mat-card> -->
             <mat-list-item>
-              <button 
+              <!-- <button 
               class="menu-item"
                 mat-flat-button>
                 <mat-icon>account_circle</mat-icon>
-              Users</button>
+              Users</button> -->
+              <a class="nav-link btn btn-default" href [routerLink]="['/adminUsers']"><mat-icon>account_circle</mat-icon>Users</a>
             </mat-list-item>
       
             <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>tab</mat-icon>
-                Advertisements</button>
+              <a class="nav-link btn btn-default" href [routerLink]="['/adminAdvertisements']"><mat-icon>account_circle</mat-icon>Advertisements</a>
               </mat-list-item>
 
               <mat-list-item>
@@ -44,19 +41,11 @@
       
       
               <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>directions_car</mat-icon>
-                Insurance Companies</button>
+                <a class="nav-link btn btn-default" href [routerLink]="['/adminLeasings']">  <mat-icon>directions_car</mat-icon>Leasing Companies</a>
               </mat-list-item>
       
               <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>directions_car</mat-icon>
-                Leasing Companies </button>
+                <a class="nav-link btn btn-default" href [routerLink]="['/adminInsurance']">  <mat-icon>directions_car</mat-icon>Insurance Companies</a>
               </mat-list-item>
       
             </mat-list>
@@ -154,7 +143,7 @@
                     
                     <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
                     <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Sellers Count</h1></mat-card-content>
-                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">45</button>
+                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{userCount}}</button>
                      
                     </mat-card>
                     <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 

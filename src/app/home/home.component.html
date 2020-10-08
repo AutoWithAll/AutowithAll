@@ -3,15 +3,18 @@
     <button type="button" (click)="showNavigationArrows = !showNavigationArrows" class="btn btn-outline-dark btn-sm">Toggle navigation arrows</button>
     <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
   </div> -->
-<div class="abc">
+<div class="container abc">
   <mat-grid-list cols="1" rowHeight="7:1">
     <!-- <mat-grid-tile></mat-grid-tile> -->
     <mat-grid-tile>
-      <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
-        [showNavigationIndicators]="showNavigationIndicators">
+      <ngb-carousel
+        *ngIf="images"
+        [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators"
+      >
         <ng-template ngbSlide *ngFor="let image of images">
           <div class="picsum-img-wrapper">
-            <img [src]="image" alt="Random slide">
+            <img [src]="image" alt="Random slide" />
           </div>
           <!-- <div class="carousel-caption">
           <h3>No mouse navigation</h3>
@@ -25,7 +28,7 @@
 
 <!-- Advertiesment -->
 <ul>
-  <li *ngFor="let item of data">
+  <li *ngFor="let item of list">
     <mat-grid-list cols="1" rowHeight="7:1">
       <mat-grid-tile>
         <mat-card class="wrapper">
@@ -33,11 +36,7 @@
           <mat-grid-list cols="4" rowHeight="2:1">
             <mat-grid-tile>
               <mat-card class="one">
-                <img
-                  mat-card-image
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
-                  alt="test"
-                />
+                <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + item.image1}}" alt="test" />
               </mat-card>
             </mat-grid-tile>
             <mat-grid-tile colspan="2">
@@ -45,12 +44,9 @@
                 <h4>
                   <b>{{ item.name }} </b>
                 </h4>
-                {{ item.date }} <br />
                 <label style="font-size: medium;">LKR-{{ item.price }}</label>
                 <br />
-
-                from - {{ item.from }} <br />
-                model year - {{ item.year }} <br />
+                model year - {{ item.m_year }} <br />
               </mat-card>
             </mat-grid-tile>
             <!-- <mat-grid-tile>

@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+    
+  }
+  mat-card {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+   }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  div {
+   
+    margin-left: 50px;
+    
+  }
+  .tableimg {
+    width: 150px;
+    height: 85px;
+  }
+
+  .title{
+    font-size: 150%;
+    margin-top: 20px;
+    margin-bottom:20px;
+    margin-left: 30px;
+    margin-right: 30px;
+   
+  }
+
+  .car{
+    width: 370px;
+    height: 220px;
+  }
+  .profile{
+    width:80%; 
+    margin-left: 5px;
+    font-size: 110%;
+    color: rgb(3, 38, 54);
+    line-height: 2;
+    margin-top: 5px;
+   }

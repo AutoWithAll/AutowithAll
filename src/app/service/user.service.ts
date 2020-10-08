@@ -3,66 +3,90 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { Login } from '../models/login.model';
 import { Observable, throwError } from 'rxjs';
-import { retry , catchError } from 'rxjs/operators';
+import { retry, catchError, map } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
+import { Ad } from '../models/ad.model';
 
-// import { appconfig } from '../config/appconfig'
+import { Lease} from '../models/lease.model'
 
-// const headeroption = {
-//   headers: new HttpHeaders({'Content-Type': 'application/json'})
-// };
+import { TokenStorageService } from "./token-storage.service";
+import { Identifiers } from '@angular/compiler';
+
+
+
+const headeroption = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  public baseUrl = 'http://localhost:8080';
-
-  constructor(private http: HttpClient , private toaster: ToastrService) {}
-
-  loginUser(user: Login) {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    console.log(user);
-    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
-    return this.http
-      .post<User>('http://localhost:8080/login', user).pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-  }
-
-  handleError(error) {
-    let errorMessage = 'error';
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log('ERROR' + errorMessage)
-  
-    return throwError(errorMessage);
-
-  }
-
   
 
-  // logOut() {
-  //   sessionStorage.removeItem('username');
+  constructor(private http : HttpClient , private toaster : ToastrService) {}
+
+  getads(){
+    return this.http.get('http://localhost:8080/advertisement/getconfrimad');
+  }   //Home Component
+
+  postAd(ad : Ad){
+    console.log(ad)
+    return this.http.post('http://localhost:8080/advertisement/postadd', ad);
+  }   // Post Add By Sales Agent
+
+  getImage(id){
+    return this.http.get('http://localhost:8080/advertisement/getimage/{id}');
+  }
+
+  getAllUsers(){
+    return this.http.get('http://localhost:8080/user/getallusers');
+  }
+  getAddsByUser() : Observable<any>{
+    return this.http.get('http://localhost:8080/advertisement/getAddsByCurrentUser');
+  }
+
+  getOneAd(id) : Observable<any>{
+    return this.http.get('http://localhost:8080/advertisement/getAdById/' + id);
+  }
+
+  editProfile(editprofile){
+    return this.http.put('http://localhost:8080/user/editprofile/' , editprofile);
+  }
+  changePassword(secData, pwd){
+    return this.http.put('http://localhost:8080/user/changepassword/'+pwd , secData);
+  }
+
+  remainAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  }
+  remainpostAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countremainad');
+  }
+
+  showSuccess(msg){
+    this.toaster.success(msg);
+  }
+  shoeErr(err){
+    this.toaster.error(err);
+  }
+
+  changePhoto(image){
+    return this.http.put('http://localhost:8080/user/changephoto', image);
+  }
+
+  // getUser(): Observable<User[]> {
+  //   return this.http.get<User[]>(this.serviceUrl);
   // }
+  
 
-  register(user: User) {
+  postLease(lease : Lease){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    console.log(user);
-    // return this.http.post('http://localhost:8080/register', user, {headers} ).pipe();
-    return this.http
-      .post<User>('http://localhost:8080/register', user)
-      .subscribe({
-        next: (res) => console.log(JSON.stringify(res)),
-        error: (err) => console.error('There was an error.', err),
-      });
+    console.log(lease);
+
+    return this.http.post<Lease>('http://localhost:8080/postlease' , lease);
+
   }
+
 }

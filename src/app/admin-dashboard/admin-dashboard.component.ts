@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {UserService  } from "../service/user.service";
 
 export interface PeriodicElement {
   Agent: string;
@@ -28,6 +29,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AdminDashboardComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  users:any
+  userCount:number
    
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
@@ -35,9 +38,15 @@ export class AdminDashboardComponent implements OnInit {
     shareReplay()
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver,private service: UserService) { }
 
   ngOnInit(): void {
+    this.service.getAllUsers().subscribe(res=>{
+      this.users = res;
+      this.userCount=this.users.length;
+      
+    })
+    
   }
 
 }

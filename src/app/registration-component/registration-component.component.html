@@ -61,15 +61,15 @@
           <mat-label>Email</mat-label>
           <input
             matInput
-            id="email"
+            id="username"
             type="email"
-            formControlName="email"
+            formControlName="username"
             placeholder="pat@example.com"
-            name="email"
-            [ngClass]="{ 'is-invalid': f.email.errors }"
+            name="username"
+            [ngClass]="{ 'is-invalid': f.username.errors }"
           />
-          <div *ngIf="f.email.errors" class="invalid-feedback">
-            <div class="errormesg" *ngIf="f.email.errors.email">
+          <div *ngIf="f.username.errors" class="invalid-feedback">
+            <div class="errormesg" *ngIf="f.username.errors.email">
               Enter valid Email
             </div>
           </div>
@@ -108,7 +108,7 @@
             </div>
           </div>
         </mat-form-field>
-        <mat-form-field class="full-width">
+        <mat-form-field id="champs" class="full-width">
           <mat-label>Select your role</mat-label>
           <mat-select
             disableRipple
@@ -122,6 +122,38 @@
             <mat-option value="nuser">Normal User</mat-option>
           </mat-select>
         </mat-form-field>
+        <p id="champs" *ngIf="f.role.value == 'lcompany' ||f.role.value == 'icompany'">
+          <mat-form-field class="full-width">
+            <mat-label>Company Name</mat-label>
+            <input
+              matInput
+              id="cname"
+              formControlName="cname"
+              placeholder="Company Name"
+              name="cname"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              id="address"
+              formControlName="address"
+              placeholder="Address"
+              name="address"
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Company Registration No</mat-label>
+            <input
+              matInput
+              id="rno"
+              formControlName="rno"
+              placeholder="Company Name"
+              name="rno"
+            />
+          </mat-form-field>
+        </p>
         <mat-card-actions>
           <a class="txt1">
             Already have an account?
