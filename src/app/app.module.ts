@@ -36,14 +36,15 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
  
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
-import {ViewadsComponent} from './salesagent/viewads/viewads.component';
+
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
 import {PostadsComponent} from './salesagent/postads/postads.component';
 import {SellerdashComponent} from './normalseller/sellerdash/sellerdash.component';
 import {SellerSidebarComponent} from './normalseller/sidebar/sidebar.component';
 import {SellerEditprofileComponent} from './normalseller/editprofile/editprofile.component';
 import {SellerPostadsComponent} from './normalseller/postads/postads.component';
-import {SellerViewadsComponent} from './normalseller/viewads/viewads.component';
+import {SellerViewadsComponent} from './normalseller/viewadsn/viewadsn.component';
+import {DeleteAdNormalDialog} from './normalseller/viewadsn/viewadsn.component';
 import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
 import { AdminLeasingsComponent } from './admin-leasings/admin-leasings.component';
 import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.component';
@@ -56,8 +57,11 @@ import { LeaseComponent } from './lease/lease.component';
 import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.component';
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
 import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
- 
-
+import { authInterceptorProviders } from './helpers/interceptor.interceptor';
+//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+import { ViewadsComponent } from './salesagent/viewads/viewads.component';
+import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,19 +74,12 @@ import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-
     FooterComponent,
     HomeComponent,
     LeasevehicleComponent,
-    
-
     ForgetPasswordComponent,
-
     HeaderComponent,
-    
     AdminDashboardComponent,
-    
     AdminUsersComponent,
-
-
+    DeleteAdNormalDialog,
     LeasingDashboardComponent,
-     
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
@@ -104,8 +101,9 @@ import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
-    PostLeasingPlanDialogComponent
-     
+    PostLeasingPlanDialogComponent,
+    HomeViewadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -129,7 +127,7 @@ import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-
      
     // ]),
   ],
-  providers: [UserService],
+  providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

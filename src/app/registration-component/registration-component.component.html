@@ -61,15 +61,15 @@
           <mat-label>Email</mat-label>
           <input
             matInput
-            id="email"
+            id="username"
             type="email"
-            formControlName="email"
+            formControlName="username"
             placeholder="pat@example.com"
-            name="email"
-            [ngClass]="{ 'is-invalid': f.email.errors }"
+            name="username"
+            [ngClass]="{ 'is-invalid': f.username.errors }"
           />
-          <div *ngIf="f.email.errors" class="invalid-feedback">
-            <div class="errormesg" *ngIf="f.email.errors.email">
+          <div *ngIf="f.username.errors" class="invalid-feedback">
+            <div class="errormesg" *ngIf="f.username.errors.email">
               Enter valid Email
             </div>
           </div>
