@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+ 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -34,6 +35,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
 //import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
+ 
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 
 import {EditprofileComponent} from './salesagent/editprofile/editprofile.component';
@@ -55,14 +57,15 @@ import { LeaseViewAdsComponent } from './lease-view-ads/lease-view-ads.component
 import { LeaseComponent } from './lease/lease.component';
 import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.component';
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
- 
 
+import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,16 +78,10 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     FooterComponent,
     HomeComponent,
     LeasevehicleComponent,
-    
-
     ForgetPasswordComponent,
-
     HeaderComponent,
-    
     AdminDashboardComponent,
-    
     AdminUsersComponent,
-
     DeleteAdNormalDialog,
     LeasingDashboardComponent,
     
@@ -109,6 +106,7 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
+    PostLeasingPlanDialogComponent,
     HomeViewadComponent,
 
     
@@ -126,6 +124,14 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
       positionClass : 'toast-top-center'
     }),
     NgbModule,
+    
+    // RouterModule.forRoot([
+    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
+    //   // { path: 'register', component: RegistrationComponentComponent },
+    //   // { path: 'login', component: LoginComponentComponent },
+       
+     
+    // ]),
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -5,35 +5,44 @@ import { map, shareReplay } from 'rxjs/operators';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/service/user.service';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-agentsidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
 
-  user : User;
+  user: User;
 
-constructor(
-  private breakpointObserver: BreakpointObserver, 
-  private tokenStorageService : TokenStorageService,
-  private router: Router
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private tokenStorageService: TokenStorageService,
+    private router: Router,
+    private authService: AuthenticationService
   ) {}
 
-ngOnInit(){
-  this.user = this.tokenStorageService.getUser();
-}
+  ngOnInit() {
+    
+       this.authService.getCurrentUser().subscribe((res) => {
+        this.user = res;
+        console.log(res);
+       });
+     
+    // this.user = this.tokenStorageService.getUser();
+  }
 
-logout(){
-  console.log("logout");
-  this.tokenStorageService.signOut();
-  //this.router.navigateByUrl('/login');
-}
-
+  logout() {
+    console.log('logout');
+    this.tokenStorageService.signOut();
+    //this.router.navigateByUrl('/login');
+  }
 }

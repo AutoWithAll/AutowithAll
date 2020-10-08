@@ -7,6 +7,8 @@ import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
 import { Ad, AdDetails } from 'src/app/models/ad.model';
 import { MatSort } from '@angular/material/sort';
+import { AsyncPipe } from '@angular/common';
+import { async } from '@angular/core/testing';
 
 export interface PeriodicElement {
   id: number;
@@ -48,7 +50,6 @@ export class ViewadsComponent implements OnInit {
     'validdate',
     'price',
     'actions',
-    'update',
     'delete',
   ];
   dataSource = new MatTableDataSource<PeriodicElement>();
@@ -78,7 +79,9 @@ export class ViewadsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAdds();
+    
+      this.getAdds();
+   
   }
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
