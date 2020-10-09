@@ -63,6 +63,7 @@ import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
+import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsuranceplan.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -107,6 +108,7 @@ import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component'
     PostLeasingPlanDialogComponent,
     HomeViewadComponent,
     ViewleaseplanComponent,
+    ViewinsuranceplanComponent,
     
   ],
   imports: [
