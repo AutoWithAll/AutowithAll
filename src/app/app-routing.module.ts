@@ -44,6 +44,7 @@ import { InsuranceViewAdsComponent} from './insurance-view-ads/insurance-view-ad
 import { InsuranceNavbarComponent} from './insurance-shared/insurance-navbar/insurance-navbar.component';
 import { InsuranceSidebarComponent} from './insurance-shared/insurance-sidebar/insurance-sidebar.component';
 import {InsuranceEditProfileComponent} from './insurance-edit-profile/insurance-edit-profile.component';
+import {InsuranceProfileComponent} from './insurance-profile/insurance-profile.component'
 
  
 const routes: Routes = [
@@ -103,7 +104,8 @@ const routes: Routes = [
   {path : 'insuranceviewads', component : InsuranceViewAdsComponent},
   {path : 'insurancenavbar', component :InsuranceNavbarComponent},
   {path : 'insurancesidebar', component : InsuranceSidebarComponent},
-  {path : 'insuranceeditprofile' , component : InsuranceEditProfileComponent}
+  {path : 'insuranceeditprofile' , component : InsuranceEditProfileComponent},
+  {path : 'insuranceprofile' , component : InsuranceProfileComponent}
 
 ];
 

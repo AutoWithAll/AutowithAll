@@ -67,6 +67,7 @@ import { InsuranceViewAdsComponent } from './insurance-view-ads/insurance-view-a
 import { InsuranceNavbarComponent } from './insurance-shared/insurance-navbar/insurance-navbar.component';
 import { InsuranceSidebarComponent } from './insurance-shared/insurance-sidebar/insurance-sidebar.component';
 import { InsuranceEditProfileComponent } from './insurance-edit-profile/insurance-edit-profile.component';
+import { InsuranceProfileComponent } from './insurance-profile/insurance-profile.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -115,6 +116,7 @@ import { InsuranceEditProfileComponent } from './insurance-edit-profile/insuranc
     InsuranceNavbarComponent,
     InsuranceSidebarComponent,
     InsuranceEditProfileComponent,
+    InsuranceProfileComponent,
     
   ],
   imports: [
