@@ -58,14 +58,11 @@ import { LeaseNavbarComponent } from './lease-shared/lease-navbar/lease-navbar.c
 import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sidebar.component';
 
 import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
- 
-
- 
-
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -107,11 +104,9 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
-
-    PostLeasingPlanDialogComponent
-     
-
+    PostLeasingPlanDialogComponent,
     HomeViewadComponent,
+    ViewleaseplanComponent,
     
 
   ],

@@ -54,11 +54,10 @@ const routes: Routes = [
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
   { path:'adminLeasings',component:AdminLeasingsComponent},
   { path:'adminInsurance',component:AdminInsuranceComponent},
-
-import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+ 
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
-const routes: Routes = [
+ 
   { path: '', component: HomeComponent },
   { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
