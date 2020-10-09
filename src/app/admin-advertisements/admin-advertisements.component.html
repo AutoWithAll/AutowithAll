@@ -1,2 +1,41 @@
 <mat-card style="text-align: center; color: blue"><h1>Advertisements</h1></mat-card>
- 
+<mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>New Advertisements</span></mat-card>
+<div class="row mt-2">
+    <div *ngFor="let ad of newAds" class="col-md-4 my-2">
+     <mat-card class="example" >
+       <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ad.email}}</mat-card-title>
+        <mat-card-subtitle>{{ad.location}}</mat-card-subtitle>
+       </mat-card-header>
+       <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}" style="width: 50px;height: 20px;" >
+       <mat-card-actions>
+        <!-- <a pageScroll href="viewads#pagedown"> -->
+            
+        <a pageScroll href="#viewAds ">View </a>
+        
+      </mat-card-actions>
+     </mat-card>
+    </div>
+   </div>
+   <mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>Confiremed Advertisements</span></mat-card>
+   <div class="row mt-2">
+    <div *ngFor="let ad of confiremedAds" class="col-md-4 my-2">
+     <mat-card class="example" >
+       <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ad.email}}</mat-card-title>
+        <mat-card-subtitle>{{ad.location}}</mat-card-subtitle>
+       </mat-card-header>
+       <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}" style="width: 50px;height: 20px;" >
+       <mat-card-actions>
+        <!-- <a pageScroll href="viewads#pagedown"> -->
+            
+        <a pageScroll href="#viewAds ">View </a>
+        
+      </mat-card-actions>
+     </mat-card>
+    </div>
+   </div>
+   
+   

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService  } from "../service/user.service";
+import { Ad, AdDetails } from 'src/app/models/ad.model';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-admin-advertisements',
@@ -7,11 +9,12 @@ import {UserService  } from "../service/user.service";
   styleUrls: ['./admin-advertisements.component.css']
 })
 export class AdminAdvertisementsComponent implements OnInit {
+  adDetail : AdDetails = <AdDetails>{};
   data:any
   newAds:any
   confiremedAds:any;
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService,private adService: UserService,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.service.getads().subscribe(res=>{
@@ -28,7 +31,16 @@ export class AdminAdvertisementsComponent implements OnInit {
       console.log(res);
       this.confiremedAds=res;
 
-    })
+    });
+   
   }
+  viewAd(id){
+    console.log(id)
+    this.adService.getOneAd(id).subscribe(res => {
+      this.adDetail = res;
+      console.log(this.adDetail)
+    });
+  }
+  
 
 }

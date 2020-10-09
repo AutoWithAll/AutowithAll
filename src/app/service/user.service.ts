@@ -75,7 +75,7 @@ export class UserService {
   }
 
   getConfiremedAds(){
-    return this.http.get('http://localhost:8080/advertisement/getconfiremed');
+    return this.http.get('http://localhost:8080/advertisement/getconfrimad');
   }
 
   showSuccess(msg){
