@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-insurance-sidebar',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./insurance-sidebar.component.css']
 })
 export class InsuranceSidebarComponent implements OnInit {
+  @Output() public childEvent =  new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  public fireEvent(x: number){
+    this.childEvent.emit(x);
   }
 
 }
