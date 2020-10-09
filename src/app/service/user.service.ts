@@ -70,6 +70,13 @@ export class UserService {
   remainpostAdCount(){
     return this.http.get('http://localhost:8080/advertisement/countremainad');
   }
+  getNewAds(){
+    return this.http.get('http://localhost:8080/advertisement/getnewad');
+  }
+
+  getConfiremedAds(){
+    return this.http.get('http://localhost:8080/advertisement/getconfiremed');
+  }
 
   showSuccess(msg){
     this.toaster.success(msg);
