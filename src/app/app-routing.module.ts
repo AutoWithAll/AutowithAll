@@ -40,9 +40,10 @@ import { LeaseComponent} from './lease/lease.component';
 import { PostLeasingPlanDialogComponent} from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { HomeViewadComponent} from './home-viewad/home-viewad.component';
 import { InsuranceComponent } from './insurance/insurance.component';
-import { InsuranceViewAdsComponent} from './insurance-view-ads/insurance-view-ads.component'
-import { InsuranceNavbarComponent} from './insurance-shared/insurance-navbar/insurance-navbar.component'
-import { InsuranceSidebarComponent} from './insurance-shared/insurance-sidebar/insurance-sidebar.component'
+import { InsuranceViewAdsComponent} from './insurance-view-ads/insurance-view-ads.component';
+import { InsuranceNavbarComponent} from './insurance-shared/insurance-navbar/insurance-navbar.component';
+import { InsuranceSidebarComponent} from './insurance-shared/insurance-sidebar/insurance-sidebar.component';
+import {InsuranceEditProfileComponent} from './insurance-edit-profile/insurance-edit-profile.component';
 
  
 const routes: Routes = [
@@ -99,9 +100,10 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
   { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
   { path : 'insurance', component : InsuranceComponent},
-  {path : 'insuranceviewads', component : InsuranceViewAdsComponent}
-  {path : 'insurancenavbar', component :InsuranceNavbarComponent}
-  {path : 'insurancesidebar', component : InsuranceSidebarComponent}
+  {path : 'insuranceviewads', component : InsuranceViewAdsComponent},
+  {path : 'insurancenavbar', component :InsuranceNavbarComponent},
+  {path : 'insurancesidebar', component : InsuranceSidebarComponent},
+  {path : 'insuranceeditprofile' , component : InsuranceEditProfileComponent}
 
 ];
 
