@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PostLeasingPlanDialogComponent } from '../post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { TokenStorageService } from '../service/token-storage.service';
 import { AdDetails } from '../models/ad.model';
 import { UserService } from '../service/user.service';
+import { PostInsurancePlanDialogComponent } from '../post-insurance-plan-dialog/post-insurance-plan-dialog.component';
 
 @Component({
   selector: 'app-insurance-view-ads',
@@ -18,9 +18,9 @@ export class InsuranceViewAdsComponent implements OnInit {
   constructor(public dialog:MatDialog , private userService : UserService) { }
   
 
-  openPostLeasingPlanDialog(){
+  PostInsurancePlanDialog(){
     // console.log(details);
-    this.dialog.open(PostLeasingPlanDialogComponent);
+    this.dialog.open(PostInsurancePlanDialogComponent);
   }
 
   ngOnInit(): void {

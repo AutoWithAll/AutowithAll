@@ -1,52 +1,128 @@
 <html>
     <body>
-        <mat-card>
-        <form  [formGroup]="editForm" (ngSubmit)="onSubmit()">
-            
-            <span style="font-size: 150%" >Edit your details here</span><br><br><br>  
-            <mat-form-field class="full-width">
-              <input matInput placeholder="FName" formControlName="fname" />
-            </mat-form-field><br>
-  
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Email" formControlName="username" />
-            </mat-form-field><br>
-  
-            <mat-form-field class="full-width">
-              <input
-                matInput
-                placeholder="Contact Number"
-                formControlName="t_number"
-              />
-            </mat-form-field><br>
-  
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Address" formControlName="address" />
-            </mat-form-field><br><br>
-            <span style="font-size: 150%"
-              ><button
-              type="reset"
-                class="button"
-                mat-raised-button
-                color="primary"
-                style="margin-right: 50px; margin-left: 200px"
-              >
-                CANCEL
-              </button>
-              <button
-              type="submit"
-                class="button"
-                mat-raised-button
-                color="primary"
-                style="margin-left: 50px"
-              >
-                SAVE
-              </button></span
-            >
-          </form>
-        </mat-card>
-  
-          <span></span>
+      <mat-grid-list cols = "2">
+
+        <mat-grid-tile>
+          <mat-card style="width: 75%; height: 95%; border-radius: 20px;">
+            <div>
+              <h2 style="text-align: center;">Edit your details here</h2>
+            </div>
+            <div style="text-align: center;">
+           <form  [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <p>
+              <mat-form-field appearance="legacy" >
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="FName" formControlName="fname" >
+                <!-- <mat-hint>Enter your current password</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="legacy">
+                <mat-label>Last NAme</mat-label>
+                <input matInput placeholder="lname" formControlName="lname" >
+                <!-- <mat-hint>Enter your new password</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="legacy">
+                <mat-label>Telephone</mat-label>
+                <input matInput placeholder="Contact Number" formControlName="t_number" >
+                <!-- <mat-hint> re type new password password</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="legacy">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Address" formControlName="address" >
+                <!-- <mat-hint> re type new password password</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <mat-grid-list cols = "2" >
+              <mat-grid-tile > 
+                <button
+                type="submit"
+                  class="button"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-right: 150px"
+                >
+                  SAVE
+                </button></mat-grid-tile>
+              <mat-grid-tile ><button
+                type="submit"
+                  class="button"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-right: 150px"
+                  
+                >
+                  RESET
+                </button></mat-grid-tile>
+
+            </mat-grid-list>
+           
+           </form>
+           </div>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card style="width: 75%; height: 95%; border-radius: 20px;">
+            <div>
+              <h2 style="text-align: center;">Change Password</h2>
+            </div>
+            <div style="text-align: center;">
+           <form [formGroup]="Securityform" (ngSubmit)="onChangePassword()">
+            <p>
+              <mat-form-field appearance="legacy" >
+                <mat-label>Current Password</mat-label>
+                <input type="password" matInput formControlName="cur_password" >
+                <mat-hint>Enter your current password</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="legacy">
+                <mat-label>New Password</mat-label>
+                <input type="password" matInput formControlName="new_password" >
+                <mat-hint>Enter your new password</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="legacy">
+                <mat-label>Confirm Password</mat-label>
+                <input type="password" matInput formControlName="confirm_password" >
+                <mat-hint> re type new password password</mat-hint>
+              </mat-form-field>
+            </p>
+            <mat-grid-list cols = "2" >
+              <mat-grid-tile > 
+                <button
+                type="submit"
+                  class="button"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-right: 150px"
+                >
+                  SAVE
+                </button></mat-grid-tile>
+              <mat-grid-tile ><button
+                type="reset"
+                  class="button"
+                  mat-raised-button
+                  color="primary"
+                  style="margin-right: 150px"
+                  
+                >
+                  RESET
+                </button></mat-grid-tile>
+
+            </mat-grid-list>
+           
+           </form>
+           </div>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
          
  
   

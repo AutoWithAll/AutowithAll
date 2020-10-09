@@ -11,13 +11,36 @@ import { AuthenticationService } from '../service/authentication.service';
 import { Ad } from '../models/ad.model';
 import { User } from '../models/user.model';
 
+
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+
+    if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      // return if another validator has already found an error on the matchingControl
+      return;
+    }
+
+    // set error on matchingControl if validation fails
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ mustMatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
+  };
+}
+
 @Component({
   selector: 'app-insurance-edit-profile',
   templateUrl: './insurance-edit-profile.component.html',
   styleUrls: ['./insurance-edit-profile.component.css'],
 })
+
+
 export class InsuranceEditProfileComponent implements OnInit {
   editForm: FormGroup;
+  Securityform: FormGroup;
   
   userDetail: User = <User>{};
 
@@ -37,14 +60,30 @@ export class InsuranceEditProfileComponent implements OnInit {
     private tokenService: TokenStorageService,
     private authService: AuthenticationService
   ) {
-    this.editForm = fb.group({
-      fname: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      t_number: [
-        '',
-        [Validators.required, Validators.pattern('^((\\+94-?)|0)?[0-9]{10}$')],
-      ],
-      username: ['', [Validators.required]],
+    this.editForm = fb.group(
+      {
+        fname: ['', [Validators.required]],
+        lname: ['', [Validators.required]],
+        t_number: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern('^((\\+94-?)|0)?[0-9]{10}$'),
+          ],
+        ],
+        address: ['', [Validators.required]],
+        cur_password: ['', [Validators.required]],
+        new_password: ['', [Validators.required, Validators.minLength(6)]],
+        confirm_password: ['', [Validators.required]],
+      }
+    );
+    this.Securityform = fb.group({
+      cur_password: ['', [Validators.required]],
+      new_password: ['', [Validators.required, Validators.minLength(6)]],
+      confirm_password: ['', [Validators.required]],
+    },
+    {
+      validator: MustMatch('new_password', 'confirm_password'),
     });
   }
 
@@ -58,7 +97,7 @@ export class InsuranceEditProfileComponent implements OnInit {
 
     this.editForm.patchValue({
       fname: this.userDetail.fname,
-      username: this.userDetail.username,
+      lname: this.userDetail.lname,
       t_number: this.userDetail.tnumber,
       address: this.userDetail.address,
     });
@@ -73,8 +112,17 @@ export class InsuranceEditProfileComponent implements OnInit {
   get address() {
     return this.editForm.get('address');
   }
-  get username() {
-    return this.editForm.get('username');
+  get lname() {
+    return this.editForm.get('lname');
+  }
+  get new_password() {
+    return this.Securityform.get('new_password');
+  }
+  get cur_password() {
+    return this.Securityform.get('cur_password');
+  }
+  get confirm_password() {
+    return this.Securityform.get('confirm_password');
   }
   onSubmit() {
     console.log('workng submit editprofile');
@@ -82,8 +130,8 @@ export class InsuranceEditProfileComponent implements OnInit {
       fname: this.fname.value,
       tnumber: this.t_number.value,
       address: this.address.value,
-      username: this.username.value,
-      lname: this.userDetail.lname,
+      username: this.userDetail.username,
+      lname: this.lname.value,
       nic: this.userDetail.nic,
       password:this.userDetail.password,
       role:this.userDetail.role,
@@ -102,5 +150,28 @@ export class InsuranceEditProfileComponent implements OnInit {
         this.userService.shoeErr(err);
       },
     });
+  }
+
+  onChangePassword() {
+    console.log("button")
+    const sec_data = {
+      fname : this.userDetail.fname,
+      lname : this.userDetail.lname,
+      username : this.userDetail.username,
+      tnumber : this.userDetail.tnumber,
+      nic : this.userDetail.nic,
+      password: this.new_password.value,
+      role :this.userDetail.role,
+      cName :this.userDetail.cName,
+      address :this.userDetail.address,
+      regNum :this.userDetail.regNum,
+      imgId : this.userDetail.imgId
+    }
+    this.userService.changePassword(sec_data,this.cur_password.value).subscribe({next : (res) =>{
+      this.userService.showSuccess(res);
+    },
+  error : (err) =>{
+    this.userService.shoeErr(err);
+  }})
   }
 }
