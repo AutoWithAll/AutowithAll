@@ -62,6 +62,14 @@ import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { InsuranceViewAdsComponent } from './insurance-view-ads/insurance-view-ads.component';
+import { InsuranceNavbarComponent } from './insurance-shared/insurance-navbar/insurance-navbar.component';
+import { InsuranceSidebarComponent } from './insurance-shared/insurance-sidebar/insurance-sidebar.component';
+import { InsuranceEditProfileComponent } from './insurance-edit-profile/insurance-edit-profile.component';
+import { InsuranceProfileComponent } from './insurance-profile/insurance-profile.component';
+import { InsuranceVehicleComponent } from './insurance-vehicle/insurance-vehicle.component';
+import { PostInsurancePlanDialogComponent } from './post-insurance-plan-dialog/post-insurance-plan-dialog.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -105,6 +113,14 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
     LeaseSidebarComponent,
     PostLeasingPlanDialogComponent,
     HomeViewadComponent,
+    InsuranceComponent,
+    InsuranceViewAdsComponent,
+    InsuranceNavbarComponent,
+    InsuranceSidebarComponent,
+    InsuranceEditProfileComponent,
+    InsuranceProfileComponent,
+    InsuranceVehicleComponent,
+    PostInsurancePlanDialogComponent,
     
   ],
   imports: [

@@ -60,6 +60,7 @@ export class LoginComponentComponent implements OnInit {
     this.authService.loginUser(logindata).subscribe(
       (data) => {
         console.log(data.token);
+        console.log(data);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data); 
 
@@ -80,7 +81,7 @@ export class LoginComponentComponent implements OnInit {
           }else if (this.role == 'ROLE_USER') {
             this.router.navigate(['/sellerdash']);
           }else if (this.role == 'ROLE_ICOMPANY') {
-            this.router.navigate(['/insuranceDash']);
+            this.router.navigate(['/insurance']);
           }
         }, 2000);
       },

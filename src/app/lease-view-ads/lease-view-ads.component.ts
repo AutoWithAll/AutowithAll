@@ -14,8 +14,6 @@ export class LeaseViewAdsComponent   {
 
   constructor(public dialog:MatDialog) { }
 
-   
-
   data = [
     {
       name:"BMW i8",

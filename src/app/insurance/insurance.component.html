@@ -1,0 +1,17 @@
+ 
+<app-insurance-navbar (toggleSideBarForMe)="sideBarToggler( )"></app-insurance-navbar>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened] = "sideBarOpen">
+        <app-insurance-sidebar (childEvent)="selectedComponent=$event"></app-insurance-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content>
+         
+        <app-insurance-dashboard *ngIf= "selectedComponent === 0"></app-insurance-dashboard>
+        <app-insurance-view-ads *ngIf= "selectedComponent === 1"></app-insurance-view-ads>
+        <app-insurance-edit-profile *ngIf= "selectedComponent === 2"></app-insurance-edit-profile>
+
+    </mat-drawer-content>
+    
+</mat-drawer-container>

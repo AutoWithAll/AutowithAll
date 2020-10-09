@@ -1,0 +1,60 @@
+
+<!---->
+  
+  <!-- Advertiesment -->
+  <ul>
+    <li *ngFor="let item of adDetails">
+      <mat-grid-list cols="1" rowHeight="7:1">
+        <mat-grid-tile>
+          <mat-card class="wrapper">
+            <!-- <mat-card-title>one</mat-card-title> -->
+            <mat-grid-list cols="4" rowHeight="5:3">
+              <mat-grid-tile>
+                <mat-card class="one">
+                  <img
+                    mat-card-image
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
+                    alt="test"
+                  />
+                </mat-card>
+              </mat-grid-tile>
+              <mat-grid-tile colspan="2">
+                <mat-card class="one">
+                  <h4>
+                    <b>{{ item.name }} </b>
+                  </h4>
+                  {{ item.datetime }} <br />
+                  <label style="font-size: medium;">LKR-{{ item.price }}</label><br>
+  
+                  from - {{ item.datetime }} <br />
+                  model year - {{ item.m_year }} <br />
+                </mat-card>
+                
+              </mat-grid-tile>
+              
+              <!-- <mat-grid-tile>
+            <mat-card class="one"> </mat-card>
+          </mat-grid-tile> -->
+              <mat-grid-tile>
+                <mat-card class="one">
+                  <mat-grid-list cols="2" rowHeight="1:2" gutterSize="5px">
+                    <mat-grid-tile colspan="2">
+                      <mat-card class="two">
+                        <button mat-button color="primary"  margin (click)="PostInsurancePlanDialog()">Post Insurance Plan</button>
+                      </mat-card>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+                </mat-card>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </li>
+  </ul>
+  
+  <!-- Advertiesment -->
+  
+ 
+
+

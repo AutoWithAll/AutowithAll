@@ -18,7 +18,6 @@ export class Ad {
   colour: string;
   description: string;
   
-
 }
 
 export class AdDetails {

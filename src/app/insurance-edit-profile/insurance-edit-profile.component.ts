@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from 'src/app/service/user.service';
-import { TokenStorageService } from 'src/app/service/token-storage.service';
-import { AuthenticationService } from 'src/app/service/authentication.service';
-import { User } from 'src/app/models/user.model';
+import {
+  FormControl,
+  Validators,
+  FormGroup,
+  FormBuilder,
+} from '@angular/forms';
+import { UserService } from '../service/user.service';
+import { TokenStorageService } from '../service/token-storage.service';
+import { AuthenticationService } from '../service/authentication.service';
+import { Ad } from '../models/ad.model';
+import { User } from '../models/user.model';
+
 
 export function MustMatch(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
@@ -25,26 +32,34 @@ export function MustMatch(controlName: string, matchingControlName: string) {
 }
 
 @Component({
-  selector: 'app-editprofile',
-  templateUrl: './editprofile.component.html',
-  styleUrls: ['./editprofile.component.css']
+  selector: 'app-insurance-edit-profile',
+  templateUrl: './insurance-edit-profile.component.html',
+  styleUrls: ['./insurance-edit-profile.component.css'],
 })
-export class SellerEditprofileComponent implements OnInit {
+
+
+export class InsuranceEditProfileComponent implements OnInit {
   editForm: FormGroup;
   Securityform: FormGroup;
+  
   userDetail: User = <User>{};
 
-  fileData: File = null;
-  previewUrls;
-  fileUploadProgress: string = null;
-  uploadedFilePath: string = null;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
 
   constructor(
     fb: FormBuilder,
     private userService: UserService,
     private tokenService: TokenStorageService,
-    private authService : AuthenticationService
-  ) { 
+    private authService: AuthenticationService
+  ) {
     this.editForm = fb.group(
       {
         fname: ['', [Validators.required]],
@@ -56,7 +71,7 @@ export class SellerEditprofileComponent implements OnInit {
             Validators.pattern('^((\\+94-?)|0)?[0-9]{10}$'),
           ],
         ],
-        adress: ['', [Validators.required]],
+        address: ['', [Validators.required]],
         cur_password: ['', [Validators.required]],
         new_password: ['', [Validators.required, Validators.minLength(6)]],
         confirm_password: ['', [Validators.required]],
@@ -72,65 +87,33 @@ export class SellerEditprofileComponent implements OnInit {
     });
   }
 
-  fileChangeEvent(fileInput: any) {
-    this.fileData = fileInput.target.files[0];
-    this.preview();
-  }
-  preview() {
-    var mimeType = this.fileData.type;
-    if (mimeType.match(/image\/*/) == null) {
-      return;
-    }
+  ngOnInit() {
+    this.userDetail = this.tokenService.getUser();
+    // console.log(this.adDetail.imgId)
+    // console.log(this.userDetail)
+    // this.authService.getCurrentUser().subscribe(res => {
+    //   this.userDetail = res;
+    // })
 
-    var reader = new FileReader();
-    reader.readAsDataURL(this.fileData);
-    reader.onload = (_event) => {
-      console.log(reader.result)
-      this.previewUrls = reader.result;
-    };
-  }
-  removeImage(){
-    this.previewUrls.splice(0);
-  //   // console.log(index);
-  //   // let images = this.previewUrls ? [...this.previewUrls] : []
-
-  //   // if (index > -1 && index < images.length) {
-  //   //   images.splice(index, 1);
-  //   // }
-
-  //   // this.previewUrls = images;
-  }
-
-  ngOnInit(): void {
-    
-        this.userDetail = this.tokenService.getUser();
-      console.log(this.userDetail.imgId)
-      console.log(this.userDetail)
-      // this.authService.getCurrentUser().subscribe(res => {
-      //   this.userDetail = res;
-      // })
-  
-      this.editForm.patchValue({
-        fname: this.userDetail.fname,
-        lname: this.userDetail.lname,
-        t_number: this.userDetail.tnumber,
-        adress: this.userDetail.address,
-      });
-     
+    this.editForm.patchValue({
+      fname: this.userDetail.fname,
+      lname: this.userDetail.lname,
+      t_number: this.userDetail.tnumber,
+      address: this.userDetail.address,
+    });
   }
 
   get fname() {
     return this.editForm.get('fname');
   }
-
-  get lname() {
-    return this.editForm.get('lname');
-  }
   get t_number() {
     return this.editForm.get('t_number');
   }
-  get adress() {
-    return this.editForm.get('adress');
+  get address() {
+    return this.editForm.get('address');
+  }
+  get lname() {
+    return this.editForm.get('lname');
   }
   get new_password() {
     return this.Securityform.get('new_password');
@@ -141,23 +124,22 @@ export class SellerEditprofileComponent implements OnInit {
   get confirm_password() {
     return this.Securityform.get('confirm_password');
   }
-
   onSubmit() {
     console.log('workng submit editprofile');
     const editform = {
       fname: this.fname.value,
+      tnumber: this.t_number.value,
+      address: this.address.value,
+      username: this.userDetail.username,
       lname: this.lname.value,
-      username : this.userDetail.username,
-      tnumber : this.userDetail.tnumber,
-      nic : this.userDetail.nic,
-      password: this.new_password.value,
-      role :this.userDetail.role,
-      cName :this.userDetail.cName,
-      address :this.userDetail.address,
-      regNum :this.userDetail.regNum
+      nic: this.userDetail.nic,
+      password:this.userDetail.password,
+      role:this.userDetail.role,
+      cName:this.userDetail.cName,
+      regNum:this.userDetail.regNum,
+      imgId:this.userDetail.imgId
     };
-    console.log(this.cur_password.value);
-
+    console.log(editform )
     this.userService.editProfile(editform).subscribe({
       next: (res) => {
         console.log(res);
@@ -192,11 +174,4 @@ export class SellerEditprofileComponent implements OnInit {
     this.userService.shoeErr(err);
   }})
   }
-  submitPhoto(){
-    this.userService.changePhoto(this.previewUrls).subscribe(res => {
-      console.log(res)
-    })
-  }
-  deletePhoto(){}
-
 }

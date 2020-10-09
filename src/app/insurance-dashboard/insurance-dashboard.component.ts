@@ -2,6 +2,8 @@ import { Component, } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { TokenStorageService } from '../service/token-storage.service';
 import { User } from '../models/user.model';
+import { AuthenticationService } from '../service/authentication.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-insurance-dashboard',
@@ -12,19 +14,13 @@ export class InsuranceDashboardComponent {
 
   user : User
 
-  constructor(
-    public dialog:MatDialog , 
-    private tokenStorageService : TokenStorageService,
-     ) { }
+  constructor(public dialog:MatDialog ,private tokenStorageService : TokenStorageService,private tokenService: TokenStorageService,private authService: AuthenticationService, private userService : UserService) { }
 
      ngOnInit(){
        this.user = this.tokenStorageService.getUser();
      }
 
-  logOut(){
-    this.tokenStorageService.signOut();
-
-  }
+  
 
   openDialog(){
     const dialogRef = this.dialog.open(InsuranceDashboardDialog );
