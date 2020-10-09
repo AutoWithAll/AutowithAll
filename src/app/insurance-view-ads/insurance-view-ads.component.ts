@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
-import {PostLeasingPlanDialogComponent} from 'src/app/post-leasing-plan-dialog/post-leasing-plan-dialog.component'
-import { MatDialog} from '@angular/material/dialog';
-
+import { MatDialog } from '@angular/material/dialog';
+import { PostLeasingPlanDialogComponent } from '../post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 
 @Component({
-  selector: 'app-lease-view-ads',
-  templateUrl: './lease-view-ads.component.html',
-  styleUrls: ['./lease-view-ads.component.css']
+  selector: 'app-insurance-view-ads',
+  templateUrl: './insurance-view-ads.component.html',
+  styleUrls: ['./insurance-view-ads.component.css']
 })
-
-export class LeaseViewAdsComponent   {
+export class InsuranceViewAdsComponent implements OnInit {
+  
 
   constructor(public dialog:MatDialog) { }
-
   data = [
     {
       name:"BMW i8",
@@ -50,9 +47,7 @@ export class LeaseViewAdsComponent   {
     this.dialog.open(PostLeasingPlanDialogComponent);
   }
 
+  ngOnInit(): void {
+  }
+
 }
-
-
- 
-
-

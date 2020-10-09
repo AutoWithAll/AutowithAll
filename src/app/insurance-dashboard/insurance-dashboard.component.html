@@ -1,107 +1,98 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <!--  <span>HOME</span> -->
-    <button
-      mat-icon-button
-      class="icon"
-      aria-label="Example icon button with a menu icon"
-      (click)="drawer.toggle()"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div>AutoWithAll</div>
-    <span class="spacer"></span>
-    <button mat-icon-button class="icon">
-      <mat-icon>notifications</mat-icon>
-    </button>
-    <a mat-button (click) = "logOut()">Logout</a>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <mat-card>
-      <div class="profile-card">
-        <div class="header">
-          <a class="User"><h2>Welcome Insurance Company!</h2></a>
-        </div>
-        <mat-card-subtitle>Insurance Provider</mat-card-subtitle>
-        <div class="logo">
-          <img
-            src="https://thumbs.dreamstime.com/b/if-you-want-to-change-logo-your-car-insurance-agency-create-new-one-logo-template-you-looking-logo-122943931.jpg"
-          />
-        </div>
-      </div>
-    </mat-card>
-
-    <mat-nav-list>
-      <mat-list-item>
-        <button class="list-item" mat-flat-button (click)="openDialog()">
-          <mat-icon>work</mat-icon>
-          View Ads
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button class="list-item" mat-flat-button>
-          <mat-icon>create</mat-icon>
-          Edit Profile
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button class="list-item" mat-flat-button>
-          <mat-icon>notifications</mat-icon>
-          Insurance Requests
-        </button>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-drawer>
-
-  <mat-grid-list cols="3">
-    <mat-grid-tile colspan="2" class="t1">
-      <div class="image">
-        <img
-          style="width: 300px; height: 200px;"
-          src="https://thumbs.dreamstime.com/b/if-you-want-to-change-logo-your-car-insurance-agency-create-new-one-logo-template-you-looking-logo-122943931.jpg"
-        />
-      </div>
-
-      <div class="profile">
-        <table class="profile">
+<br> <br> <br>    
+     <mat-grid-list cols="3" rowHeight="1:1">
+       <mat-grid-tile class="tile">
+        <mat-card  class="t1"> 
+        <div class="image">
+          <img style="width: 300px; height: 200px;" src="https://cdn5.f-cdn.com/contestentries/888538/15588545/582b5e379d936_thumb900.jpg" >  
+          
+        
+        
+         <div>
+          <table class="profile">
           <tr>
             <td style="text-align: left;">Company Name</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">{{user.fname}} {{user.lname}}</td>
+            <td style="text-align: left;">Lease For You</td>
           </tr>
           <tr>
-            <td style="text-align: left;">Address</td>
+            <td style="text-align: left;">Address</td> 
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">High Level Road, Colombo 07</td>
+            <td style="text-align: left;">High Level Road, Colombo 02</td>
           </tr>
           <tr>
             <td style="text-align: left;">Contact No</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">{{user.tnumber}}</td>
+            <td style="text-align: left;">0112233445</td> 
           </tr>
           <tr>
             <td style="text-align: left;">Email</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">{{user.username}}</td>
+            <td style="text-align: left;">leaseforyou@gmail.com</td>
           </tr>
+
         </table>
       </div>
+    </div> 
+    </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile>
-      <mat-card class="status">
-        <div class="status">
-          <h2>Your Status</h2>
-          <div style="color: green;"><h1>Active</h1></div>
-          <h3>Your membership will expire in 7 days</h3>
-          <button mat-raised-button color="primary">click to pay</button>
+
+      <mat-card class="profile-card"> 
+
+        <div class="profile-card">
+           <div class="header">
+             <a class="User"><h2>Agent of The Company</h2></a> 
+           </div>   
+           <mat-card-subtitle>Leasing Provider</mat-card-subtitle>
+
+              <div class="logo">  
+                <img src="https://static.photocdn.pt/images/articles/2019/08/07/images/articles/2019/07/31/linkedin_profile_picture_tips-1.jpg">
+              </div> <br>
+              <div class="card">
+                <div  >Agent Name : A.M.Aththanayake</div>
+                <div  >Emp Id :  emp12345</div>
+                <div  >Email : aththanayake@gmail.com</div>
+                <div  >Contact No : 077313213</div>
+            </div>
+              
+
         </div>
       </mat-card>
+
     </mat-grid-tile>
-  </mat-grid-list>
-</mat-drawer-container>
+    
+    <mat-grid-tile>
+       <mat-card class="status"> 
+         <div class="status">
+            <h2>Your Status</h2>
+            <div style="color: green;"><h1>Active</h1></div>
+            <h3>Your membership will expire in 7 days</h3>
+            <button mat-raised-button color="primary">click to pay</button>
+        </div>
+       </mat-card>
+      
+    </mat-grid-tile>
+    </mat-grid-list>
+
+       
+         
+         
+          
+     
+       
+       
+        
+
+      
+       
+
+ 
+     
+
+     
+    
+  
+     
+   
+    
