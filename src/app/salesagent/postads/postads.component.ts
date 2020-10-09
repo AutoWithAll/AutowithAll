@@ -199,8 +199,8 @@ export class PostadsComponent implements OnInit {
       description: this.description.value,
       images : this.previewUrls,
       flag: 0,
-      lStatus:0,
-      iStatus:0
+      lStatus: 0,
+      iStatus: 0
     };
 
 

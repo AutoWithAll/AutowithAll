@@ -108,7 +108,6 @@ import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component'
     HomeViewadComponent,
     ViewleaseplanComponent,
     
-
   ],
   imports: [
     BrowserModule,
@@ -123,6 +122,14 @@ import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component'
       positionClass : 'toast-top-center'
     }),
     NgbModule,
+    
+    // RouterModule.forRoot([
+    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
+    //   // { path: 'register', component: RegistrationComponentComponent },
+    //   // { path: 'login', component: LoginComponentComponent },
+       
+     
+    // ]),
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],

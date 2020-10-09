@@ -40,4 +40,8 @@ export class AuthenticationService {
 
     this.router.navigate(['']);
   }
+
+  getCurrentUser() : Observable<any>{
+    return this.http.get('http://localhost:8080/user/currentuser');
+  }
 }
