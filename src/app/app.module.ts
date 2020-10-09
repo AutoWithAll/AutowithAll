@@ -60,7 +60,7 @@ import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sideba
 
 import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
-//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 import { HomeReportadComponent } from './home-reportad/home-reportad.component';
@@ -69,7 +69,6 @@ import { HomeFaqComponent } from './home-faq/home-faq.component';
 import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
 import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
 
-//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
   declarations: [
@@ -135,13 +134,7 @@ import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.com
     }),
     NgbModule,
     
-    // RouterModule.forRoot([
-    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
-    //   // { path: 'register', component: RegistrationComponentComponent },
-    //   // { path: 'login', component: LoginComponentComponent },
-       
-     
-    // ]),
+    
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],

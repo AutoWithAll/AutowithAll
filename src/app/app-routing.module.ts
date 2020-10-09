@@ -27,7 +27,7 @@ import {SellerPostadsComponent} from './normalseller/postads/postads.component';
 import {SellerViewadsComponent} from './normalseller/viewadsn/viewadsn.component';
 
 import  { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
-//Admindashboard
+
 import { AdminAdvertisementsComponent } from './admin-advertisements/admin-advertisements.component';
 import { AdminLeasingsComponent } from './admin-leasings/admin-leasings.component';
 import { AdminInsuranceComponent } from './admin-insurance/admin-insurance.component';
@@ -59,28 +59,17 @@ const routes: Routes = [
   { path:'adminLeasings',component:AdminLeasingsComponent},
   { path:'adminInsurance',component:AdminInsuranceComponent},
 
-// import { HomeViewadComponent } from './home-viewad/home-viewad.component';
-//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
- 
-
-  
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
   { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
- // { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
- // { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
- // { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
- // { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
- // { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
+   
  { path: 'home-view-ad', component: HomeViewadComponent},
- 
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
   { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
   {path: 'sidebar',component: SidebarComponent},
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
   {path: 'postads',component:PostadsComponent},
-  
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'normalsellerdash',component:SellerdashComponent},
   {path: 'viewadsn',component:SellerViewadsComponent},
@@ -88,7 +77,6 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent},
   { path : 'insuranceDash', component: InsuranceDashboardComponent},
   { path : 'leaseProfile', component: LeasingProfileComponent},
-
   { path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   { path : 'lease', component:LeaseComponent},
   {path:'report-ad',component:HomeReportadComponent},
@@ -96,8 +84,6 @@ const routes: Routes = [
   {path:'faq',component:HomeFaqComponent},
   {path:'privacy',component:HomePrivacypolicyComponent},
   {path:'terms',component:HomeTermsofUseComponent},
-  //{ path : 'leaseEditProfile', component: LeasingEditProfileComponent },
-  //{ path : 'lease', component:LeaseComponent},
   {path: 'sellerdash',component:SellerdashComponent , canActivate: [AuthGuard]},
   {path: 'editprofilen',component:SellerEditprofileComponent, canActivate: [AuthGuard]},
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
