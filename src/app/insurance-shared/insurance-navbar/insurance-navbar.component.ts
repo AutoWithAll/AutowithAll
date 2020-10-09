@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-insurance-navbar',
@@ -8,7 +9,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class InsuranceNavbarComponent implements OnInit {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private tokenService : TokenStorageService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,11 @@ export class InsuranceNavbarComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
+}
+
+logOut(){
+  this.tokenService.signOut();
+
 }
 
 }

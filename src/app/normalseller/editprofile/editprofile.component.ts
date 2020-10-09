@@ -102,13 +102,13 @@ export class SellerEditprofileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(() => {
-      //   this.userDetail = this.tokenService.getUser();
-      // console.log(this.userDetail.imgId)
-      // console.log(this.userDetail)
-      this.authService.getCurrentUser().subscribe(res => {
-        this.userDetail = res;
-      })
+    
+        this.userDetail = this.tokenService.getUser();
+      console.log(this.userDetail.imgId)
+      console.log(this.userDetail)
+      // this.authService.getCurrentUser().subscribe(res => {
+      //   this.userDetail = res;
+      // })
   
       this.editForm.patchValue({
         fname: this.userDetail.fname,
@@ -116,7 +116,7 @@ export class SellerEditprofileComponent implements OnInit {
         t_number: this.userDetail.tnumber,
         adress: this.userDetail.address,
       });
-      }, 1000)
+     
   }
 
   get fname() {

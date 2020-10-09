@@ -20,6 +20,7 @@ export class SellerdashComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getCurrentUser().subscribe(res => {
       this.user = res;
+      console.log(res)
     })
 
     this.userService.remainAdCount().subscribe(res => {

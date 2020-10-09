@@ -12,22 +12,22 @@
           <tr>
             <td style="text-align: left;">Company Name</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">Lease For You</td>
+            <td style="text-align: left;">{{user.cName}}</td>
           </tr>
           <tr>
             <td style="text-align: left;">Address</td> 
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">High Level Road, Colombo 02</td>
+            <td style="text-align: left;">{{user.address}}</td>
           </tr>
           <tr>
             <td style="text-align: left;">Contact No</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">0112233445</td> 
+            <td style="text-align: left;">{{user.tnumber}}</td> 
           </tr>
           <tr>
             <td style="text-align: left;">Email</td>
             <td style="text-align: center;">:</td>
-            <td style="text-align: left;">leaseforyou@gmail.com</td>
+            <td style="text-align: left;">{{user.username}}</td>
           </tr>
 
         </table>
@@ -44,17 +44,31 @@
            <div class="header">
              <a class="User"><h2>Agent of The Company</h2></a> 
            </div>   
-           <mat-card-subtitle>Leasing Provider</mat-card-subtitle>
+           <mat-card-subtitle>Insurance Provider</mat-card-subtitle>
 
-              <div class="logo">  
-                <img src="https://static.photocdn.pt/images/articles/2019/08/07/images/articles/2019/07/31/linkedin_profile_picture_tips-1.jpg">
-              </div> <br>
-              <div class="card">
-                <div  >Agent Name : A.M.Aththanayake</div>
-                <div  >Emp Id :  emp12345</div>
-                <div  >Email : aththanayake@gmail.com</div>
-                <div  >Contact No : 077313213</div>
-            </div>
+            <table class="profile">
+              <tr>
+                <td style="text-align: left;">Agent Name </td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">{{user.fname}} {{user.lname}}</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">Company Reg Number</td> 
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">{{user.regNum}}</td>
+              </tr>
+              <tr>
+                <td style="text-align: left;">Contact No</td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">?????????</td> 
+              </tr>
+              <tr>
+                <td style="text-align: left;">Email</td>
+                <td style="text-align: center;">:</td>
+                <td style="text-align: left;">???????</td>
+              </tr>
+    
+            </table>
               
 
         </div>
