@@ -5,8 +5,8 @@
     <mat-card class="one">
       <mat-card-subtitle><i><b> OVERVIEW </b></i></mat-card-subtitle>
       <a [routerLink]="['/aboutus']"> <i>About Us</i></a><br />
-      <a routerLink=""> <i>Privacy Policy</i></a><br />
-      <a routerLink=""> <i>Terms of Use</i></a>
+      <a [routerLink]="['/privacy']"> <i>Privacy Policy</i></a><br />
+      <a [routerLink]="['/terms']"> <i>Terms of Use</i></a>
     </mat-card>
   </mat-grid-tile>
 
@@ -32,13 +32,16 @@
     <mat-card class="one">
       <mat-card-subtitle><i><b> Help and Support </b></i></mat-card-subtitle>
       <a [routerLink]="['/faq']"> <i>FAQ</i></a><br />
-      <a routerLink=""> <i>Contact Us</i></a><br />
+      <a [routerLink]="['/report-ad']"> <i>Contact Us</i></a><br />
     </mat-card>
   </mat-grid-tile>
 
   <mat-grid-tile class="four" colspan="5">
     <mat-card class="four">
-      <mat-card-subtitle> <i> AutoWithAll </i></mat-card-subtitle>
+      <mat-card-content style="color: white;">  Copyright © 2020 AutoWithAll, All Rights Reserved.
+         
+          <i style="font-size: large;margin-left: 900px;">AutoWithAll</i>
+        </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 

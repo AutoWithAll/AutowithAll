@@ -66,6 +66,8 @@ import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 import { HomeReportadComponent } from './home-reportad/home-reportad.component';
 import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
 import { HomeFaqComponent } from './home-faq/home-faq.component';
+import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
+import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
 
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
@@ -114,6 +116,8 @@ import { HomeFaqComponent } from './home-faq/home-faq.component';
     HomeReportadComponent,
     HomeAboutUsComponent,
     HomeFaqComponent,
+    HomePrivacypolicyComponent,
+    HomeTermsofUseComponent,
 
     
   ],

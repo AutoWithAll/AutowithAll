@@ -42,7 +42,8 @@ import { HomeViewadComponent} from './home-viewad/home-viewad.component';
 import { HomeReportadComponent } from './home-reportad/home-reportad.component';
 import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
 import { HomeFaqComponent } from './home-faq/home-faq.component';
-
+import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
+import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -93,7 +94,8 @@ const routes: Routes = [
   {path:'report-ad',component:HomeReportadComponent},
   {path:'aboutus',component:HomeAboutUsComponent},
   {path:'faq',component:HomeFaqComponent},
-
+  {path:'privacy',component:HomePrivacypolicyComponent},
+  {path:'terms',component:HomeTermsofUseComponent},
   //{ path : 'leaseEditProfile', component: LeasingEditProfileComponent },
   //{ path : 'lease', component:LeaseComponent},
   {path: 'sellerdash',component:SellerdashComponent , canActivate: [AuthGuard]},
