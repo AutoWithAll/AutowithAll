@@ -24,7 +24,7 @@ export class PackageService {
     return this.http.get('http://localhost:8080/advertisement/countremainad');
   }
   ifActivePackage(){
-    return false;
+    return true;
   }
 
 
