@@ -1,4 +1,8 @@
 <app-agentsidebar></app-agentsidebar>
+<div *ngIf="isLoading">
+  <mat-progress-spinner></mat-progress-spinner>
+</div>
+<div *ngIf="!isLoading">
 <mat-grid-list cols="7" gutterSize="30px" rowHeight="820px">
   <mat-grid-tile colspan="5">
     <mat-card class="my-card">
@@ -188,3 +192,4 @@
       </mat-card>
    </mat-grid-tile> -->
 </mat-grid-list>
+</div>

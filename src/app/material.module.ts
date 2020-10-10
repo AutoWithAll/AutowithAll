@@ -17,14 +17,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TextFieldModule } from '@angular/cdk/text-field';
 // import { MatSort } from '@angular/material/sort';
-
 
 @NgModule({
   imports: [
@@ -51,7 +51,9 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     FormsModule,
     ReactiveFormsModule,
     MatProgressBarModule,
-    TextFieldModule
+    TextFieldModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     CommonModule,
@@ -77,7 +79,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     FormsModule,
     ReactiveFormsModule,
     MatProgressBarModule,
-    
+    MatProgressSpinnerModule,
   ],
 })
 export class MyMaterialModule {}
