@@ -54,7 +54,7 @@ export class UserService {
   }
 
   getOneAd(id) : Observable<any>{
-    return this.http.get('http://localhost:8080/advertisement/getAdById/' + id);
+    return this.http.get('http://localhost:8080/advertisement/getAdById/' +id);
   }
 
   editProfile(editprofile){
@@ -72,6 +72,10 @@ export class UserService {
   }
   getNewAds(){
     return this.http.get('http://localhost:8080/advertisement/getnewad');
+  }
+
+  acceptAd(id:number) {
+   return this.http.put('http://localhost:8080/admin/confrim/' +id,{});
   }
 
   getConfiremedAds(){

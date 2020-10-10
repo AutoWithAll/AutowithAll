@@ -14,7 +14,7 @@ export class AdminAdvertisementsComponent implements OnInit {
   newAds:any
   confiremedAds:any;
 
-  constructor(private service: UserService,private adService: UserService,private modalService: NgbModal) { }
+  constructor(private service: UserService  ) { }
 
   ngOnInit(): void {
     this.service.getads().subscribe(res=>{
@@ -23,24 +23,32 @@ export class AdminAdvertisementsComponent implements OnInit {
       //console.log();
     });
     this.service.getNewAds().subscribe(res=>{
-      console.log(res);
+     // console.log(res);
       this.newAds=res;
 
     });
     this.service.getConfiremedAds().subscribe(res=>{
-      console.log(res);
+      //console.log(res);
       this.confiremedAds=res;
 
     });
    
   }
   viewAd(id){
-    console.log(id)
-    this.adService.getOneAd(id).subscribe(res => {
+    //console.log(id)
+    this.service.getOneAd(id).subscribe(res => {
       this.adDetail = res;
       console.log(this.adDetail)
     });
   }
-  
+  // scroll(el: HTMLElement) {
+  //   el.scrollIntoView({behavior: 'smooth'});
+  // }
+  acceptAd(id){
+   this.service.acceptAd(id).subscribe(res=>{
+     console.log("successful");
+   }) ;
+   
+  }
 
 }

@@ -128,7 +128,7 @@ get lname() {
   return this.editForm.get('lname');
 }
 get t_number() {
-  return this.editForm.get('t_number');
+  return this.editForm.get('tnumber');
 }
 get adress() {
   return this.editForm.get('adress');
