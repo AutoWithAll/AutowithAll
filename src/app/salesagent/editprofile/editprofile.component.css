@@ -30,3 +30,6 @@
     margin-bottom: 10px;
 
   } 
+  .example-margin {
+    margin: 0 10px;
+  }

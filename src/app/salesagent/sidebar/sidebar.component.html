@@ -1,3 +1,14 @@
+<div  *ngIf="isLoading">
+  <mat-grid-list cols = "3" rows = "3">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile rowspan ="5">
+      <mat-card >
+        <mat-spinner style="margin: auto;" ></mat-spinner>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div *ngIf="!isLoading">
 <mat-toolbar color="primary">
   <button
     type="button"
@@ -99,3 +110,4 @@
 
   <!-- Add Content Here -->
 </mat-sidenav-container>
+</div>

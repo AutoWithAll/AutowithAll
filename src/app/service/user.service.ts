@@ -57,12 +57,7 @@ export class UserService {
     return this.http.put('http://localhost:8080/user/changepassword/'+pwd , secData);
   }
 
-  remainAdCount(){
-    return this.http.get('http://localhost:8080/advertisement/countpostedad');
-  }
-  remainpostAdCount(){
-    return this.http.get('http://localhost:8080/advertisement/countremainad');
-  }
+  
 
   showSuccess(msg){
     this.toaster.success(msg);
@@ -87,6 +82,13 @@ export class UserService {
 
     return this.http.post<Lease>('http://localhost:8080/postlease' , lease);
 
+  }
+
+  remainAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  }
+  remainpostAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countremainad');
   }
 
 }

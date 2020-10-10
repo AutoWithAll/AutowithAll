@@ -10,6 +10,7 @@ import { Ad } from 'src/app/models/ad.model';
 import { UserService } from './../../service/user.service';
 import { ToastrService } from 'ngx-toastr';
 import * as _ from 'lodash';
+import { PackageService } from 'src/app/service/package.service';
 
 @Component({
   selector: 'app-postads',
@@ -31,8 +32,15 @@ export class PostadsComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private adservice: UserService,
-    private toast: ToastrService
-  ) {}
+    private toast: ToastrService,
+    private packService : PackageService
+  ) {
+    
+    
+  }
+  ifActive(){
+    return this.packService.ifActivePackage();
+  }
 
   fileChangeEvent(fileInput: any) {
     this.fileData = fileInput.target.files[0];

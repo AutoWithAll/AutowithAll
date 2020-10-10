@@ -1,97 +1,43 @@
-<br>
-<br>
+<br />
+<br />
 
-
-<h2 mat-dialog-title style="color: blue; text-align: center;">
+<h2 mat-dialog-title style="color: blue; text-align: center">
     Post Leasing Plan
 </h2>
- 
-<div class="card" >
-    <form class="form" [formGroup]="leaseForm" (ngSubmit)="onSubmit()" >
-         
+
+<div class="card">
+    <form class="form" [formGroup]="leaseForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width">
             <mat-label>Lease Rental Amount</mat-label>
-            <input
-              matInput
-              id="ramount"
-              formControlName="ramount"
-              name="ramount"
-              placeholder="Rental Amount"
-              required
-               
-            />
+            <input matInput id="ramount" formControlName="ramount" name="ramount" placeholder="Rental Amount"
+                required />
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Number of Installments</mat-label>
-            <input
-              matInput
-              id="years"
-              formControlName="years"
-              name="years"
-              placeholder="No of Installments"
-              required
-               
-            />
+            <input matInput id="years" formControlName="years" name="years" placeholder="No of Installments" required />
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Interest Rate</mat-label>
-            <input
-              matInput
-              id="interest"
-              formControlName="interest"
-              name="interest"
-              placeholder="Rate"
-              required
-               
-            />
+            <input matInput id="interest" formControlName="interest" name="interest" placeholder="Rate" required />
         </mat-form-field>
 
         <mat-form-field class="full-width">
             <mat-label>Installment Amount</mat-label>
-            <input
-              matInput
-              id="iamount"
-              formControlName="iamount"
-              name="iamount"
-              placeholder="Installment Amount"
-              required
-               
-            />
+            <input matInput id="iamount" formControlName="iamount" name="iamount" placeholder="Installment Amount"
+                required />
         </mat-form-field>
-        
-        <mat-card-actions>
 
-            <button
-            mat-raised-button
-            color="primary"
-            class="button1"
-            (click) = "onClose()"
-            type="button"
-             
-            >
+        <mat-card-actions>
+            <button mat-raised-button color="primary" class="button1" (click)="onClose()" type="button">
                 Cancel
             </button>
 
-            <button
-            mat-raised-button
-            color="primary"
-            class="button2"
-            [disabled]="leaseForm.invalid"
-            mat-dialog-close
-            
-            type="submit"
-            (click) = "onClose()"
-            
-            >
+            <button mat-raised-button color="primary" class="button2" [disabled]="leaseForm.invalid" mat-dialog-close
+                type="submit" (click)="onClose()">
                 Submit
             </button>
-    </mat-card-actions>
+        </mat-card-actions>
     </form>
-     
-     
 </div>
- 
- 
- 

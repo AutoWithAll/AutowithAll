@@ -78,7 +78,7 @@ const routes: Routes = [
  // { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
  { path: 'home-view-ad', component: HomeViewadComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
-  { path: 'salesagentdash', component: SalesdashboardComponent, canActivate: [AuthGuard]},
+  { path: 'salesagentdash', component: SalesdashboardComponent},
   {path: 'sidebar',component: SidebarComponent},
   {path: 'viewads',component:ViewadsComponent},
   {path: 'editprofile',component:EditprofileComponent},
