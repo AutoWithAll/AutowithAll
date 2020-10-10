@@ -41,6 +41,7 @@ import { PostLeasingPlanDialogComponent} from './post-leasing-plan-dialog/post-l
 import { HomeViewadComponent} from './home-viewad/home-viewad.component';
 import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
 import {ViewinsuranceplanComponent} from './viewinsuranceplan/viewinsuranceplan.component';
+import { PaymentComponent } from './payment/payment.component';
 
  
 const routes: Routes = [
@@ -101,7 +102,8 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
   { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
   {path : 'viewleaseplan', component: ViewleaseplanComponent},
-  {path : 'viewinsplan', component: ViewinsuranceplanComponent}
+  {path : 'viewinsplan', component: ViewinsuranceplanComponent},
+  {path : 'payment', component: PaymentComponent}
 
 ];
 

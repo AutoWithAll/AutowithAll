@@ -64,6 +64,7 @@ import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
 import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsuranceplan.component';
+import { PaymentComponent } from './payment/payment.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -109,6 +110,7 @@ import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsurancepla
     HomeViewadComponent,
     ViewleaseplanComponent,
     ViewinsuranceplanComponent,
+    PaymentComponent,
     
   ],
   imports: [
