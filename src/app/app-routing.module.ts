@@ -48,6 +48,10 @@ import {InsuranceProfileComponent} from './insurance-profile/insurance-profile.c
 import {InsuranceVehicleComponent} from './insurance-vehicle/insurance-vehicle.component';
 import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component'
  
+import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
+import {ViewinsuranceplanComponent} from './viewinsuranceplan/viewinsuranceplan.component';
+import { PaymentComponent } from './payment/payment.component';
+
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -62,10 +66,14 @@ const routes: Routes = [
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
   { path:'adminLeasings',component:AdminLeasingsComponent},
   { path:'adminInsurance',component:AdminInsuranceComponent},
-
-// import { HomeViewadComponent } from './home-viewad/home-viewad.component';
+ 
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
+ 
+  { path: '', component: HomeComponent },
+  { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
+
 
   
   { path: 'forgetpassword', component: ForgetPasswordComponent },
@@ -109,8 +117,11 @@ const routes: Routes = [
   {path : 'insuranceeditprofile' , component : InsuranceEditProfileComponent},
   {path : 'insuranceprofile' , component : InsuranceProfileComponent},
   {path : 'insurancevehicle' , component : InsuranceVehicleComponent},
-  {path : 'postinsuranceplan', component : PostInsurancePlanDialogComponent}
+  {path : 'postinsuranceplan', component : PostInsurancePlanDialogComponent},
 
+  {path : 'viewleaseplan', component: ViewleaseplanComponent},
+  {path : 'viewinsplan', component: ViewinsuranceplanComponent},
+  {path : 'payment', component: PaymentComponent}
 
 ];
 

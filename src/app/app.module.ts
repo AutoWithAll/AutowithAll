@@ -72,6 +72,9 @@ import { InsuranceVehicleComponent } from './insurance-vehicle/insurance-vehicle
 import { PostInsurancePlanDialogComponent } from './post-insurance-plan-dialog/post-insurance-plan-dialog.component';
 import { ChoosepackageComponent } from "./salesagent/salesdashboard/choosepackage/choosepackage.component";
 
+import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
+import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsuranceplan.component';
+import { PaymentComponent } from './payment/payment.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -124,6 +127,9 @@ import { ChoosepackageComponent } from "./salesagent/salesdashboard/choosepackag
     InsuranceVehicleComponent,
     PostInsurancePlanDialogComponent,
     ChoosepackageComponent,
+    ViewleaseplanComponent,
+    ViewinsuranceplanComponent,
+    PaymentComponent,
     
   ],
   imports: [
