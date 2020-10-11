@@ -34,6 +34,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 
 import { LeasingDashboardComponent } from './leasing-dashboard/leasing-dashboard.component';
+//import {LeasingDashboardDialog} from './leasing-dashboard/leasing-dashboard.component';
  
 import {SidebarComponent} from './salesagent/sidebar/sidebar.component';
 
@@ -59,7 +60,7 @@ import { LeaseSidebarComponent } from './lease-shared/lease-sidebar/lease-sideba
 
 import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-leasing-plan-dialog.component';
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
-//import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
+
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 import { ReportComponent } from './report/report.component';
@@ -79,6 +80,12 @@ import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsurancepla
 import { PaymentComponent } from './payment/payment.component';
 import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-details.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+import { HomeReportadComponent } from './home-reportad/home-reportad.component';
+import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
+import { HomeFaqComponent } from './home-faq/home-faq.component';
+import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
+import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
+
 
 @NgModule({
   declarations: [
@@ -98,6 +105,7 @@ import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-detai
     AdminUsersComponent,
     DeleteAdNormalDialog,
     LeasingDashboardComponent,
+    
     SalesdashboardComponent,
     SidebarComponent,
     ViewadsComponent,
@@ -136,6 +144,12 @@ import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-detai
     ViewinsuranceplanComponent,
     PaymentComponent,
     AdminEditDetailsComponent,
+    HomeReportadComponent,
+    HomeAboutUsComponent,
+    HomeFaqComponent,
+    HomePrivacypolicyComponent,
+    HomeTermsofUseComponent,
+
     
   ],
   imports: [
@@ -152,13 +166,7 @@ import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-detai
     }),
     NgbModule,
     
-    // RouterModule.forRoot([
-    //   // { path: '', redirectTo: '/', pathMatch: 'full' },
-    //   // { path: 'register', component: RegistrationComponentComponent },
-    //   // { path: 'login', component: LoginComponentComponent },
-       
-     
-    // ]),
+    
   ],
   providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent],
