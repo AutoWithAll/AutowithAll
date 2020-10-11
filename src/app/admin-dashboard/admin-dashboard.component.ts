@@ -35,7 +35,8 @@ export class AdminDashboardComponent implements OnInit {
   users:any
   userCount:number
   userDetail: User = <User>{};
-   
+  newAds:any
+  newAdsCount:number
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
@@ -52,6 +53,12 @@ export class AdminDashboardComponent implements OnInit {
       
     })
     this.userDetail = this.tokenService.getUser();
+    this.service.getNewAds().subscribe(res=>{
+      // console.log(res);
+       this.newAds=res;
+       this.newAdsCount=this.newAds.length;
+ 
+     });
     
   }
 
