@@ -139,7 +139,8 @@
         <td style="text-align: center;color: red;">:</td>
         <td style="text-align: left;color: red;">{{adDetail.datetime}}</td>
     </tr>
-    <tr> <button mat-raised-button (click)="acceptAd(adDetail.id)">accept</button> </tr>
+    <tr> <button mat-raised-button (click)="acceptAd(adDetail.id)">accept</button> 
+        <button mat-raised-button href [routerLink]="['/reportAd',adDetail.id]" >report</button> </tr>
     
   
       </table>

@@ -7,7 +7,8 @@ import {
 } from '@angular/forms';
 import {Report} from '../models/report.model';
 import {UserService  } from "../service/user.service";
-import { Router } from '@angular/router';
+ 
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 export function MustMatch(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
@@ -35,10 +36,18 @@ export function MustMatch(controlName: string, matchingControlName: string) {
 export class ReportComponent implements OnInit {
   report:Report=new Report();
   reportForm:FormGroup;
-
-  constructor(private formBuilder: FormBuilder,private userService:UserService) { }
+  adId:number
+  constructor(private formBuilder: FormBuilder,private userService:UserService,private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // this.route.queryParams.subscribe(params => {
+    //   this.adId = params['id'];
+    //   console.log(this.adId);
+
+    // });
+    this.adId = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(this.adId);
     this.reportForm=this.formBuilder.group(
       {
         reason:['',[Validators.required]],

@@ -96,7 +96,7 @@ const routes: Routes = [
   {path: 'postadsn',component:SellerPostadsComponent , canActivate: [AuthGuard]},
   { path : 'insuranceDash', component: InsuranceDashboardComponent, canActivate: [AuthGuard]},
   { path : 'leaseProfile', component: LeasingProfileComponent , canActivate: [AuthGuard]},
-  {path:'reportAd',component:ReportComponent,canActivate:[AuthGuard]},
+  {path:'reportAd/:id',component:ReportComponent,canActivate:[AuthGuard]},
   {path:'adminDetails',component:AdminEditDetailsComponent,canActivate:[AuthGuard]}
 ];
 

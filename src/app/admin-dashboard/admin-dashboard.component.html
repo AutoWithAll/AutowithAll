@@ -163,12 +163,12 @@
                     <span matBadge="{{newAdsCount}}" matBadgeOverlap="false" matBadgeSize="large" > </span>
                   </div>
                   </mat-grid-tile>
-                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;"> New Leasing Companies</button>
+                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;" href [routerLink]="['/adminLeasings']"> New Leasing Companies</button>
                     
                     <div>
                     <span matBadge="3" matBadgeOverlap="false" matBadgeSize="large"> </span></div>
                   </mat-grid-tile>
-                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;">New Insurance Companies</button>
+                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;" [routerLink]="['/adminInsurance']">New Insurance Companies</button>
                     <div>
                     <span matBadge="9" matBadgeOverlap="false" matBadgeSize="large"> </span></div>
                   </mat-grid-tile>

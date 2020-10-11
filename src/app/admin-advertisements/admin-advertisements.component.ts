@@ -13,6 +13,7 @@ export class AdminAdvertisementsComponent implements OnInit {
   data:any
   newAds:any
   confiremedAds:any;
+  reportAdId:number;
 
   constructor(private service: UserService  ) { }
 
@@ -38,6 +39,7 @@ export class AdminAdvertisementsComponent implements OnInit {
     //console.log(id)
     this.service.getOneAd(id).subscribe(res => {
       this.adDetail = res;
+      this.reportAdId=this.adDetail.id;
       console.log(this.adDetail)
     });
   }
