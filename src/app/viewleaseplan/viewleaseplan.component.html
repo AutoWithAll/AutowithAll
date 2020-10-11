@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<mat-grid-list cols="3" rows="12" rowHeight="100px" >
+    <mat-grid-tile colspan="3">
+  <mat-card class=title>View Available Leasing Plans for Vehicle : </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="4:1">
+    <mat-grid-tile>
+        <mat-card class="wrapper">
+            <mat-grid-list cols="4" rowHeight="1:1">
+                <mat-grid-tile>
+                    <mat-card class="one">
+                      <img mat-card-image src= "https://cdn5.f-cdn.com/contestentries/888538/15588545/582b5e379d936_thumb900.jpg"  />
+                        <br/>
+                        <h2 style="margin-left: 30px;">
+                            <b>Company Name</b>
+                        </h2>
+                    </mat-card>
+                  </mat-grid-tile>
+                  <mat-grid-tile >
+                    <mat-card class="two">
+                        
+                        <label style="font-size: large;">
+                            Lease Rental Amount :
+                        </label>
+                        <br/> <br/>
+                        <label style="font-size: large;">Number of Installments:</label>
+                        <br/> <br/>
+                        <label style="font-size: large;">Special Requirements:</label>
+                    </mat-card>
+                </mat-grid-tile>   
+                
+                <mat-grid-tile >
+                    <mat-card class="three">
+                        
+                        <label style="font-size: large;">Interest Rate:</label>
+                        
+                        <br/><br/>
+                        <label style="font-size: large;">Installment Amount:</label>
+                        
+                        <br/>
+                        
+                    </mat-card>
+                  </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-card class="one">
+                        <mat-grid-list cols="2" rowHeight="1:1" gutterSize="5px">
+                        <mat-grid-tile colspan="2">
+                            <mat-card class="two">
+                                <button mat-button color="primary" routerLink = "../leaseProfile">View Company Details</button>
+                            </mat-card>
+                        </mat-grid-tile>
+
+                        </mat-grid-list>
+
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>

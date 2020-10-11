@@ -1,48 +1,50 @@
 <mat-divider color="#3F51B5"></mat-divider>
 <mat-grid-list gutterSize="5px" cols="5" rowHeight="7:1">
+
   <mat-grid-tile rowspan="4">
     <mat-card class="one">
-      <mat-card-subtitle
-        ><i><b> OVERVIEW </b></i></mat-card-subtitle
-      >
-      <a routerLink=""> <i>About Us</i></a
-      ><br />
-      <a routerLink=""> <i>Contact Us</i></a
-      ><br />
-      <a routerLink=""> <i>Privacy Policy</i></a
-      ><br />
-      <a routerLink=""> <i>Terms of Use</i></a>
+      <mat-card-subtitle><i><b> OVERVIEW </b></i></mat-card-subtitle>
+      <a [routerLink]="['/aboutus']"> <i>About Us</i></a><br />
+      <a [routerLink]="['/privacy']"> <i>Privacy Policy</i></a><br />
+      <a [routerLink]="['/terms']"> <i>Terms of Use</i></a>
     </mat-card>
   </mat-grid-tile>
+
   <mat-grid-tile colspan="2" rowspan="4">
     <mat-card class="two">
-      <mat-card-subtitle
-        ><i><b>Categories</b></i></mat-card-subtitle
-      >
+      <mat-card-subtitle><i><b>Categories</b></i></mat-card-subtitle>
       <div class="colomn">
         <a routerLink=""> <i>Car </i></a><br />
-        <a routerLink=""> <i>Van</i></a
-        ><br />
-        <a routerLink=""> <i>SUV s</i></a
-        ><br />
+        <a routerLink=""> <i>Van</i></a><br />
+        <a routerLink=""> <i>SUV s</i></a><br />
         <a routerLink=""> <i>jeep</i></a>
       </div>
       <div class="colomn">
         <a routerLink=""> <i>Truck </i></a><br />
-        <a routerLink=""> <i>Bus</i></a
-        ><br />
-        <a routerLink=""> <i>Lorry</i></a
-        ><br />
+        <a routerLink=""> <i>Bus</i></a><br />
+        <a routerLink=""> <i>Lorry</i></a><br />
         <a routerLink=""> <i>Three wheeler</i></a>
       </div>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="4" colspan="2"></mat-grid-tile>
-  <mat-grid-tile class="four" colspan="5">
-    <mat-card class="four">
-      <mat-card-subtitle> <i> AutoWithAll </i></mat-card-subtitle>
+
+  <mat-grid-tile rowspan="4" colspan="2">
+    <mat-card class="one">
+      <mat-card-subtitle><i><b> Help and Support </b></i></mat-card-subtitle>
+      <a [routerLink]="['/faq']"> <i>FAQ</i></a><br />
+      <a [routerLink]="['/report-ad']"> <i>Contact Us</i></a><br />
     </mat-card>
   </mat-grid-tile>
+
+  <mat-grid-tile class="four" colspan="5">
+    <mat-card class="four">
+      <mat-card-content style="color: white;">  Copyright © 2020 AutoWithAll, All Rights Reserved.
+         
+          <i style="font-size: large;margin-left: 900px;">AutoWithAll</i>
+        </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
 </mat-grid-list>
 
 <router-outlet></router-outlet>
