@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginGuard } from './guards/login.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { AgentGuard} from './guards/agent.guard'
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -10,7 +11,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { HomeComponent} from "./home/home.component";
 import {LeasevehicleComponent} from "./leasevehicle/leasevehicle.component";
-import { from } from 'rxjs';
+
 
 
  
@@ -47,28 +48,29 @@ import {InsuranceEditProfileComponent} from './insurance-edit-profile/insurance-
 import {InsuranceProfileComponent} from './insurance-profile/insurance-profile.component';
 import {InsuranceVehicleComponent} from './insurance-vehicle/insurance-vehicle.component';
 import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component'
+import { AdminGuard } from './guards/admin.guard';
  
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'register', component: RegistrationComponentComponent },
-  { path: 'login', component: LoginComponentComponent },
+  { path: 'register', component: RegistrationComponentComponent,canActivate: [LoginGuard]  },
+  { path: 'login', component: LoginComponentComponent,canActivate: [LoginGuard]  },
   { path: 'postlease', component:PostLeasingPlanDialogComponent},
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
-  { path:'adminDashboard',component: AdminDashboardComponent},
-  { path:'adminUsers',component:AdminUsersComponent},
-  { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
-  { path:'adminLeasings',component:AdminLeasingsComponent},
-  { path:'adminInsurance',component:AdminInsuranceComponent},
+  { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
+  { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
+  { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
+  { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
+  { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},
 
 // import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
  
 
   
-  { path: 'forgetpassword', component: ForgetPasswordComponent },
+  { path: 'forgetpassword', component: ForgetPasswordComponent , canActivate: [LoginGuard]},
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
   { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
  // { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
@@ -78,11 +80,11 @@ const routes: Routes = [
  // { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},  
  { path: 'home-view-ad', component: HomeViewadComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
-  { path: 'salesagentdash', component: SalesdashboardComponent},
-  {path: 'sidebar',component: SidebarComponent},
-  {path: 'viewads',component:ViewadsComponent},
-  {path: 'editprofile',component:EditprofileComponent},
-  {path: 'postads',component:PostadsComponent},
+  { path: 'salesagentdash', component: SalesdashboardComponent,canActivate: [AgentGuard] },
+  {path: 'sidebar',component: SidebarComponent ,canActivate: [AgentGuard]},
+  {path: 'viewads',component:ViewadsComponent, canActivate: [AgentGuard]},
+  {path: 'editprofile',component:EditprofileComponent ,canActivate: [AgentGuard]},
+  {path: 'postads',component:PostadsComponent, canActivate: [AgentGuard]},
   
   {path: 'sidebarn',component: SellerSidebarComponent},
   {path: 'normalsellerdash',component:SellerdashComponent},

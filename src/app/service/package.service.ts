@@ -10,7 +10,7 @@ export class PackageService {
   constructor(private http : HttpClient,  private toaster : ToastrService) { }
 
   getPackageDetails(id){
-    return this.http.get('http://localhost:8080/{id}');
+    return this.http.get('http://localhost:8080/package/packsDetails/'+id);
   }
 
   getCurrentPackage(){
@@ -25,6 +25,16 @@ export class PackageService {
   }
   ifActivePackage(){
     return false;
+  }
+
+  isExistAgent(){
+    return this.http.get('http://localhost:8080/agent/isnewagent');
+  }
+  addPackage(pkgId){
+    return this.http.post('http://localhost:8080/agent/packagepurchase/' + pkgId, null);
+  }
+  updatePackage(pkgId){
+    return this.http.put('http://localhost:8080/agent/packageupdate/' + pkgId ,null );
   }
 
 

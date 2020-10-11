@@ -1,4 +1,6 @@
 <app-agentsidebar></app-agentsidebar>
+<div *ngIf="!wait">
+
 <mat-grid-list cols="4" rows="5" gutterSize="30px" rowHeight="190px">
   <mat-grid-tile>
     <img
@@ -40,7 +42,7 @@
           <td style="text-align: center; font-size: 100%">
             :&nbsp;&nbsp;&nbsp;
           </td>
-          <td *ngIf="ifActive()" style="text-align: left; font-size: 100%">{{curPackDetail}}/=</td>
+          <td *ngIf="ifActive()" style="text-align: left; font-size: 100%">{{curPackDetail.packages.packageName}}</td>
           <td *ngIf="!ifActive()" style="text-align: left; font-size: medium; color: red; font-size: 100%">First Select your Package</td>
         </tr>
         <tr *ngIf="ifActive()">
@@ -50,7 +52,7 @@
           <td style="text-align: center; font-size: 100%">
             :&nbsp;&nbsp;&nbsp;
           </td>
-          <td style="text-align: left; font-size: 100%">{{curPackDetail}}</td>
+          <td style="text-align: left; font-size: 100%">{{curPackDetail.packages.maxAd}}</td>
         </tr>
       </table>
     </mat-card>
@@ -148,3 +150,5 @@
     </p>
   </mat-grid-tile>
 </mat-grid-list>
+
+</div>
