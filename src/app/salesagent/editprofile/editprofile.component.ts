@@ -179,7 +179,7 @@ export class EditprofileComponent implements OnInit {
     this.userService.editProfile(editform).subscribe({
       next: (res) => {
         console.log(res);
-        this.userService.showSuccess(res);
+        this.userService.showSuccess("Profile Update Successfull");
       },
       error: (err) => {
         console.log(err);
@@ -202,16 +202,17 @@ export class EditprofileComponent implements OnInit {
       imgId : this.userDetail.imgId
     }
     this.userService.changePassword(sec_data,this.cur_password.value).subscribe({next : (res) =>{
-      this.userService.showSuccess(res);
+      this.userService.showSuccess("Password Changed Succesfull");
     },
   error : (err) =>{
     this.userService.shoeErr(err);
   }})
-  window.location.reload();
+  // window.location.reload();
   }
   deletePhoto(){
 
   }
+  
   submitPhoto(){
     this.userService.changePhoto(this.previewUrls).subscribe(res => {
       console.log(res)

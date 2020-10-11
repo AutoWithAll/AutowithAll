@@ -1,4 +1,6 @@
 <h3 mat-dialog-title class="title"><b>Select Package what you want</b></h3>
+<div *ngIf="!isLoading">
+
 
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile>
@@ -10,8 +12,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Platinum Package</h1>
-            <p>Price : 4000/=</p>
-            <p>Ads : 40</p>
+            <p>Price : {{platinumDetails.price}}/=</p>
+            <p>Ads : {{platinumDetails.maxAd}}</p>
+            <p>Valid till : {{platinumDetails.endingDate}}</p>
             <button (click) ="choosePlan(1)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
@@ -26,8 +29,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Gold Package</h1>
-            <p>Price : 3000/=</p>
-            <p>Ads : 30</p>
+            <p>Price : {{goldDetails.price}}/=</p>
+            <p>Ads : {{goldDetails.maxAd}}</p>
+            <p>Valid till : {{goldDetails.endingDate}}</p>
             <button mat-raised-button color="primary" (click) ="choosePlan(2)" >Choose</button>
           </div>
         </div>
@@ -43,8 +47,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Silver Package</h1>
-            <p>Price : 1000/=</p>
-            <p>Ads : 10</p>
+            <p>Price : {{silverDetails.price}}/=</p>
+            <p>Ads : {{silverDetails.maxAd}}</p>
+            <p>Valid till : {{silverDetails.endingDate}}</p>
             <button (click) ="choosePlan(3)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
@@ -53,3 +58,5 @@
   </mat-grid-tile>
 </mat-grid-list>
 
+  
+</div>

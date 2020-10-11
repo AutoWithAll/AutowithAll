@@ -17,6 +17,8 @@ export class SalesdashboardComponent implements OnInit {
   remainAd: any;
   postedAd: any;
 
+  wait =true;
+
   curPackDetail;
 
   constructor(
@@ -32,11 +34,15 @@ export class SalesdashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.tokenService.getUser());
-    // this.user = this.tokenService.getUser();
+    
     this.authService.getCurrentUser().subscribe((res) => {
       this.user = res;
+      this.wait = false;
     });
+
+    this.packService.isExistAgent().subscribe(res => {
+      this.curPackDetail = res;
+    })
 
     this.packService.remainAdCount().subscribe((res) => {
       console.log(res);

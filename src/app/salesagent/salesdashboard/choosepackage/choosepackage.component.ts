@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from 'src/app/service/package.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-choosepackage',
@@ -11,21 +13,27 @@ export class ChoosepackageComponent implements OnInit {
   platinumDetails;
   goldDetails;
   silverDetails;
+
+  isLoading = true;
   
 
-  constructor(private packService : PackageService, private dialogRef:MatDialogRef<ChoosepackageComponent>) {
-    this.getPlatinum();
-    this.getGold();
-    this.getSilver();
+  constructor(private packService : PackageService, private toaster : ToastrService, private dialogRef:MatDialogRef<ChoosepackageComponent>) {
+
    }
 
   ngOnInit(): void {
+    this.getPlatinum();
+    this.getGold();
+    this.getSilver();
+    
+
     
   }
 
   getPlatinum(){
     this.packService.getPackageDetails(1).subscribe({next :(res) => {
       this.platinumDetails = res;
+      console.log(res)
 
     },
   error: (err) => {
@@ -44,6 +52,7 @@ export class ChoosepackageComponent implements OnInit {
   getSilver(){
     this.packService.getPackageDetails(3).subscribe({next :(res) => {
       this.silverDetails = res;
+      this.isLoading = false;
 
     },
   error: (err) => {
@@ -53,14 +62,20 @@ export class ChoosepackageComponent implements OnInit {
 
   //Choose Plan
   choosePlan(id){
-    console.log(id);
-    this.dialogRef.close();
     
-
+    if(this.packService.isExistAgent()){
+      this.packService.updatePackage(id).subscribe(res=> {
+        console.log(res)
+        this.toaster.success("Packege Update Succesfully");
+        
+      })
+    }else{
+      this.packService.addPackage(id).subscribe(res => {
+        this.toaster.success("Package Aded Successfully");
+      })
+    
+    }
+    this.dialogRef.close();
   }
-
-  
-
-
-
+    
 }
