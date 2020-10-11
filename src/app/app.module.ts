@@ -61,6 +61,8 @@ import { PostLeasingPlanDialogComponent } from './post-leasing-plan-dialog/post-
 import { authInterceptorProviders } from './helpers/interceptor.interceptor';
 //import { EditagentadsComponent } from './salesagent/editagentads/editagentads.component';
 import { ViewadsComponent } from './salesagent/viewads/viewads.component';
+//import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
+import { ReportComponent } from './report/report.component';
 import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { InsuranceViewAdsComponent } from './insurance-view-ads/insurance-view-ads.component';
@@ -75,6 +77,7 @@ import { ChoosepackageComponent } from "./salesagent/salesdashboard/choosepackag
 import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
 import { ViewinsuranceplanComponent } from './viewinsuranceplan/viewinsuranceplan.component';
 import { PaymentComponent } from './payment/payment.component';
+import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-details.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
 
 @NgModule({
@@ -116,6 +119,8 @@ import { PaymentComponent } from './payment/payment.component';
     LeaseComponent,
     LeaseNavbarComponent,
     LeaseSidebarComponent,
+   // EditagentadsComponent,
+    ReportComponent,
     PostLeasingPlanDialogComponent,
     HomeViewadComponent,
     InsuranceComponent,
@@ -130,6 +135,7 @@ import { PaymentComponent } from './payment/payment.component';
     ViewleaseplanComponent,
     ViewinsuranceplanComponent,
     PaymentComponent,
+    AdminEditDetailsComponent,
     
   ],
   imports: [

@@ -1,103 +1,162 @@
-<mat-card style="text-align: center; color: blue"><h1>Advertisements</h1></mat-card>
-<mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>New Advertisement Requests</span></mat-card>
-<!-- <mat-grid-list cols="4" rowHeight="1.5:1" [gutterSize]="'30px'">
-    <mat-grid-tile>   <mat-card>
+ 
+    <mat-card style="text-align: center; color: blue"><h1>Advertisements</h1></mat-card>
+<mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>New Advertisements</span></mat-card>
+<div class="row mt-2">
+    <div *ngFor="let ad of newAds" class="col-md-4 my-2">
+     <mat-card class="example" >
+       <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title> {{ad.email}}</mat-card-title>
+        <mat-card-subtitle>{{ad.location}}</mat-card-subtitle>
+       </mat-card-header>
+       <!-- <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}" style="width: 50px;height: 20px;" > -->
+       <!-- <mat-card-actions>
+        
+            <a pageScroll href="adminAdvertisements#pagedown">
+                <button mat-raised-button (click) ="viewAd(ad.id)" >VIEW</button> </a>
+      
+        
+      </mat-card-actions> -->
+      <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}"  style="width: 100px;height: 60px;" > 
+      <mat-card-actions>
        
-      <img mat-card-image src="  https://www.lankabusinessonline.com/wp-content/uploads/2016/05/vehicle.jpg" style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Request</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
+           <a pageScroll href="adminAdvertisements#pagedown">
+               <button mat-raised-button (click) ="viewAd(ad.id)" >VIEW</button> </a>
+     
        
-      <img mat-card-image src=" https://www.lankabusinessonline.com/wp-content/uploads/2016/05/vehicle.jpg" style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Request</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
+     </mat-card-actions> 
+     </mat-card>
+    </div>
+   </div >
+    
+
+   <mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>Confiremed Advertisements</span></mat-card>
+   <div class="row mt-2">
+    <div *ngFor="let ad of confiremedAds" class="col-md-4 my-2">
+     <mat-card class="example" >
+       <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title> {{ad.email}}</mat-card-title>
+        <mat-card-subtitle>{{ad.location}}</mat-card-subtitle>
+       </mat-card-header>
+       <!-- <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}" style="width: 50px;height: 20px;" > -->
+       <!-- <mat-card-actions>
+        
+            <a pageScroll href="adminAdvertisements#pagedown">
+                <button mat-raised-button (click) ="viewAd(ad.id)" >VIEW</button> </a>
+      
+        
+      </mat-card-actions> -->
+      <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + ad.image1}}" style="width: 100px;height: 60px;" > 
+      <mat-card-actions>
        
-      <img mat-card-image src=" https://www.lankabusinessonline.com/wp-content/uploads/2016/05/vehicle.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Request</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
+           <a pageScroll href="adminAdvertisements#pagedown">
+               <button mat-raised-button (click) ="viewAd(ad.id)" >VIEW</button> </a>
+     
        
-      <img mat-card-image src="  https://www.lankabusinessonline.com/wp-content/uploads/2016/05/vehicle.jpg" style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Request</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-  </mat-grid-list>
-  <mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>Available Vehicles</span></mat-card>
-  <mat-grid-list cols="4" rowHeight="1.5:1"  [gutterSize]="'30px'">
-    <mat-grid-tile>   <mat-card>
-       
-      <img mat-card-image src=" https://www.toyota.lk/wp-content/uploads/2017/09/wigooolan.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Details</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
-       
-      <img mat-card-image src=" https://www.toyota.lk/wp-content/uploads/2017/09/wigooolan.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Details</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
-       
-      <img mat-card-image src=" https://www.toyota.lk/wp-content/uploads/2017/09/wigooolan.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Details</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>
-       
-      <img mat-card-image src=" https://www.toyota.lk/wp-content/uploads/2017/09/wigooolan.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Details</button></mat-card-content>
-   </mat-card></mat-grid-tile>
-  </mat-grid-list> -->
-  <ul>
-    <li *ngFor="let item of data">
-      <mat-grid-list cols="1" rowHeight="7:1">
-        <mat-grid-tile>
-          <mat-card class="wrapper">
-            <!-- <mat-card-title>one</mat-card-title> -->
-            <mat-grid-list cols="4" rowHeight="2:1">
-              <mat-grid-tile>
-                <mat-card class="one">
-                  <img
-                    mat-card-image
-                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Cy79CqMxWJYVkpb3GkkaiwHaE7%26pid%3DApi&f=1"
-                    alt="test"
-                  />
-                </mat-card>
-              </mat-grid-tile>
-              <mat-grid-tile colspan="2">
-                <mat-card class="one">
-                  <h4>
-                    <b>{{ item.name }} </b>
-                  </h4>
-                  {{ item.date }} <br />
-                  <label style="font-size: medium;">LKR-{{ item.price }}</label>
-                  <br />
+     </mat-card-actions> 
+     </mat-card>
+    </div>
+   </div >
+
+   <div id="pagedown">
+    <mat-card>
+        <table class="profile">
+          <caption style="caption-side:top">{{adDetail.name}}</caption>
+          <tr>
+            <td style="text-align: left;">Ad reference</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{adDetail.title}}</td>
+        </tr>
+         <tr>
+              <td style="text-align: left;">Price(LKR)</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.price}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Vehicle Type</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.v_type}}</td>
+          </tr>
+          
+          <tr>
+              <td style="text-align: left;">Manufacturer</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.manufacturer}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Model</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.model}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Model Year</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.m_year}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Registereted Year</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.r_year}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Engine Capacity</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.e_capacity}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Mileage</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.mileage}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Vehicle Condition</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.v_condition}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Transmission</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.transmission}}</td>
+          </tr>
+          <tr>
+              <td style="text-align: left;">Fuel Type</td>
+              <td style="text-align: center;">:</td>
+              <td style="text-align: left;">{{adDetail.fuel_type}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Colour</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{adDetail.colour}}</td>
+        </tr>
+        <tr>
+          <td style="text-align: left; color: blue;">Posted On</td>
+          <td style="text-align: center;color: blue;">:</td>
+          <td style="text-align: left;color: blue;">{{adDetail.datetime}}</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;color: red;">Valid Till</td>
+        <td style="text-align: center;color: red;">:</td>
+        <td style="text-align: left;color: red;">{{adDetail.datetime}}</td>
+    </tr>
+    <tr> <button mat-raised-button (click)="acceptAd(adDetail.id)">accept</button> 
+        <button mat-raised-button href [routerLink]="['/reportAd',adDetail.id]" >report</button> </tr>
+    
   
-                  from - {{ item.from }} <br />
-                  model year - {{ item.year }} <br />
-                </mat-card>
-              </mat-grid-tile>
-              <!-- <mat-grid-tile>
-            <mat-card class="one"> </mat-card>
-          </mat-grid-tile> -->
-              <mat-grid-tile>
-                <mat-card class="one">
-                  <mat-grid-list cols="2" rowHeight="2:1" gutterSize="5px">
-                    <mat-grid-tile colspan="2">
-                      <mat-card class="two">
-                        <button mat-button color="primary">Leasing Plan</button>
-                      </mat-card>
-                    </mat-grid-tile>
-                    <mat-grid-tile colspan="2">
-                      <mat-card class="two">
-                        <button mat-button color="primary">Insure Plan</button>
-                      </mat-card>
-                    </mat-grid-tile>
-                  </mat-grid-list>
-                </mat-card>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </li>
-  </ul>
-
-
+      </table>
+      </mat-card>
+      <mat-card>
+     
+        <!-- <img class="car" src="{{'http://localhost:8080/advertisement/getimage/' + adDetail.image1}}" >  -->
+   
+  </mat-card>
+    <mat-card >
+        Discription :-
+        <br>
+        <br>
+        {{adDetail.description}}
+       </mat-card>
+       
+   </div>
+   
+   

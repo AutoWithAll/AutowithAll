@@ -11,6 +11,7 @@ import { Lease} from '../models/lease.model'
 
 import { TokenStorageService } from "./token-storage.service";
 import { Identifiers } from '@angular/compiler';
+import { Report } from '../models/report.model';
 
 
 
@@ -35,6 +36,12 @@ export class UserService {
     return this.http.post('http://localhost:8080/advertisement/postadd', ad);
   }   // Post Add By Sales Agent
 
+  postReport(report:Report,id){
+      console.log(id)
+      return this.http.post('http://localhost:8080/advertisement/reportad/{1}', report);
+
+  }
+
   getImage(id){
     return this.http.get('http://localhost:8080/advertisement/getimage/{id}');
   }
@@ -47,7 +54,7 @@ export class UserService {
   }
 
   getOneAd(id) : Observable<any>{
-    return this.http.get('http://localhost:8080/advertisement/getAdById/' + id);
+    return this.http.get('http://localhost:8080/advertisement/getAdById/' +id);
   }
 
   editProfile(editprofile){
@@ -58,6 +65,23 @@ export class UserService {
   }
 
   
+  // remainAdCount(){
+  //   return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  // }
+  // remainpostAdCount(){
+  //   return this.http.get('http://localhost:8080/advertisement/countremainad');
+  // }
+  getNewAds(){
+    return this.http.get('http://localhost:8080/advertisement/getnewad');
+  }
+
+  acceptAd(id:number) {
+   return this.http.put('http://localhost:8080/admin/confrim/' +id,{});
+  }
+
+  getConfiremedAds(){
+    return this.http.get('http://localhost:8080/advertisement/getconfrimad');
+  }
 
   showSuccess(msg){
     this.toaster.success(msg);

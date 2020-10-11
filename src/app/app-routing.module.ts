@@ -52,6 +52,8 @@ import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component'
 import {ViewinsuranceplanComponent} from './viewinsuranceplan/viewinsuranceplan.component';
 import { PaymentComponent } from './payment/payment.component';
 
+import {ReportComponent} from './report/report.component';
+import { AdminEditDetailsComponent } from './admin-edit-details/admin-edit-details.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -121,8 +123,11 @@ const routes: Routes = [
 
   {path : 'viewleaseplan', component: ViewleaseplanComponent},
   {path : 'viewinsplan', component: ViewinsuranceplanComponent},
-  {path : 'payment', component: PaymentComponent}
+  {path : 'payment', component: PaymentComponent},
 
+  { path : 'leaseProfile', component: LeasingProfileComponent , canActivate: [AuthGuard]},
+  {path:'reportAd/:id',component:ReportComponent,canActivate:[AuthGuard]},
+  {path:'adminDetails',component:AdminEditDetailsComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
