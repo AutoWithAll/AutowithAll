@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   img;
   showNavigationArrows = false;
   showNavigationIndicators = false;
-  images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images = [133, 111, 3].map((n) => `https://picsum.photos/id/${n}/500/300`);
 
   constructor(config: NgbCarouselConfig, private service: UserService , private homeService : HomeService) {
     // customize default values of carousels used by this component tree

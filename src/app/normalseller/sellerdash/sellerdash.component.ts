@@ -14,6 +14,7 @@ export class SellerdashComponent implements OnInit {
   user: any;
   postedAd: any;
   remainAd: any;
+  isLoading = true;
 
   constructor(private tokenService: TokenStorageService,private authService: AuthenticationService, private userService : UserService) { }
 
@@ -22,6 +23,7 @@ export class SellerdashComponent implements OnInit {
       this.user = res;
       console.log(res)
     })
+    this.isLoading = false
 
     this.userService.remainAdCount().subscribe(res => {
       console.log(res)  

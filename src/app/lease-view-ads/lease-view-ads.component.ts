@@ -4,6 +4,7 @@ import { MatDialog} from '@angular/material/dialog';
 import { UserService } from '../service/user.service';
 
 
+
 @Component({
   selector: 'app-lease-view-ads',
   templateUrl: './lease-view-ads.component.html',
@@ -31,7 +32,6 @@ export class LeaseViewAdsComponent  implements OnInit {
   }
 
 }
-
 
  
 
