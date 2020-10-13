@@ -46,7 +46,8 @@ import { InsuranceSidebarComponent} from './insurance-shared/insurance-sidebar/i
 import {InsuranceEditProfileComponent} from './insurance-edit-profile/insurance-edit-profile.component';
 import {InsuranceProfileComponent} from './insurance-profile/insurance-profile.component';
 import {InsuranceVehicleComponent} from './insurance-vehicle/insurance-vehicle.component';
-import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component'
+import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component';
+import {AdminLeasingsDetailsComponent} from './admin-leasings-details/admin-leasings-details.component'
  
  
 const routes: Routes = [
@@ -57,7 +58,7 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
-  { path:'adminDashboard',component: AdminDashboardComponent},
+  { path:'adminDashboard',component: AdminDashboardComponent},  
   { path:'adminUsers',component:AdminUsersComponent},
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
   { path:'adminLeasings',component:AdminLeasingsComponent},
@@ -109,7 +110,8 @@ const routes: Routes = [
   {path : 'insuranceeditprofile' , component : InsuranceEditProfileComponent},
   {path : 'insuranceprofile' , component : InsuranceProfileComponent},
   {path : 'insurancevehicle' , component : InsuranceVehicleComponent},
-  {path : 'postinsuranceplan', component : PostInsurancePlanDialogComponent}
+  {path : 'postinsuranceplan', component : PostInsurancePlanDialogComponent},
+  {path : 'adminleasingcompanydetails', component : AdminLeasingsDetailsComponent}
 
 
 ];
