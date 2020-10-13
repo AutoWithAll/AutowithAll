@@ -23,6 +23,15 @@ const headeroption = {
   providedIn: 'root',
 })
 export class UserService {
+
+  leasingDetailsAdmin;
+
+  setleasingDetailsAdmin(data){
+    this.leasingDetailsAdmin = data;
+  }
+  getleasingDetailsAdmin(){
+    return this.leasingDetailsAdmin;
+  }
   
 
   constructor(private http : HttpClient , private toaster : ToastrService) {}
@@ -92,6 +101,10 @@ export class UserService {
 
   changePhoto(image){
     return this.http.put('http://localhost:8080/user/changephoto', image);
+  }
+
+  getLeasingCompany(){
+    return this.http.get('http://localhost:8080/admin/getalllcompany');
   }
 
   // getUser(): Observable<User[]> {

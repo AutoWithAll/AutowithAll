@@ -77,7 +77,7 @@ export class LoginComponentComponent implements OnInit {
           } else if (this.role == 'ROLE_AGENT') {
             this.router.navigate(['/salesagentdash']);
           } else if (this.role == 'ROLE_LCOMPANY') {
-            this.router.navigate(['/leasingDash']);
+            this.router.navigate(['/lease']);
           }else if (this.role == 'ROLE_USER') {
             this.router.navigate(['/sellerdash']);
           }else if (this.role == 'ROLE_ICOMPANY') {
