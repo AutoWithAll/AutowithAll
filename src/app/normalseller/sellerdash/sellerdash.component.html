@@ -12,22 +12,22 @@
           <tr>
               <td style="text-align: left;font-size: 120%">Full Name</td>
               <td style="text-align: center;font-size: 120%">:&nbsp;&nbsp;&nbsp; </td>
-              <td style="text-align: left;font-size: 120%">Saman Bnadra</td>
+              <td style="text-align: left;font-size: 120%">{{user.fname}} {{user.lname}}</td>
           </tr>
           <tr>
               <td style="text-align: left;font-size: 120%">Telephone Number</td>
               <td style="text-align: center;font-size: 120%">:&nbsp;&nbsp;&nbsp; </td>
-              <td style="text-align: left;font-size: 120%">0772992002</td>
+              <td style="text-align: left;font-size: 120%">{{ user.tnumber }}</td>
           </tr>
           <tr>
               <td style="text-align: left;font-size: 120%">Email Address</td>
               <td style="text-align: center;font-size: 120%">:&nbsp;&nbsp;&nbsp; </td>
-              <td style="text-align: left;font-size: 120%">thisa@gmail.com</td>
+              <td style="text-align: left;font-size: 120%">{{ user.username }}</td>
           </tr>
           <tr>
               <td style="text-align: left;font-size: 120%">Home Address</td>
               <td style="text-align: center;font-size: 120%">:&nbsp;&nbsp;&nbsp; </td>
-              <td style="text-align: left;font-size: 120%">Karana</td>
+              <td style="text-align: left;font-size: 120%"></td>
           </tr>
           <tr><a class="nav-link btn btn-default" href [routerLink]="['/reportAd']">reportAd</a></tr>
       </table>
@@ -42,7 +42,7 @@
         
         <span style="font-size: 200%; margin-top: 30px">POSTED ADs</span>
         
-        <span style="font-size: 300%; margin-top:40px">17</span>
+        <span style="font-size: 300%; margin-top:40px">{{ postedAd }}</span>
 
       </p>
     </mat-card>

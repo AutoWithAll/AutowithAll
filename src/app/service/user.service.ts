@@ -31,7 +31,7 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/getconfrimad');
   }   //Home Component
 
-  postAd(ad : Ad){
+  postAd(ad){
     console.log(ad)
     return this.http.post('http://localhost:8080/advertisement/postadd', ad);
   }   // Post Add By Sales Agent
@@ -80,12 +80,13 @@ export class UserService {
     return this.http.put('http://localhost:8080/user/changepassword/'+pwd , secData);
   }
 
-  remainAdCount(){
-    return this.http.get('http://localhost:8080/advertisement/countpostedad');
-  }
-  remainpostAdCount(){
-    return this.http.get('http://localhost:8080/advertisement/countremainad');
-  }
+  
+  // remainAdCount(){
+  //   return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  // }
+  // remainpostAdCount(){
+  //   return this.http.get('http://localhost:8080/advertisement/countremainad');
+  // }
   getNewAds(){
     return this.http.get('http://localhost:8080/advertisement/getnewad');
   }
@@ -121,6 +122,17 @@ export class UserService {
 
     return this.http.post<Lease>('http://localhost:8080/postlease' , lease);
 
+  }
+
+  remainAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countpostedad');
+  }
+  remainpostAdCount(){
+    return this.http.get('http://localhost:8080/advertisement/countremainad');
+  }
+
+  getAgentDetails(){
+    return this.http.get('http://localhost:8080/agent/getallagent');
   }
 
 }

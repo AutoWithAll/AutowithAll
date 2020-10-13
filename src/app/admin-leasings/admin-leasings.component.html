@@ -1,7 +1,7 @@
 <mat-card style="text-align: center; color: blue"><h1>Leasing Companies</h1></mat-card>
 <mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>New Leasing Company Requests</span></mat-card>
 <mat-grid-list cols="4" rowHeight="1.5:1" [gutterSize]="'30px'">
-    <mat-grid-tile>   <mat-card>
+    <mat-grid-tile><mat-card>
        
       <img mat-card-image src="https://www.customlogoshop.com/wp-content/uploads/2017/03/Hyper-Car-Leasing.jpg " style="height: 170px;">
       <mat-card-content ><button mat-raised-button color="primary">View Request</button></mat-card-content>
@@ -27,7 +27,7 @@
     <mat-grid-tile>   <mat-card>
        
       <img mat-card-image src="https://i.pinimg.com/originals/aa/15/f9/aa15f93b8336a2aedddc308ada6e120b.jpg " style="height: 170px;">
-      <mat-card-content><button mat-raised-button color="primary">View Details</button></mat-card-content>
+      <mat-card-content><button (click) = "viewDetails()" mat-raised-button color="primary">View Details</button></mat-card-content>
    </mat-card></mat-grid-tile>
     <mat-grid-tile><mat-card>
        

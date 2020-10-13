@@ -55,6 +55,7 @@ export class ViewadsComponent implements OnInit {
   dataSource = new MatTableDataSource<PeriodicElement>();
 
   adDetail : AdDetails = <AdDetails>{};
+  isLoading = true;
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -81,6 +82,7 @@ export class ViewadsComponent implements OnInit {
   ngOnInit(): void {
     
       this.getAdds();
+      this.isLoading = false;
    
   }
   ngAfterViewInit(): void {

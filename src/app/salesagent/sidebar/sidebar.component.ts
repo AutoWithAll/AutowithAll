@@ -22,6 +22,7 @@ export class SidebarComponent {
     );
 
   user: User;
+  isLoading = true;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -31,12 +32,12 @@ export class SidebarComponent {
   ) {}
 
   ngOnInit() {
-    
-       this.authService.getCurrentUser().subscribe((res) => {
-        this.user = res;
-        console.log(res);
-       });
-     
+    this.authService.getCurrentUser().subscribe((res) => {
+      this.user = res;
+      this.isLoading = false;
+      console.log(res);
+    });
+
     // this.user = this.tokenStorageService.getUser();
   }
 

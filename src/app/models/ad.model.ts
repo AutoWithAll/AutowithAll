@@ -17,6 +17,7 @@ export class Ad {
   fuel_type: string;
   colour: string;
   description: string;
+  
 }
 
 export class AdDetails {

@@ -1,115 +1,125 @@
 <app-header></app-header>
-<mat-grid-list cols="10" rows="7" rowHeight="150px" >
-    <mat-grid-tile rowspan="7"></mat-grid-tile>
-    <mat-grid-tile colspan="5">
-        <mat-card >
-            <mat-card-header >
-             
-              <mat-card-title style="font-size:25px;color: blue;">Toyota Hiace LH102 - Dolphin</mat-card-title>
-              </mat-card-header>
-              <mat-card-content style="font-size:15px;margin-left: 15px;" >Posted on 2018/03/05 , Kurunegala for sale by Sunil Perera</mat-card-content>
-           </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3">
-      <mat-card >
-        <mat-card-actions>
-        <button mat-raised-button color="warn" style="margin-left:75px;">REPORT ADVERTISEMENT</button></mat-card-actions>
-         </mat-card>
-  </mat-grid-tile>
-    <mat-grid-tile rowspan="7"></mat-grid-tile>
-    <mat-grid-tile colspan="4" rowspan="3" ><mat-card><img src="assets/img/car.jpg"  width="600" height="400"></mat-card></mat-grid-tile>
+<mat-grid-list cols="10" rows="7" rowHeight="150px">
+  <mat-grid-tile rowspan="7"></mat-grid-tile>
+  <mat-grid-tile colspan="5">
+    <mat-card>
+      <mat-card-header>
 
-    
-    
-    <mat-grid-tile colspan="4" rowspan="3">
-      <mat-card>
-        <div class="profile">
-        <table class="profile">
-            <tr>
-              <td style="text-align: left;">Ad reference</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">B</td>
-            </tr>
-            <tr>
-              <td style="text-align: left;">Price(LKR)</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">56789000</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Model</td>
-                <td style="text-align: center;">:</td>
-                <td style="text-align: left;">BMW</td>
-              </tr>
-              <tr>
-                <td style="text-align: left;">Model Year</td>
-                <td style="text-align: center;">:</td>
-                <td style="text-align: left;">325/e</td>
-              </tr>
-            <tr>
-              <td style="text-align: left;">Manufacturer</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">jaj</td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Color</td>
-                <td style="text-align: center;">:</td>
-                <td style="text-align: left;">gray</td>
-              </tr>        
-            <tr>
-              <td style="text-align: left;">Engine Capacity</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">256</td>
-            </tr>
-            <tr>
-              <td style="text-align: left;">Mileage</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">537}</td>
-            </tr>
-            <tr>
-              <td style="text-align: left;">Vehicle Condition</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">Good</td>
-            </tr>
-            <tr>
-              <td style="text-align: left;">Transmission</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">WE</td>
-            </tr>
-            <tr>
-              <td style="text-align: left;">Fuel Type</td>
-              <td style="text-align: center;">:</td>
-              <td style="text-align: left;">Good</td>
-            </tr>
-            </table>
-        </div>
-      </mat-card>  
-    </mat-grid-tile>
-    <mat-grid-tile ><img src="assets/img/car.jpg"  width="150" height="100"></mat-grid-tile>
-    <mat-grid-tile ><img src="assets/img/car.jpg"  width="150" height="100"></mat-grid-tile>
-    <mat-grid-tile ><img src="assets/img/car.jpg"  width="150" height="100"></mat-grid-tile>
-    <mat-grid-tile ><img src="assets/img/car.jpg"  width="150" height="100"></mat-grid-tile>
-    <mat-grid-tile colspan="4">
-
-      <mat-card >
-          <mat-card-header>
-           
-            <mat-card-title>Contact Person</mat-card-title>
-            
-          </mat-card-header>
-          <mat-card-content style="font-size:15px;margin-left: 15px;">071892722<br>sunilperera123@gmail.com</mat-card-content>
-         </mat-card>
-  </mat-grid-tile>
-    <mat-grid-tile colspan="4"><button mat-raised-button color="primary">VIEW  AVAILABLE  LEASING  PLANS</button></mat-grid-tile>
-    <mat-grid-tile colspan="4"><button mat-raised-button color="primary">VIEW  AVAILABLE  INSURANCE  PLANS</button></mat-grid-tile>
-    <mat-grid-tile colspan="8">
-        <mat-card>
-        <mat-card-header>
-         <mat-card-title style="color:red">NOTE :</mat-card-title>
-       
+        <mat-card-title style="font-size:25px;color: blue;">{{releventAd.name}} - {{releventAd.model}}</mat-card-title>
       </mat-card-header>
-      <mat-card-content style="font-size:15px;margin-left: 15px;">Do not make any payments to advertiser before inspecting the vehicle.
+      <mat-card-content style="margin-left: 15px;font-size:15px;">Posted on {{releventAd.datetime}} , {{releventAd.location}} for sale by {{releventAd.user.fname}}
+        {{releventAd.user.lname}}</mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3">
+    <mat-card>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" style="margin-left:75px;" [routerLink]="['/report-ad']">REPORT
+          ADVERTISEMENT</button></mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="7"></mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="3">
+    <mat-card><img src="assets/img/car.jpg" width="600" height="400"></mat-card>
+  </mat-grid-tile>
 
-         "AutoWithAll" shall not be held responsible for any transaction or agreement happened between the advertiser and you. </mat-card-content>
-     </mat-card></mat-grid-tile>
+
+
+  <mat-grid-tile colspan="4" rowspan="3">
+    <mat-card>
+      <div class="profile">
+        <table class="profile">
+          <tr>
+            <td style="text-align: left;">Ad reference</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.id}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Price(LKR)</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.price}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Model</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.model}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Model Year</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.m_year}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Manufacturer</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.manufacturer}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Color</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.colour}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Engine Capacity</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.e_capacity}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Mileage</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.mileage}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Vehicle Condition</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.v_condition}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Transmission</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.transmission}}</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">Fuel Type</td>
+            <td style="text-align: center;">:</td>
+            <td style="text-align: left;">{{releventAd.fuel_type}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image2}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image3}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image4}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image5}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile colspan="4">
+
+    <mat-card>
+      <mat-card-header>
+
+        <mat-card-title>Contact Person</mat-card-title>
+
+      </mat-card-header>
+      <mat-card-content style="font-size:15px;margin-left: 15px;">{{releventAd.user.tnumber}}<br>{{releventAd.user.username}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4"><button mat-raised-button color="primary">VIEW AVAILABLE LEASING PLANS</button>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4"><button mat-raised-button color="primary">VIEW AVAILABLE INSURANCE PLANS</button>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="8">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title style="color:red">NOTE :</mat-card-title>
+
+      </mat-card-header>
+      <mat-card-content style="font-size:15px;margin-left: 15px;">Do not make any payments to advertiser before
+        inspecting the vehicle.
+
+        "AutoWithAll" shall not be held responsible for any transaction or agreement happened between the advertiser and
+        you. </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
 </mat-grid-list>
 <app-footer></app-footer>
