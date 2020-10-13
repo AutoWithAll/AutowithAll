@@ -6,6 +6,7 @@ import {UserService  } from "../service/user.service";
 import { User } from 'src/app/models/user.model';
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
+import { ThrowStmt } from '@angular/compiler';
 
 export interface PeriodicElement {
   Agent: string;
@@ -37,6 +38,12 @@ export class AdminDashboardComponent implements OnInit {
   userDetail: User = <User>{};
   newAds:any
   newAdsCount:number
+  agents:any
+  agentCount:number
+  leasings:any
+  leasingCount:number
+  insurance:any
+  insuranceCount:number
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
@@ -51,6 +58,18 @@ export class AdminDashboardComponent implements OnInit {
       this.users = res;
       this.userCount=this.users.length;
       
+    })
+    this.service.getAgents().subscribe(res=>{
+      this.agents=res;
+      this.agentCount=this.agents.length;
+    })
+    this.service.getAllLeasing().subscribe(res=>{
+      this.leasings=res;
+      this.leasingCount=this.leasings.length;
+    })
+    this.service.getAllInsurance().subscribe(res=>{
+      this.insurance=res;
+      this.insuranceCount=this.insurance.length
     })
     this.userDetail = this.tokenService.getUser();
     this.service.getNewAds().subscribe(res=>{

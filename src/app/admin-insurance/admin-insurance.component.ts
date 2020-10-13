@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService  } from "../service/user.service";
+ 
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-admin-insurance',
@@ -10,6 +13,7 @@ export class AdminInsuranceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+     
   }
 
 }

@@ -104,42 +104,7 @@
                 
                  </mat-grid-list>
                  <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'50px'">
-                  <mat-grid-tile class="gl2">
-                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-                      <!--- Note that these columns can be defined in any order.
-                            The actual rendered columns are set as a property on the row definition" -->
-                    
-                      <!-- Position Column -->
-                      <ng-container matColumnDef="position">
-                        <th mat-header-cell *matHeaderCellDef> No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                      </ng-container>
-                    
-                      <!-- Name Column -->
-                      <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> Agent </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Agent}} </td>
-                      </ng-container>
-                    
-                      <!-- Weight Column -->
-                      <ng-container matColumnDef="weight">
-                        <th mat-header-cell *matHeaderCellDef> Income </th>
-                        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-                      </ng-container>
-                    
-                      <!-- Symbol Column -->
-                      <ng-container matColumnDef="symbol">
-                        <th mat-header-cell *matHeaderCellDef> Addcount </th>
-                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-                      </ng-container>
-                    
-                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-                    
-                    
-                  </mat-grid-tile>
+                  
                   <mat-grid-tile class="gl2" >
                     
                     <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
@@ -149,7 +114,22 @@
                     </mat-card>
                     <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 
                       <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Agents Count</h1></mat-card-content>
-                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">45</button>
+                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{agentCount}}</button>
+                    </mat-card>
+                      
+                    
+                  </mat-grid-tile>
+                      
+                  <mat-grid-tile class="gl2" >
+                    
+                    <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
+                    <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Total Leasing Companies</h1></mat-card-content>
+                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{leasingCount}}</button>
+                     
+                    </mat-card>
+                    <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 
+                      <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Total Insurance Companies</h1></mat-card-content>
+                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{insuranceCount}}</button>
                     </mat-card>
                       
                     

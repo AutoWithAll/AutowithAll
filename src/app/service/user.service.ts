@@ -49,6 +49,12 @@ export class UserService {
   getAllUsers(){
     return this.http.get('http://localhost:8080/user/getallusers');
   }
+  getAllLeasing(){
+    return  this.http.get('http://localhost:8080/admin/getalllcompany');
+  }
+  getAllInsurance(){
+    return  this.http.get('http://localhost:8080/admin/getallicompany');
+  }
   getAgents(){
     return  this.http.get('http://localhost:8080/admin/getallagents');
   }
