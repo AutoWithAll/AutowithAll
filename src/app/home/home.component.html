@@ -19,7 +19,8 @@
         </div> -->
         </ng-template>
       </ngb-carousel>
-    </mat-grid-tile><mat-grid-tile>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
         [showNavigationIndicators]="showNavigationIndicators">
         <ng-template ngbSlide *ngFor="let image of images">
@@ -32,7 +33,8 @@
         </div> -->
         </ng-template>
       </ngb-carousel>
-    </mat-grid-tile><mat-grid-tile>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
         [showNavigationIndicators]="showNavigationIndicators">
         <ng-template ngbSlide *ngFor="let image of images">
@@ -60,19 +62,18 @@
         <mat-card-subtitle>Hire a Salesagent to post your Advertisement</mat-card-subtitle>
       </mat-card-header>
      
-      <mat-accordion *ngFor="let item1 of agentList">
+      <mat-accordion>
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{item1.fname}} {{item1.lname}}
+              Saman Bandara
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <p>Contact - {{item1.tnumber}}</p>
-          <p>Email - {{item1.username}}</p>
-          <p>Location - {{item1.address}}</p>
+          <p>Contact - 0718580598</p>
+          <p>Email - kasunbandara@gmail.com</p>
+          <p>Location - Katana</p>
         </mat-expansion-panel>
-        <br>
       </mat-accordion>
       <br />
 
@@ -80,10 +81,10 @@
   </mat-grid-tile>
 
   
-  <mat-grid-tile colspan="3">
+  <mat-grid-tile colspan="3" *ngFor="let item of list">
     <mat-card class="wrapper">
 
-      <mat-grid-list cols="4" *ngFor="let item of list">
+      <mat-grid-list cols="4">
 
         <mat-grid-tile>
           <mat-card class="one">
