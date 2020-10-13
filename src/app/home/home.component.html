@@ -61,7 +61,7 @@
         <mat-grid-tile>
           <mat-card class="one">
             <img mat-card-image src="{{'http://localhost:8080/advertisement/getimage/' + item.image1}}" alt="test"
-              [routerLink]="['/home-view-ad']" />
+              [routerLink]="['/home-view-ad']" (click) = "viewAd(item)" />
           </mat-card>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">

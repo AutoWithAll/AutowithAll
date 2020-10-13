@@ -115,4 +115,8 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/countremainad');
   }
 
+  getAgentDetails(){
+    return this.http.get('http://localhost:8080/agent/getallagent');
+  }
+
 }

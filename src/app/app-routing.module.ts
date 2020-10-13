@@ -90,7 +90,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
   { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
    
- { path: 'home-view-ad', component: HomeViewadComponent},
+  { path: 'home-view-ad', component: HomeViewadComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},
   { path: 'salesagentdash', component: SalesdashboardComponent,canActivate: [AgentGuard] },
   {path: 'sidebar',component: SidebarComponent ,canActivate: [AgentGuard]},
