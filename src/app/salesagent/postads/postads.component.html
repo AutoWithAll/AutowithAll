@@ -1,5 +1,13 @@
 <app-agentsidebar></app-agentsidebar>
 
+<div *ngIf="!ifActive()">
+  <h2 style="color: red;">
+    Please Update your Package Before Posting Ads <br>
+
+  </h2>
+</div>
+<div *ngIf="ifActive()">
+
 <!--Title of the Salesagent page-->
 <span class="title">
   Post Your New Advertisement here within Four steps!
@@ -382,3 +390,5 @@
     </button>
   </mat-step>
 </mat-horizontal-stepper>
+
+</div>

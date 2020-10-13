@@ -4,6 +4,8 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/service/user.service';
 import { AuthenticationService } from 'src/app/service/authentication.service';
+import { __rest } from 'tslib';
+
 
 export function MustMatch(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
@@ -30,9 +32,15 @@ export function MustMatch(controlName: string, matchingControlName: string) {
   styleUrls: ['./editprofile.component.css'],
 })
 export class EditprofileComponent implements OnInit {
+
+  isLoading = true;
+
+
+
   editForm: FormGroup;
   Securityform: FormGroup;
   userDetail: User = <User>{};
+
 
   fileData: File = null;
   previewUrls;
@@ -45,6 +53,8 @@ export class EditprofileComponent implements OnInit {
     private tokenService: TokenStorageService,
     private authService : AuthenticationService
   ) {
+    console.log("construcror")
+    
     this.editForm = fb.group(
       {
         fname: ['', [Validators.required]],
@@ -95,34 +105,37 @@ export class EditprofileComponent implements OnInit {
   removeImage() {
 
     this.previewUrls.splice(0);
-    // console.log(index);
-    // let images = this.previewUrls ? [...this.previewUrls] : []
-
-    // if (index > -1 && index < images.length) {
-    //   images.splice(index, 1);
-    // }
-
-    // this.previewUrls = images;
+    
   }
 
-  async ngOnInit(){
+  ngOnInit(){
     
-      this.userDetail = this.tokenService.getUser();
-    console.log(this.userDetail.imgId)
-    console.log(this.userDetail)
-    //  await this.authService.getCurrentUser().subscribe(res => {
-    //   this.userDetail = res;
-    // })
+     this.authService.getCurrentUser().subscribe(res => {
+      this.userDetail = res;
+      console.log(this.userDetail);
+      console.log(res);
+      this.isLoading =false;
+      this.editForm.patchValue({
+        fname: this.userDetail.fname,
+        lname: this.userDetail.lname,
+        t_number: this.userDetail.tnumber,
+        adress: this.userDetail.address,
+      });
+      })
 
-    this.editForm.patchValue({
-      fname: this.userDetail.fname,
-      lname: this.userDetail.lname,
-      t_number: this.userDetail.tnumber,
-      adress: this.userDetail.address,
-    });
+      
+    
+
+    
  
     
   }
+
+  //##################promise
+
+  
+
+  //#############promise
 
   get fname() {
     return this.editForm.get('fname');
@@ -153,12 +166,12 @@ export class EditprofileComponent implements OnInit {
       fname: this.fname.value,
       lname: this.lname.value,
       username : this.userDetail.username,
-      tnumber : this.userDetail.tnumber,
+      tnumber : this.t_number.value,
       nic : this.userDetail.nic,
-      password: this.new_password.value,
+      password: this.userDetail.password,
       role :this.userDetail.role,
       cName :this.userDetail.cName,
-      address :this.userDetail.address,
+      address :this.adress.value,
       regNum :this.userDetail.regNum
     };
     console.log(this.cur_password.value);
@@ -166,7 +179,7 @@ export class EditprofileComponent implements OnInit {
     this.userService.editProfile(editform).subscribe({
       next: (res) => {
         console.log(res);
-        this.userService.showSuccess(res);
+        this.userService.showSuccess("Profile Update Successfull");
       },
       error: (err) => {
         console.log(err);
@@ -189,15 +202,17 @@ export class EditprofileComponent implements OnInit {
       imgId : this.userDetail.imgId
     }
     this.userService.changePassword(sec_data,this.cur_password.value).subscribe({next : (res) =>{
-      this.userService.showSuccess(res);
+      this.userService.showSuccess("Password Changed Succesfull");
     },
   error : (err) =>{
     this.userService.shoeErr(err);
   }})
+  // window.location.reload();
   }
   deletePhoto(){
 
   }
+  
   submitPhoto(){
     this.userService.changePhoto(this.previewUrls).subscribe(res => {
       console.log(res)

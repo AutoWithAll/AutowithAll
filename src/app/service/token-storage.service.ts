@@ -5,19 +5,21 @@ const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenStorageService {
+  constructor(private router: Router) {}
 
-  constructor(private router : Router) { }
-
-  signOut(){
+  signOut() {
     window.sessionStorage.clear();
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl('/login');
   }
 
-  public saveToken(token: string){
-    console.log(token)
+  public saveToken(token: string) {
+    setTimeout(() => {
+      this.signOut();
+    }, 600000);
+    console.log(token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
@@ -27,12 +29,13 @@ export class TokenStorageService {
   }
 
   public saveUser(user) {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+   
+      window.sessionStorage.removeItem(USER_KEY);
+      window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+   
   }
 
   public getUser() {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
   }
-
 }
