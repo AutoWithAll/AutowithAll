@@ -47,7 +47,8 @@ import { InsuranceSidebarComponent} from './insurance-shared/insurance-sidebar/i
 import {InsuranceEditProfileComponent} from './insurance-edit-profile/insurance-edit-profile.component';
 import {InsuranceProfileComponent} from './insurance-profile/insurance-profile.component';
 import {InsuranceVehicleComponent} from './insurance-vehicle/insurance-vehicle.component';
-import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component'
+import {PostInsurancePlanDialogComponent} from './post-insurance-plan-dialog/post-insurance-plan-dialog.component';
+import {AdminLeasingsDetailsComponent} from './admin-leasings-details/admin-leasings-details.component'
 import { AdminGuard } from './guards/admin.guard';
  
 import { ViewleaseplanComponent } from './viewleaseplan/viewleaseplan.component';
@@ -70,6 +71,11 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent },
   { path: 'dashboard', component: DashboardComponent  },
   { path: 'leasevehicle', component: LeasevehicleComponent },
+  { path:'adminDashboard',component: AdminDashboardComponent},  
+  { path:'adminUsers',component:AdminUsersComponent},
+  { path:'adminAdvertisements',component:AdminAdvertisementsComponent},
+  { path:'adminLeasings',component:AdminLeasingsComponent},
+  { path:'adminInsurance',component:AdminInsuranceComponent},
   { path:'adminDashboard',component: AdminDashboardComponent , canActivate: [AdminGuard]},
   { path:'adminUsers',component:AdminUsersComponent, canActivate: [AdminGuard]},
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
@@ -114,6 +120,7 @@ const routes: Routes = [
   {path : 'insuranceprofile' , component : InsuranceProfileComponent},
   {path : 'insurancevehicle' , component : InsuranceVehicleComponent},
   {path : 'postinsuranceplan', component : PostInsurancePlanDialogComponent},
+  {path : 'adminleasingcompanydetails', component : AdminLeasingsDetailsComponent},
 
   {path : 'viewleaseplan', component: ViewleaseplanComponent},
   {path : 'viewinsplan', component: ViewinsuranceplanComponent},

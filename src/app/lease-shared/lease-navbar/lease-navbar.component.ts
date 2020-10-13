@@ -1,4 +1,5 @@
 import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-lease-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
 })
 export class LeaseNavbarComponent implements OnInit {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  constructor(private tokenService : TokenStorageService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,10 @@ export class LeaseNavbarComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
+}
+
+logout(){
+  this.tokenService.signOut();
 }
 
 }
