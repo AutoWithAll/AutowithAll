@@ -16,7 +16,9 @@ export class AdminLeasingsDetailsComponent implements OnInit {
   constructor(public dialog:MatDialog ,private tokenStorageService : TokenStorageService,private tokenService: TokenStorageService,private authService: AuthenticationService, private userService : UserService) { }
 
   ngOnInit(): void {
-    this.user = this.tokenStorageService.getUser();
+    this.user = this.userService.getleasingDetailsAdmin();
+    // this.user = this.tokenStorageService.getUser();
+
   }
 
 }
