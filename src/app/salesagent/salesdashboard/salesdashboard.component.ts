@@ -39,9 +39,9 @@ export class SalesdashboardComponent implements OnInit {
       this.wait = false;
     });
 
-    this.packService.isExistAgent().subscribe(res => {
-      this.curPackDetail = res;
-    })
+    // this.packService.isExistAgent().subscribe(res => {
+    //   this.curPackDetail = res;
+    // })
 
     this.packService.remainAdCount().subscribe((res) => {
       console.log(res);
