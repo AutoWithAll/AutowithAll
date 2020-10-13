@@ -78,17 +78,7 @@ const routes: Routes = [
 
 // import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
- 
- 
-  { path: '', component: HomeComponent },
-  { path: 'register', component: RegistrationComponentComponent, canActivate: [LoginGuard] },
-  { path: 'login', component: LoginComponentComponent, canActivate: [LoginGuard] },
 
-
-  
-  { path: 'forgetpassword', component: ForgetPasswordComponent , canActivate: [LoginGuard]},
-  { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard] },
-  { path: 'leasevehicle', component: LeasevehicleComponent, canActivate: [AuthGuard] },
    
   { path: 'home-view-ad', component: HomeViewadComponent},
   {path : 'leasingDash', component: LeasingDashboardComponent, canActivate: [AuthGuard]},

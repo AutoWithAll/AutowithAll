@@ -28,9 +28,8 @@ export class SalesdashboardComponent implements OnInit {
     public dialog: MatDialog,
     private userService: UserService
   ) {
-    this.authService.getCurrentUser().subscribe((res)=>{
-      this.user =res;
-    })
+    
+    
   }
 
   ngOnInit(): void {
