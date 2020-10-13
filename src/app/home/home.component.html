@@ -34,17 +34,17 @@
         <mat-card-subtitle>Hire a Salesagent to post your Advertisement</mat-card-subtitle>
       </mat-card-header>
      
-      <mat-accordion>
+      <mat-accordion *ngFor="let item of agentList">
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Saman Bandara
+              {{item.fname}} {{item.lname}}
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <p>Contact - 0718580598</p>
-          <p>Email - kasunbandara@gmail.com</p>
-          <p>Location - Katana</p>
+          <p>Contact - {{item.tnumber}}</p>
+          <p>Email - {{item.username}}</p>
+          <p>Location - {{item.address}}</p>
         </mat-expansion-panel>
       </mat-accordion>
       <br />
