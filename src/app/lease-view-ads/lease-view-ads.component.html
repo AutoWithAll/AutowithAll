@@ -3,7 +3,7 @@
   
   <!-- Advertiesment -->
   <ul>
-    <li *ngFor="let item of data">
+    <li *ngFor="let item of adDetails">
       <mat-grid-list cols="1" rowHeight="7:1">
         <mat-grid-tile>
           <mat-card class="wrapper">
@@ -23,12 +23,11 @@
                   <h4>
                     <b>{{ item.name }} </b>
                   </h4>
-                  {{ item.date }} <br />
+                  {{ item.datetime }} <br />
                   <label style="font-size: medium;">LKR-{{ item.price }}</label>
-                  <br /><br>
-  
-                  from - {{ item.from }} <br />
-                  model year - {{ item.year }} <br />
+                  <br>
+                  from - {{ item.datetime }} <br />
+                  model year - {{ item.m_year }} <br />
                 </mat-card>
               </mat-grid-tile>
               <!-- <mat-grid-tile>
