@@ -51,9 +51,9 @@ export class ReportComponent implements OnInit {
     this.reportForm=this.formBuilder.group(
       {
         reason:['',[Validators.required]],
-        first_name: ['', [Validators.required]],
-        last_name: ['', [Validators.required]],
-        telephone: [
+        f_name: ['', [Validators.required]],
+        l_name: ['', [Validators.required]],
+        t_number: [
           '',
           [
             Validators.required,
@@ -69,14 +69,14 @@ export class ReportComponent implements OnInit {
   get reason() {
     return this.reportForm.get('reason');
   }
-  get first_name() {
-    return this.reportForm.get('first_name');
+  get f_name() {
+    return this.reportForm.get('f_name');
   }
-  get last_name() {
-    return this.reportForm.get('last_name');
+  get l_name() {
+    return this.reportForm.get('l_name');
   }
-  get telephone(){
-    return this.reportForm.get('telephone');
+  get t_number(){
+    return this.reportForm.get('t_number');
   }
   get email(){
     return this.reportForm.get('email');
@@ -86,15 +86,15 @@ export class ReportComponent implements OnInit {
   }
   onSubmit(){
     const report={
-      reason:[this.reason.value],
-      first_name:this.first_name.value,
-      last_name:this.last_name.value,
-      telephone:this.telephone.value,
+      reason:this.reason.value,
+      f_name:this.f_name.value,
+      l_name:this.l_name.value,
+      t_number:this.t_number.value,
       email:this.email.value,
       message:this.message.value,
     };
     console.log(report);
-    this.userService.postReport(report,1).subscribe({
+    this.userService.postReport(report,this.adId).subscribe({
       next:(res)=>{
         console.log(res);
       },

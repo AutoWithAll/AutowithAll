@@ -38,7 +38,7 @@ export class UserService {
 
   postReport(report:Report,id){
       console.log(id)
-      return this.http.post('http://localhost:8080/advertisement/reportad/{1}', report);
+      return this.http.post('http://localhost:8080/advertisement/reportad/'+id, report);
 
   }
 
@@ -49,12 +49,22 @@ export class UserService {
   getAllUsers(){
     return this.http.get('http://localhost:8080/user/getallusers');
   }
+  getAgents(){
+    return  this.http.get('http://localhost:8080/admin/getallagents');
+  }
+  getNormalUsers(){
+    return this.http.get('http://localhost:8080/admin/getallusers');
+  }
+
   getAddsByUser() : Observable<any>{
     return this.http.get('http://localhost:8080/advertisement/getAddsByCurrentUser');
   }
 
   getOneAd(id) : Observable<any>{
     return this.http.get('http://localhost:8080/advertisement/getAdById/' +id);
+  }
+  getOneUser(id):Observable<any>{
+    return this.http.get('http://localhost:8080/user/getUserById/' +id);
   }
 
   editProfile(editprofile){
@@ -78,7 +88,7 @@ export class UserService {
    return this.http.put('http://localhost:8080/admin/confrim/' +id,{});
   }
 
-  getConfiremedAds(){
+  getConfirmedAds(){
     return this.http.get('http://localhost:8080/advertisement/getconfrimad');
   }
 

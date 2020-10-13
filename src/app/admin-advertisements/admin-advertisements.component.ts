@@ -28,7 +28,7 @@ export class AdminAdvertisementsComponent implements OnInit {
       this.newAds=res;
 
     });
-    this.service.getConfiremedAds().subscribe(res=>{
+    this.service.getConfirmedAds().subscribe(res=>{
       //console.log(res);
       this.confiremedAds=res;
 

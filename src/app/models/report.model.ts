@@ -1,8 +1,8 @@
 export class Report {
-    reason:string[];
-    first_name:string;
-    last_name:string;
-    telephone:string;
+    reason:string;
+    f_name:string;
+    l_name:string;
+    t_number:string;
     email:string;
     message:string;
 }

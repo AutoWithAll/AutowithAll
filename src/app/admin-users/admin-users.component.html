@@ -1,7 +1,7 @@
 <mat-card style="text-align: center; color: blue"><h1>Normal Users</h1></mat-card>
-<mat-card style="text-align: center;background-color: antiquewhite ;margin-bottom: 10px;margin-top: 10px;"><span>Users</span></mat-card>
+ 
  <div class="row mt-2">
-  <div *ngFor="let user of users" class="col-md-4 my-2">
+  <div *ngFor="let user of normalUsers" class="col-md-4 my-2">
    <mat-card class="example">
      <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -10,16 +10,79 @@
      </mat-card-header>
      <mat-card-content>
       <p>
-        {{user.tname}}
+        {{user.tnumber}}
       </p>
       <p>
         {{user.username}}
       </p>
     </mat-card-content>
+    <mat-card-actions>
+      <a pageScroll href="adminUsers#pagedown">
+        <button mat-raised-button (click)="viewUser(user.id)">View</button>
+      </a>
+    </mat-card-actions>
+     
    </mat-card>
   </div>
  </div>
  <mat-card style="text-align: center; color: blue"><h1>Agents</h1></mat-card>
- <mat-card style="text-align: center; color: blue"><h1>Administrators</h1></mat-card>
+ <div class="row mt-2">
+  <div *ngFor="let user of agents" class="col-md-4 my-2">
+   <mat-card class="example">
+     <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{user.fname}}</mat-card-title>
+      <mat-card-subtitle>{{user.lname}}</mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+      <p>
+        {{user.tnumber}}
+      </p>
+      <p>
+        {{user.username}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a pageScroll href="adminUsers#pagedown">
+        <button mat-raised-button (click)="viewUser(user.id)">View</button>
+      </a>
+    </mat-card-actions>
+   </mat-card>
+  </div>
+ </div>
+ <div id="pagedown">
+   <mat-card>
+     <table class="users">
+      <caption style="caption-side:top">{{userview.fname}}</caption>
+      <tr>
+        <td style="text-align: left;">FirstName</td>
+         <td style="text-align: left;">:</td>
+        <td style="text-align: left;">{{userview.fname}}</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">LastName</td>
+         <td style="text-align: left;">:</td>
+        <td style="text-align: left;">{{userview.lname}}</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">Telephone</td>
+         <td style="text-align: left;">:</td>
+        <td style="text-align: left;">{{userview.tnumber}}</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">NIC</td>
+         <td style="text-align: left;">:</td>
+        <td style="text-align: left;">{{userview.nic}}</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">username</td>
+         <td style="text-align: left;">:</td>
+        <td style="text-align: left;">{{userview.username}}</td>
+      </tr>
+      
+     </table>
+   </mat-card>
+
+ </div>
  
   
