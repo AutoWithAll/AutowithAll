@@ -11,7 +11,7 @@ import { UserService } from '../service/user.service';
 })
 
 export class LeaseViewAdsComponent  implements OnInit {
-  data : any = <any>{};
+  
   adDetails : any = <any>{};
   constructor(public dialog:MatDialog , private userService : UserService) { }
 
@@ -24,7 +24,7 @@ export class LeaseViewAdsComponent  implements OnInit {
 
   ngOnInit(): void {
 
-    this.data = this.userService.getads().subscribe(res => {
+      this.userService.getads().subscribe(res => {
       this.adDetails = res;
     })
     
