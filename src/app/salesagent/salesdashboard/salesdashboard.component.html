@@ -42,7 +42,7 @@
           <td style="text-align: center; font-size: 100%">
             :&nbsp;&nbsp;&nbsp;
           </td>
-          <td *ngIf="ifActive()" style="text-align: left; font-size: 100%">{{curPackDetail.packages.packageName}}</td>
+          <!-- <td *ngIf="ifActive()" style="text-align: left; font-size: 100%">{{curPackDetail.packages.packageName}}</td> -->
           <td *ngIf="!ifActive()" style="text-align: left; font-size: medium; color: red; font-size: 100%">First Select your Package</td>
         </tr>
         <tr *ngIf="ifActive()">
@@ -52,7 +52,7 @@
           <td style="text-align: center; font-size: 100%">
             :&nbsp;&nbsp;&nbsp;
           </td>
-          <td style="text-align: left; font-size: 100%">{{curPackDetail.packages.maxAd}}</td>
+          <!-- <td style="text-align: left; font-size: 100%">{{curPackDetail.packages.maxAd}}</td> -->
         </tr>
       </table>
     </mat-card>

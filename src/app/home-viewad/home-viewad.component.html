@@ -20,7 +20,7 @@
   </mat-grid-tile>
   <mat-grid-tile rowspan="7"></mat-grid-tile>
   <mat-grid-tile colspan="4" rowspan="3">
-    <mat-card><img src="assets/img/car.jpg" width="600" height="400"></mat-card>
+    <mat-card><img (click)="viewImg(releventAd.image1)" src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image1}}" width="600" height="400"></mat-card>
   </mat-grid-tile>
 
 
@@ -88,10 +88,10 @@
       </div>
     </mat-card>
   </mat-grid-tile>
-  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image2}}" width="150" height="100"></mat-grid-tile>
-  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image3}}" width="150" height="100"></mat-grid-tile>
-  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image4}}" width="150" height="100"></mat-grid-tile>
-  <mat-grid-tile><img src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image5}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img (click)="viewImg(releventAd.image2)" src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image2}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img (click)="viewImg(releventAd.image3)" src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image3}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img (click)="viewImg(releventAd.image4)" src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image4}}" width="150" height="100"></mat-grid-tile>
+  <mat-grid-tile><img (click)="viewImg(releventAd.image5)" src="{{'http://localhost:8080/advertisement/getimage/' + releventAd.image5}}" width="150" height="100"></mat-grid-tile>
   <mat-grid-tile colspan="4">
 
     <mat-card>

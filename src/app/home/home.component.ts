@@ -30,6 +30,9 @@ export class HomeComponent implements OnInit {
     this.service.getads().subscribe(res=>{
       console.log(res);
       this.list = res;
+    },
+    err => {
+      console.log(err)
     })
 
   }
