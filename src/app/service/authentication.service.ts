@@ -42,7 +42,7 @@ export class AuthenticationService {
     this.loading = false;
   }
 
-  registerUser(user: User): Observable<any> {
+  registerUser(user): Observable<any> {
     console.log(user);
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');

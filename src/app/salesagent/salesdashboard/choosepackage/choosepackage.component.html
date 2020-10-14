@@ -4,6 +4,7 @@
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile>
     <mat-card>
+      <div style="display: none" id="submit-form-container"></div>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -11,10 +12,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Platinum Package</h1>
-            <p>Price : {{platinumDetails.price}}/=</p>
-            <p>Ads : {{platinumDetails.maxAd}}</p>
-            <p>Valid till : {{platinumDetails.endingDate}}</p>
-            <button (click) ="choosePlan(1)" mat-raised-button color="primary" >Choose</button>
+            <p>Price : 4000/=</p>
+            <p>Ads : 40</p>
+            <button (click) ="choosePlan(1,4000)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
       </div>
@@ -28,10 +28,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Gold Package</h1>
-            <p>Price : {{goldDetails.price}}/=</p>
-            <p>Ads : {{goldDetails.maxAd}}</p>
-            <p>Valid till : {{goldDetails.endingDate}}</p>
-            <button mat-raised-button color="primary" (click) ="choosePlan(2)" >Choose</button>
+            <p>Price : 3000/=</p>
+            <p>Ads : 30</p>
+            <button mat-raised-button color="primary" (click) ="choosePlan(2, 3000)" >Choose</button>
           </div>
         </div>
       </div>
@@ -46,10 +45,9 @@
           </div>
           <div class="flip-card-back">
             <h1>Silver Package</h1>
-            <p>Price : {{silverDetails.price}}/=</p>
-            <p>Ads : {{silverDetails.maxAd}}</p>
-            <p>Valid till : {{silverDetails.endingDate}}</p>
-            <button (click) ="choosePlan(3)" mat-raised-button color="primary" >Choose</button>
+            <p>Price : 1000/=</p>
+            <p>Ads : 10</p>
+            <button (click) ="choosePlan(3,1000)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
       </div>

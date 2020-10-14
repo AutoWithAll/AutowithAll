@@ -1,53 +1,50 @@
-<h1 style="color: rgb(29, 68, 238); text-align: center; font-family: cursive; font-weight: bold;">Payment</h1>
-
+<h1
+  style="
+    color: rgb(29, 68, 238);
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+  "
+>
+  Payment
+</h1>
+<div style="display: none" id="submit-form-container"></div>
 <form class="form">
-    
+  <div class="form-group">
+    <mat-label class="label"> Accepted cards </mat-label>
 
-    <div class="form-group">
+    <mat-grid-list cols="6" rows="1" rowHeight="120px">
+      <mat-grid-tile colspan="5">
+        <img
+          class="img"
+          src="https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/credit-card/how-to/acceptance-logos.png "
+        />
+      </mat-grid-tile>
+    </mat-grid-list>
 
-        <mat-label class="label">
-            Accepted cards
-        </mat-label>
-    
-        <mat-grid-list cols="6" rows="1" rowHeight="120px">
-            <mat-grid-tile colspan="5">
-                    <img class="img" src="https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/credit-card/how-to/acceptance-logos.png ">
-            </mat-grid-tile>
-    
-             
-        </mat-grid-list>
+    <label class="label"> Name on Card </label>
+    <input type="text" class="form-control" placeholder="Jane Mathew" />
 
-        <label class="label">
-            Name on Card
-        </label>
-        <input type="text" class="form-control" placeholder="Jane Mathew">
-        
-        <label class="label">
-            Card Number
-        </label>
-        <input type="text" class="form-control"   placeholder="1111-2222-3333-4444" required>
+    <label class="label"> Card Number </label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="1111-2222-3333-4444"
+      required
+    />
 
-        <label class="label" >
-            Expire Month
-        </label>
-        <input type="text" class="form-control"  placeholder="July" required>
+    <label class="label"> Expire Month </label>
+    <input type="text" class="form-control" placeholder="July" required />
 
-        <label class="label">
-            Expire Year
-        </label>
-        <input type="text" class="form-control" placeholder="2022" required>
+    <label class="label"> Expire Year </label>
+    <input type="text" class="form-control" placeholder="2022" required />
 
-        <label class="label">
-             CVV
-        </label>
-        <input type="text" class="form-control" placeholder="352" required>
+    <label class="label"> CVV </label>
+    <input type="text" class="form-control" placeholder="352" required />
 
-
-        <br/>
-        <button mat-raised-button class="btn"> Continue to checkout</button>
-    </div>
-
-     
-
+    <br />
+    <button mat-raised-button class="btn" (click)="checkout()">
+      Continue to checkout ...
+    </button>
+  </div>
 </form>
-

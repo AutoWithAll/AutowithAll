@@ -215,7 +215,7 @@ export class EditprofileComponent implements OnInit {
   
   submitPhoto(){
     this.userService.changePhoto(this.previewUrls).subscribe(res => {
-      console.log(res)
+      console.log(res);
     })
   }
 }
