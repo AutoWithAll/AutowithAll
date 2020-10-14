@@ -36,6 +36,12 @@ export class HomeComponent implements OnInit {
     })
 
   }
+  viewleaseplan(id){
+    this.homeService.setLeasePlan(id);
+  }
+  viewinsplan(id){
+    this.homeService.setInsurePlans(id);
+  }
 
   getAgentList(){
     this.service.getAgentDetails().subscribe(res => {

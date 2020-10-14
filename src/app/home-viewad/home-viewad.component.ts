@@ -22,6 +22,10 @@ export class HomeViewadComponent implements OnInit {
     this.homeService.setImg(id);
     this.dialog.open(ViewImgComponent);
   }
+  reportAd(id){
+    console.log(id)
+    this.homeService.setReportAdId(id);
+  }
 
  
 
@@ -39,4 +43,6 @@ export class ViewImgComponent {
   ngOnInit(){
     this.img = this.homeService.getImg();
   }
+
+  
 }

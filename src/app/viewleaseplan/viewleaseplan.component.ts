@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../service/home.service';
 
 @Component({
   selector: 'app-viewleaseplan',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewleaseplanComponent implements OnInit {
 
-  constructor() { }
+  leaseList;
+  adId;
+
+  constructor(private homeService : HomeService) { }
 
   ngOnInit(): void {
+    this.adId = this.homeService.getLeasePlanId();
+    console.log(this.adId)
+    this.homeService.getLeasingPlans(this.adId).subscribe(res => {
+      this.leaseList = res;
+    },
+    err=> {
+      console.log(err)
+    })
+
   }
 
 }

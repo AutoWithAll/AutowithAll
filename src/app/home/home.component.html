@@ -119,10 +119,10 @@
           <mat-card class="one">
             <mat-grid-list cols="2" rowHeight="2:1" gutterSize="5px">
               <mat-grid-tile colspan="2">
-                <button mat-raised-button color="primary" class="button1">View Leasing Plans</button>
+                <button mat-raised-button color="primary" (click) = "viewleaseplan(item.id)" [routerLink]="['/viewleaseplan']" routerLinkActive="router-link-active"  class="button1">View Leasing Plans</button>
               </mat-grid-tile>
               <mat-grid-tile colspan="2">
-                <button mat-raised-button color="primary" class="button1">View Insurance Plan</button>
+                <button mat-raised-button (click) = "viewinsplan(item.id)" [routerLink]="['/viewinsplan']" routerLinkActive="router-link-active"  color="primary" class="button1">View Insurance Plan</button>
               </mat-grid-tile>
             </mat-grid-list>
           </mat-card>

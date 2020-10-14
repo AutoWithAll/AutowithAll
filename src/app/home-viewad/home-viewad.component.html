@@ -14,7 +14,7 @@
   <mat-grid-tile colspan="3">
     <mat-card>
       <mat-card-actions>
-        <button mat-raised-button color="warn" style="margin-left:75px;" [routerLink]="['/report-ad']">REPORT
+        <button mat-raised-button color="warn" style="margin-left:75px;" (click)="reportAd(releventAd.id)" [routerLink]="['/report-ad']">REPORT
           ADVERTISEMENT</button></mat-card-actions>
     </mat-card>
   </mat-grid-tile>

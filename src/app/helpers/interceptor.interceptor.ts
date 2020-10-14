@@ -21,7 +21,7 @@ export class InterceptorInterceptor implements HttpInterceptor {
     
     let authReq = request;
     const token = this.token.getToken();
-    console.log('sex', token)
+    console.log('Token', token)
     if(token != null){
       authReq = request.clone({headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer '+ token)});
     }

@@ -13,11 +13,15 @@
                 <span style="float: left;">Customer Inquiry</span>
             </mat-toolbar>
 
-            <form class="my-form">
+            <form class="my-form"  [formGroup]="repotForm" (ngSubmit)="onSubmit()" >
 
                 <mat-form-field class="full-width">
                     <mat-label>Select your Reason</mat-label>
-                    <mat-select>
+                    <mat-select 
+                    disableRipple
+                    id="value"
+                    formControlName="reason"
+                    name="reason">
                         <mat-option value="wronginfo">Wrong Information</mat-option>
                         <mat-option value="notcontact">Can't contact seller Contact</mat-option>
                         <mat-option value="fraud">Fraud</mat-option>
@@ -29,32 +33,32 @@
 
                 <mat-form-field class="full-width">
                     <mat-label>First Name</mat-label>
-                    <input matInput  placeholder="First Name" />
+                    <input matInput formControlName="fname"  placeholder="First Name" />
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Last Name</mat-label>
-                    <input matInput  placeholder="Last Name" name="lname" required />
+                    <input matInput formControlName="lname" placeholder="Last Name" name="lname" required />
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Telephone Number</mat-label>
-                    <input matInput placeholder="Telephone Number" />
+                    <input matInput formControlName="tnumber" placeholder="Telephone Number" />
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Email</mat-label>
-                    <input matInput  placeholder="auto@example.com" name="username" />
+                    <input matInput formControlName="email"  placeholder="auto@example.com" name="username" />
                 </mat-form-field>
 
                 <mat-form-field class="full-width">
                     <mat-label>Description/your message</mat-label>
-                    <textarea matInput class="textarea"></textarea>
+                    <textarea matInput formControlName="description" class="textarea"></textarea>
                 </mat-form-field>
 
 
                 <mat-card-actions>
-                    <button mat-raised-button color="primary" style="margin-left: 200px;"> SUBMIT </button>
+                    <button mat-raised-button type="submit" color="primary" style="margin-left: 200px;"> SUBMIT </button>
                 </mat-card-actions>
             </form>
 
