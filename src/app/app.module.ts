@@ -87,6 +87,7 @@ import { HomeFaqComponent } from './home-faq/home-faq.component';
 import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
 import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
 import { AdminInsuranceDetailsComponent } from './admin-insurance-details/admin-insurance-details.component';
+import { AdminReportsComponent } from './admin-reports/admin-reports.component';
 
 
 @NgModule({
@@ -153,6 +154,7 @@ import { AdminInsuranceDetailsComponent } from './admin-insurance-details/admin-
     HomePrivacypolicyComponent,
     HomeTermsofUseComponent,
     AdminInsuranceDetailsComponent,
+    AdminReportsComponent,
 
     
   ],

@@ -1,13 +1,16 @@
- <mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar style="text-align: center">Profile</mat-toolbar>
 
-        <mat-sidenav #drawer class="sidenav" fixedInViewport
-            [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-            [mode]="(isHandset$ | async) ? 'over' : 'side'"
-            [opened]="(isHandset$ | async) === false">
-          <mat-toolbar style="text-align: center;">Profile</mat-toolbar>
-      
-          <mat-list id="menus">
-            <!-- <mat-card>
+    <mat-list id="menus">
+      <!-- <mat-card>
               <mat-card-header>
                 <div 
                   mat-card-avatar 
@@ -18,170 +21,294 @@
                 <mat-card-subtitle> <img src="assets/img/Admin1.jpg" ></mat-card-subtitle>
               </mat-card-header>
             </mat-card> -->
-            <mat-list-item>
-              <!-- <button 
+      <mat-list-item>
+        <!-- <button 
               class="menu-item"
                 mat-flat-button>
                 <mat-icon>account_circle</mat-icon>
               Users</button> -->
-              <a class="nav-link btn btn-default" href [routerLink]="['/adminUsers']"><mat-icon>account_circle</mat-icon>Users</a>
-            </mat-list-item>
-      
-            <mat-list-item>
-              <a class="nav-link btn btn-default" href [routerLink]="['/adminAdvertisements']"><mat-icon>account_circle</mat-icon>Advertisements</a>
-              </mat-list-item>
+        <a class="nav-link btn btn-default" href [routerLink]="['/adminUsers']"
+          ><mat-icon>account_circle</mat-icon>Users</a
+        >
+      </mat-list-item>
 
-              <mat-list-item>
-                <button 
-                class="menu-item"
-                  mat-flat-button>
-                  <mat-icon>directions_car</mat-icon>
-                Payings</button>
-              </mat-list-item>
-      
-      
-              <mat-list-item>
-                <a class="nav-link btn btn-default" href [routerLink]="['/adminLeasings']">  <mat-icon>directions_car</mat-icon>Leasing Companies</a>
-              </mat-list-item>
-      
-              <mat-list-item>
-                <a class="nav-link btn btn-default" href [routerLink]="['/adminInsurance']">  <mat-icon>directions_car</mat-icon>Insurance Companies</a>
-              </mat-list-item>
-      
-            </mat-list>
-        </mat-sidenav>
-      
-        <mat-sidenav-content>
-          <mat-toolbar color="primary">
-            <button
-             type="button"
-              aria-label="Toggle sidenav"
-              mat-icon-button
-              (click)="drawer.toggle()"
-              *ngIf="isHandset$ | async">
-              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-            <span [routerLink]="['/']" routerLinkActive="router-link-active" >AutoWithAll</span>
-            <span class="fill-space"></span>
-            <mat-icon
-          class="toolbar-icon"
-          matBadge="8"
-          matBadgePosition="after"
-          matBadgeColor="accent"
-        >notifications</mat-icon>
-        <a mat-button (click) = "logout()">Log out</a>
-          </mat-toolbar>
-          <mat-grid-list cols="2" rowHeight="2:1">
-              <mat-grid-tile>
-                  <mat-card>
-                      <mat-card-header>
-                        <div 
-                          mat-card-avatar 
-                          class="avatar"></div>
-              
-                        <mat-card-title>{{userDetail.fname}}</mat-card-title>
-                        <mat-card-subtitle>{{userDetail.lname}}</mat-card-subtitle>
-                        <mat-card-subtitle> <img class="a" src="assets/img/Admin1.jpg" ></mat-card-subtitle>
-                        
-                      </mat-card-header>
-                      <mat-card-content>
-                          <!-- <button mat-raised-button color="primary" href [routerLink]="['/adminDetails']" >Edit Details</button> -->
-                          <a class=" btn btn-default" href [routerLink]="['/adminDetails']">  <mat-icon style="margin-right: 5px;">border_color</mat-icon>EditDetails</a>
+      <mat-list-item>
+        <a
+          class="nav-link btn btn-default"
+          href
+          [routerLink]="['/adminAdvertisements']"
+          ><mat-icon>account_circle</mat-icon>Advertisements</a
+        >
+      </mat-list-item>
 
-                      </mat-card-content>
-                    </mat-card>
+      <mat-list-item>
+        <a
+          class="nav-link btn btn-default"
+          href
+          [routerLink]="['/adminReports']"
+        >
+          <mat-icon>assignment</mat-icon> Reports</a
+        >
+      </mat-list-item>
 
-              </mat-grid-tile>
-              <mat-grid-tile>
-                  <!-- <img  class="img1" src="assets/img/mysales.png"  >  -->
-                   <mat-card>
-                      <mat-card-title>Trending</mat-card-title>
-                      <img mat-card-image src="https://www.toyota.lk/wp-content/uploads/2019/04/Camry-frount.jpg" style="height: 170px;">
-                      <mat-card-content><button mat-raised-button color="primary">View</button></mat-card-content>
-                   </mat-card>
-                 </mat-grid-tile>  
-           
-                
-                 </mat-grid-list>
-                 <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'50px'">
-                  
-                  <mat-grid-tile class="gl2" >
-                    
-                    <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
-                    <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Sellers Count</h1></mat-card-content>
-                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{userCount}}</button>
-                     
-                    </mat-card>
-                    <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 
-                      <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Agents Count</h1></mat-card-content>
-                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{agentCount}}</button>
-                    </mat-card>
-                      
-                    
-                  </mat-grid-tile>
-                      
-                  <mat-grid-tile class="gl2" >
-                    
-                    <mat-card style="background-color: rgb(51, 185, 185); height: 300px; width: 300px; margin-right: 40px;margin-bottom: 30px;" >
-                    <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Total Leasing Companies</h1></mat-card-content>
-                    <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{leasingCount}}</button>
-                     
-                    </mat-card>
-                    <mat-card style="background-color: rgb(51, 185, 185);height: 300px; width: 300px;margin-right: 40px;margin-bottom: 30px; "> 
-                      <mat-card-content style="color: rgb(15, 19, 20);font-size: 30px;text-align: center;margin-top: 30px;"><h1>Total Insurance Companies</h1></mat-card-content>
-                      <button mat-fab color="blue" aria-label="Example icon button with a delete icon" style="width: 100px;height: 100px;margin-left: 50px;">{{insuranceCount}}</button>
-                    </mat-card>
-                      
-                    
-                  </mat-grid-tile></mat-grid-list>
-                 <mat-card style="text-align: center;background-color: rgb(105, 105, 197);margin-bottom: 20px;"><h1>New Requests</h1></mat-card>
-                 
-                 <mat-grid-list cols="3" rowHeight="2:1" [gutterSize]="'70px'">
-                   
-                  <mat-grid-tile  class="gl1" > <button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;" href [routerLink]="['/adminAdvertisements']">New Advertisements</button>
-                    <div>
-                    <span matBadge="{{newAdsCount}}" matBadgeOverlap="false" matBadgeSize="large" > </span>
-                  </div>
-                  </mat-grid-tile>
-                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;" href [routerLink]="['/adminLeasings']"> New Leasing Companies</button>
-                    
-                    <div>
-                    <span matBadge="3" matBadgeOverlap="false" matBadgeSize="large"> </span></div>
-                  </mat-grid-tile>
-                  <mat-grid-tile  class="gl1" ><button mat-flat-button  style="margin-top: 10px;width: 250px;height: 60px;" [routerLink]="['/adminInsurance']">New Insurance Companies</button>
-                    <div>
-                    <span matBadge="9" matBadgeOverlap="false" matBadgeSize="large"> </span></div>
-                  </mat-grid-tile>
-                 </mat-grid-list>
-                 <mat-card style="background: whitesmoke"></mat-card>
+      <mat-list-item>
+        <a
+          class="nav-link btn btn-default"
+          href
+          [routerLink]="['/adminLeasings']"
+        >
+          <mat-icon>directions_car</mat-icon>Leasing Companies</a
+        >
+      </mat-list-item>
 
-                 
-                   
-                
-                
-            
-               
-            
-               
-            
-              
-           
-           
-             
+      <mat-list-item>
+        <a
+          class="nav-link btn btn-default"
+          href
+          [routerLink]="['/adminInsurance']"
+        >
+          <mat-icon>directions_car</mat-icon>Insurance Companies</a
+        >
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
 
-          
-         
-            
-          <!-- Add Content Here -->
-        </mat-sidenav-content>
-      
-      </mat-sidenav-container>
-       
-      
-       
-       
-      
-      
-      
-     
-  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span [routerLink]="['/']" routerLinkActive="router-link-active"
+        >AutoWithAll</span
+      >
+      <span class="fill-space"></span>
+      <mat-icon
+        class="toolbar-icon"
+        matBadge="8"
+        matBadgePosition="after"
+        matBadgeColor="accent"
+        >notifications</mat-icon
+      >
+      <a mat-button (click)="logout()">Log out</a>
+    </mat-toolbar>
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="avatar"></div>
+
+            <mat-card-title>{{ userDetail.fname }}</mat-card-title>
+            <mat-card-subtitle>{{ userDetail.lname }}</mat-card-subtitle>
+            <mat-card-subtitle>
+              <img class="a" src="assets/img/Admin1.jpg"
+            /></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <!-- <button mat-raised-button color="primary" href [routerLink]="['/adminDetails']" >Edit Details</button> -->
+            <a class="btn btn-default" href [routerLink]="['/adminDetails']">
+              <mat-icon style="margin-right: 5px">border_color</mat-icon
+              >EditDetails</a
+            >
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <!-- <img  class="img1" src="assets/img/mysales.png"  >  -->
+        <mat-card>
+          <mat-card-title>Trending</mat-card-title>
+          <img
+            mat-card-image
+            src="https://www.toyota.lk/wp-content/uploads/2019/04/Camry-frount.jpg"
+            style="height: 170px"
+          />
+          <mat-card-content
+            ><button mat-raised-button color="primary">
+              View
+            </button></mat-card-content
+          >
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'50px'">
+      <mat-grid-tile class="gl2">
+        <mat-card
+          style="
+            background-color: rgb(51, 185, 185);
+            height: 300px;
+            width: 300px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+          "
+        >
+          <mat-card-content
+            style="
+              color: rgb(15, 19, 20);
+              font-size: 30px;
+              text-align: center;
+              margin-top: 30px;
+            "
+            ><h1>Sellers Count</h1></mat-card-content
+          >
+          <button
+            mat-fab
+            color="blue"
+            aria-label="Example icon button with a delete icon"
+            style="width: 100px; height: 100px; margin-left: 50px"
+          >
+            {{ userCount }}
+          </button>
+        </mat-card>
+        <mat-card
+          style="
+            background-color: rgb(51, 185, 185);
+            height: 300px;
+            width: 300px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+          "
+        >
+          <mat-card-content
+            style="
+              color: rgb(15, 19, 20);
+              font-size: 30px;
+              text-align: center;
+              margin-top: 30px;
+            "
+            ><h1>Agents Count</h1></mat-card-content
+          >
+          <button
+            mat-fab
+            color="blue"
+            aria-label="Example icon button with a delete icon"
+            style="width: 100px; height: 100px; margin-left: 50px"
+          >
+            {{ agentCount }}
+          </button>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile class="gl2">
+        <mat-card
+          style="
+            background-color: rgb(51, 185, 185);
+            height: 300px;
+            width: 300px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+          "
+        >
+          <mat-card-content
+            style="
+              color: rgb(15, 19, 20);
+              font-size: 30px;
+              text-align: center;
+              margin-top: 30px;
+            "
+            ><h1>Total Leasing Companies</h1></mat-card-content
+          >
+          <button
+            mat-fab
+            color="blue"
+            aria-label="Example icon button with a delete icon"
+            style="width: 100px; height: 100px; margin-left: 50px"
+          >
+            {{ leasingCount }}
+          </button>
+        </mat-card>
+        <mat-card
+          style="
+            background-color: rgb(51, 185, 185);
+            height: 300px;
+            width: 300px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+          "
+        >
+          <mat-card-content
+            style="
+              color: rgb(15, 19, 20);
+              font-size: 30px;
+              text-align: center;
+              margin-top: 30px;
+            "
+            ><h1>Total Insurance Companies</h1></mat-card-content
+          >
+          <button
+            mat-fab
+            color="blue"
+            aria-label="Example icon button with a delete icon"
+            style="width: 100px; height: 100px; margin-left: 50px"
+          >
+            {{ insuranceCount }}
+          </button>
+        </mat-card>
+      </mat-grid-tile></mat-grid-list
+    >
+    <mat-card
+      style="
+        text-align: center;
+        background-color: rgb(105, 105, 197);
+        margin-bottom: 20px;
+      "
+      ><h1>New Requests</h1></mat-card
+    >
+
+    <mat-grid-list cols="3" rowHeight="2:1" [gutterSize]="'70px'">
+      <mat-grid-tile class="gl1">
+        <button
+          mat-flat-button
+          style="margin-top: 10px; width: 250px; height: 60px"
+          href
+          [routerLink]="['/adminAdvertisements']"
+        >
+          New Advertisements
+        </button>
+        <div>
+          <span
+            matBadge="{{ newAdsCount }}"
+            matBadgeOverlap="false"
+            matBadgeSize="large"
+          >
+          </span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="gl1"
+        ><button
+          mat-flat-button
+          style="margin-top: 10px; width: 250px; height: 60px"
+          href
+          [routerLink]="['/adminLeasings']"
+        >
+          New Leasing Companies
+        </button>
+
+        <div>
+          <span matBadge="3" matBadgeOverlap="false" matBadgeSize="large">
+          </span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="gl1"
+        ><button
+          mat-flat-button
+          style="margin-top: 10px; width: 250px; height: 60px"
+          [routerLink]="['/adminInsurance']"
+        >
+          New Insurance Companies
+        </button>
+        <div>
+          <span matBadge="9" matBadgeOverlap="false" matBadgeSize="large">
+          </span>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card style="background: whitesmoke"></mat-card>
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

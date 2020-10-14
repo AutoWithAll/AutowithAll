@@ -1,0 +1,24 @@
+<mat-card style="text-align: center; color: blue"
+><h1>Reports</h1></mat-card
+>
+<table class="table table-dark">
+    <thead>
+        <tr>
+        <th scope="col">AdId</th>
+          <th scope="col">Reason</th>
+          <th scope="col">Message</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">TelephoneNumber</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let report of Reports; ">
+            <td>{{report.id}}</td>
+         <td>{{report.reason}}</td>
+            <td>{{report.message}}  </td>
+            <td>{{report.email}} </td>
+             
+        </tr>
+      </tbody>
+</table>

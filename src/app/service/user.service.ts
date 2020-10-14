@@ -155,5 +155,8 @@ export class UserService {
   getAgentDetails() : Observable<any> {
     return this.http.get('http://localhost:8080/admin/getallagents');
   }
+  getReports(){
+    return this.http.get('http://localhost:8080/reportad/getallreport');
+  }
 
 }

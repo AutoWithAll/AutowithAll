@@ -62,6 +62,7 @@ import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
 import { HomeFaqComponent } from './home-faq/home-faq.component';
 import { HomePrivacypolicyComponent } from './home-privacypolicy/home-privacypolicy.component';
 import { HomeTermsofUseComponent } from './home-termsof-use/home-termsof-use.component';
+import { AdminReportsComponent } from './admin-reports/admin-reports.component';
  
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -81,6 +82,8 @@ const routes: Routes = [
   { path:'adminAdvertisements',component:AdminAdvertisementsComponent, canActivate: [AdminGuard]},
   { path:'adminLeasings',component:AdminLeasingsComponent, canActivate: [AdminGuard]},
   { path:'adminInsurance',component:AdminInsuranceComponent, canActivate: [AdminGuard]},
+  { path:'adminReports',component:AdminReportsComponent, canActivate: [AdminGuard]},
+
 
 // import { HomeViewadComponent } from './home-viewad/home-viewad.component';
 //import { EditnselleradsComponent } from './normalseller/editnsellerads/editnsellerads.component';
