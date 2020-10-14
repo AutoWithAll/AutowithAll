@@ -7,6 +7,24 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PackageService {
 
+  packagePrice;
+  packageiD;
+
+  SetpackageiD(data){
+    this.packageiD = data;
+  
+  }
+  getpackageiD(){
+    return this.packageiD;
+  }
+
+  SetpackagePrice(data){
+    this.SetpackagePrice =data;
+  }
+  getpackagePrice(){
+    return this.packagePrice;
+  }
+
   constructor(private http : HttpClient,  private toaster : ToastrService) { }
 
   getPackageDetails(id){

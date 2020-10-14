@@ -3,6 +3,7 @@
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile>
     <mat-card>
+      <div style="display: none" id="submit-form-container"></div>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -12,7 +13,7 @@
             <h1>Platinum Package</h1>
             <p>Price : 4000/=</p>
             <p>Ads : 40</p>
-            <button (click) ="choosePlan(1)" mat-raised-button color="primary" >Choose</button>
+            <button (click) ="choosePlan(1,4000)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
       </div>
@@ -28,7 +29,7 @@
             <h1>Gold Package</h1>
             <p>Price : 3000/=</p>
             <p>Ads : 30</p>
-            <button mat-raised-button color="primary" (click) ="choosePlan(2)" >Choose</button>
+            <button mat-raised-button color="primary" (click) ="choosePlan(2, 3000)" >Choose</button>
           </div>
         </div>
       </div>
@@ -45,7 +46,7 @@
             <h1>Silver Package</h1>
             <p>Price : 1000/=</p>
             <p>Ads : 10</p>
-            <button (click) ="choosePlan(3)" mat-raised-button color="primary" >Choose</button>
+            <button (click) ="choosePlan(3,1000)" mat-raised-button color="primary" >Choose</button>
           </div>
         </div>
       </div>
