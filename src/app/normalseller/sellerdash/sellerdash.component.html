@@ -1,8 +1,14 @@
-<app-sellersidebar></app-sellersidebar>
+<div *ngIf="isLoading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <app-sellersidebar></app-sellersidebar>
 <mat-grid-list cols="4"  gutterSize="30px" rowHeight='300px'>
 
   <mat-grid-tile>
-    <img src="assets/img/normalseller.jpg"  class="profileimg" height="100px" weight="90px">
+    <img src="{{
+      'http://localhost:8080/advertisement/getimage/' + user.imgId
+    }}"  class="profileimg" height="100px" weight="90px">
   </mat-grid-tile>
 
   <mat-grid-tile colspan="2">
@@ -29,7 +35,7 @@
               <td style="text-align: center;font-size: 120%">:&nbsp;&nbsp;&nbsp; </td>
               <td style="text-align: left;font-size: 120%"></td>
           </tr>
-          <tr><a class="nav-link btn btn-default" href [routerLink]="['/reportAd']">reportAd</a></tr>
+          <!-- <tr><a class="nav-link btn btn-default" href [routerLink]="['/reportAd']">reportAd</a></tr> -->
       </table>
       </mat-card>
    
@@ -101,6 +107,7 @@
 
 
 </mat-grid-list>
+</div>
 
 
 

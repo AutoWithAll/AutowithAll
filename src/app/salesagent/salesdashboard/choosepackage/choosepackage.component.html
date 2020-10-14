@@ -1,4 +1,5 @@
 <h3 mat-dialog-title class="title"><b>Select Package what you want</b></h3>
+<div *ngIf="!isLoading">
 
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile>
@@ -54,3 +55,5 @@
   </mat-grid-tile>
 </mat-grid-list>
 
+  
+</div>

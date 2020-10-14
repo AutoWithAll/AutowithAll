@@ -35,6 +35,8 @@ interface PaymentData {
   // custom_2: string;
   // hash:string
 }
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-choosepackage',
@@ -42,6 +44,9 @@ interface PaymentData {
   styleUrls: ['./choosepackage.component.css'],
 })
 export class ChoosepackageComponent implements OnInit {
+
+  isLoading = true;
+
   platinumDetails;
   goldDetails;
   silverDetails;
@@ -75,6 +80,7 @@ export class ChoosepackageComponent implements OnInit {
     this.authenticationService.getCurrentUser().subscribe(
       (data) => {
         this.cid = data.id;
+        this.isLoading = false;
         this.getOrderId();
       },
       (error) => {

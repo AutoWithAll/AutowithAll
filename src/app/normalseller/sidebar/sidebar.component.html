@@ -1,3 +1,8 @@
+<div *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+
 <mat-toolbar color="primary">
   <button
     type="button"
@@ -7,7 +12,7 @@
   >
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
-  <span>AutoWithAll</span>
+  <span [routerLink]="['/']" routerLinkActive="router-link-active" >AutoWithAll</span>
   <img src="assets/img/logo.png" class="logo" />
   <span class="fill-space"></span>
 
@@ -18,7 +23,7 @@
     matBadgeColor="accent"
     >notifications
   </mat-icon>
-  <a mat-button routerLink="/login">Log out</a>
+  <a mat-button (click)="logout()" >Log out</a>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
@@ -49,7 +54,9 @@
           <mat-card-title>{{user.fname}}</mat-card-title>
           <mat-card-subtitle>Normal Seller</mat-card-subtitle>
           <mat-card-subtitle>
-            <img src="assets/img/normalseller.jpg" class="girl"
+            <img src="{{
+              'http://localhost:8080/advertisement/getimage/' + user.imgId
+            }}" class="girl" 
           /></mat-card-subtitle>
         </mat-card-header>
       </mat-card>
@@ -98,3 +105,4 @@
 
   <!-- Add Content Here -->
 </mat-sidenav-container>
+</div>

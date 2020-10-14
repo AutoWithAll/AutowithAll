@@ -33,6 +33,7 @@ export class SellerEditprofileComponent implements OnInit {
   editForm: FormGroup;
   Securityform: FormGroup;
   userDetail: User = <User>{};
+  isLoading = true;
 
   fileData: File = null;
   previewUrls;
@@ -103,12 +104,12 @@ export class SellerEditprofileComponent implements OnInit {
 
   ngOnInit(): void {
     
-        this.userDetail = this.tokenService.getUser();
-      console.log(this.userDetail.imgId)
-      console.log(this.userDetail)
-      // this.authService.getCurrentUser().subscribe(res => {
-      //   this.userDetail = res;
-      // })
+      //   this.userDetail = this.tokenService.getUser();
+      // console.log(this.userDetail.imgId)
+      // console.log(this.userDetail)
+      this.authService.getCurrentUser().subscribe(res => {
+        this.userDetail = res;
+      })
   
       this.editForm.patchValue({
         fname: this.userDetail.fname,
@@ -116,6 +117,7 @@ export class SellerEditprofileComponent implements OnInit {
         t_number: this.userDetail.tnumber,
         adress: this.userDetail.address,
       });
+      this.isLoading = false;
      
   }
 

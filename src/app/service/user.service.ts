@@ -23,6 +23,15 @@ const headeroption = {
   providedIn: 'root',
 })
 export class UserService {
+
+  leasingDetailsAdmin;
+
+  setleasingDetailsAdmin(data){
+    this.leasingDetailsAdmin = data;
+  }
+  getleasingDetailsAdmin(){
+    return this.leasingDetailsAdmin;
+  }
   
 
   constructor(private http : HttpClient , private toaster : ToastrService) {}
@@ -94,6 +103,10 @@ export class UserService {
     return this.http.put('http://localhost:8080/user/changephoto', image);
   }
 
+  getLeasingCompany(){
+    return this.http.get('http://localhost:8080/admin/getalllcompany');
+  }
+
   // getUser(): Observable<User[]> {
   //   return this.http.get<User[]>(this.serviceUrl);
   // }
@@ -113,6 +126,10 @@ export class UserService {
   }
   remainpostAdCount(){
     return this.http.get('http://localhost:8080/advertisement/countremainad');
+  }
+
+  getAgentDetails() : Observable<any> {
+    return this.http.get('http://localhost:8080/admin/getallagents');
   }
 
 }

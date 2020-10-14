@@ -221,6 +221,10 @@ export class PostadsComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
+        let errmsg = err.error.message;
+       
+        this.toast.error(errmsg + "photo upload but must Upload 5 photos only")
+        
       },
     });
   }

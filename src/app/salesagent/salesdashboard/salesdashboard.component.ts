@@ -24,6 +24,7 @@ export class SalesdashboardComponent implements OnInit {
   payment = new Payment();
   orderId: number;
   pId: number;
+  wait =true;
 
   curPackDetail;
 
