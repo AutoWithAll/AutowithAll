@@ -44,11 +44,21 @@ mat-label{
     justify-content: center;
 }
 
-button {
+.button {
     margin-right: 50px;
     margin-left: 140px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 50px;
+    width: 100px;
+     
+    
+}
+
+.button2 {
+    margin-right: 50px;
+    margin-left: 140px;
+    margin-bottom: 70px;
+    margin-top: 0;
     width: 100px;
      
     
