@@ -1,3 +1,19 @@
 <mat-card style="text-align: center; color: blue"><h1>Insurance Companies</h1></mat-card>
- 
+<mat-grid-list cols="4" rowHeight="1.5:1" [gutterSize]="'30px'">
+    <mat-grid-tile *ngFor = "let item of list"
+      ><mat-card>
+        
+        <img
+          mat-card-image
+          src="https://www.customlogoshop.com/wp-content/uploads/2017/03/Hyper-Car-Leasing.jpg "
+          style="height: 140px"
+        />
+        <p>{{item.fname}}{{item.lname}}</p>
+        <mat-card-content
+          ><button mat-raised-button color="primary" (click)="viewDetails(item)">
+            Viewdetails
+          </button></mat-card-content
+        >
+      </mat-card></mat-grid-tile
+    ></mat-grid-list>
  

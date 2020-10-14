@@ -75,9 +75,6 @@ export class ViewadsComponent implements OnInit {
     this.dialog.open(DeleteAdDialog);
   }
 
-  onDelete(id){
-    
-  }
 
   ngOnInit(): void {
     
@@ -110,4 +107,12 @@ export class ViewadsComponent implements OnInit {
   selector: 'agentdeletead-dialog',
   templateUrl: 'agentdeletead-dialog.html',
 })
-export class DeleteAdDialog {}
+export class DeleteAdDialog {
+  msg : String;
+  ngOnInit(){
+    this.msg = "Prabath";
+  }
+  onDelete(){
+    
+  }
+}

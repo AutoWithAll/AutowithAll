@@ -28,11 +28,11 @@ export class LoginGuard implements CanActivate {
       } else if (role == 'ROLE_AGENT') {
         this.router.navigate(['/salesagentdash']);
       } else if (role == 'ROLE_LCOMPANY') {
-        this.router.navigate(['/leasingDash']);
+        this.router.navigate(['/lease']);
       }else if (role == 'ROLE_USER') {
         this.router.navigate(['/sellerdash']);
       }else if (role == 'ROLE_ICOMPANY') {
-        this.router.navigate(['/insuranceDash']);
+        this.router.navigate(['/insurance']);
         console.log(role)
       }
     }

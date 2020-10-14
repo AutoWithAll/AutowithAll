@@ -23,6 +23,22 @@ const headeroption = {
   providedIn: 'root',
 })
 export class UserService {
+
+  leasingDetailsAdmin;
+  insuranceDetailsAdmin;
+
+  setleasingDetailsAdmin(data){
+    this.leasingDetailsAdmin = data;
+  }
+  getleasingDetailsAdmin(){
+    return this.leasingDetailsAdmin;
+  }
+  setinsuranceDetailsAdmin(data){
+    this.insuranceDetailsAdmin = data;
+  }
+  getinsuranceDetailsAdmin(){
+    return this.insuranceDetailsAdmin;
+  }
   
 
   constructor(private http : HttpClient , private toaster : ToastrService) {}
@@ -52,9 +68,7 @@ export class UserService {
   getAllLeasing(){
     return  this.http.get('http://localhost:8080/admin/getalllcompany');
   }
-  getAllInsurance(){
-    return  this.http.get('http://localhost:8080/admin/getallicompany');
-  }
+  
   getAgents(){
     return  this.http.get('http://localhost:8080/admin/getallagents');
   }
@@ -110,6 +124,13 @@ export class UserService {
     return this.http.put('http://localhost:8080/user/changephoto', image);
   }
 
+  getLeasingCompany(){
+    return this.http.get('http://localhost:8080/admin/getalllcompany');
+  }
+  getInsuranceCompany(){
+    return  this.http.get('http://localhost:8080/admin/getallicompany');
+  }
+
   // getUser(): Observable<User[]> {
   //   return this.http.get<User[]>(this.serviceUrl);
   // }
@@ -131,8 +152,8 @@ export class UserService {
     return this.http.get('http://localhost:8080/advertisement/countremainad');
   }
 
-  getAgentDetails(){
-    return this.http.get('http://localhost:8080/agent/getallagent');
+  getAgentDetails() : Observable<any> {
+    return this.http.get('http://localhost:8080/admin/getallagents');
   }
 
 }

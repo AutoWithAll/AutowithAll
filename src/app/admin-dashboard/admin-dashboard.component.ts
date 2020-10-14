@@ -81,4 +81,8 @@ export class AdminDashboardComponent implements OnInit {
     
   }
 
+  logout()
+{
+  this.tokenService.signOut();
+}
 }

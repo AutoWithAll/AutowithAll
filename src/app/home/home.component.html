@@ -4,8 +4,36 @@
     <button type="button" (click)="showNavigationIndicators = !showNavigationIndicators" class="btn btn-outline-dark btn-sm">Toggle navigation indicators</button>
   </div> -->
 <div class="container abc">
-  <mat-grid-list cols="1" rowHeight="7:1">
+  <mat-grid-list cols="3" rowHeight="2:1">
     <!-- <mat-grid-tile></mat-grid-tile> -->
+    <mat-grid-tile>
+      <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="picsum-img-wrapper">
+            <img [src]="image" alt="Random slide" />
+          </div>
+          <!-- <div class="carousel-caption">
+          <h3>No mouse navigation</h3>
+          <p>This carousel hides navigation arrows and indicators.</p>
+        </div> -->
+        </ng-template>
+      </ngb-carousel>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
+        [showNavigationIndicators]="showNavigationIndicators">
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="picsum-img-wrapper">
+            <img [src]="image" alt="Random slide" />
+          </div>
+          <!-- <div class="carousel-caption">
+          <h3>No mouse navigation</h3>
+          <p>This carousel hides navigation arrows and indicators.</p>
+        </div> -->
+        </ng-template>
+      </ngb-carousel>
+    </mat-grid-tile>
     <mat-grid-tile>
       <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
         [showNavigationIndicators]="showNavigationIndicators">
@@ -34,17 +62,17 @@
         <mat-card-subtitle>Hire a Salesagent to post your Advertisement</mat-card-subtitle>
       </mat-card-header>
      
-      <mat-accordion>
+      <mat-accordion *ngFor="let agent of agentList">
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Saman Bandara
+              {{agent.fname}} {{agent.lname}}
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <p>Contact - 0718580598</p>
-          <p>Email - kasunbandara@gmail.com</p>
-          <p>Location - Katana</p>
+          <p>Contact - {{agent.tnumber}}</p>
+          <p>Email - {{agent.username}}</p>
+          <p>Location - {{agent.location}}</p>
         </mat-expansion-panel>
       </mat-accordion>
       <br />

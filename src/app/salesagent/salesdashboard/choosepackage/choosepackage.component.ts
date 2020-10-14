@@ -25,6 +25,7 @@ export class ChoosepackageComponent implements OnInit {
     this.getPlatinum();
     this.getGold();
     this.getSilver();
+    this.isLoading = false;
     
 
     

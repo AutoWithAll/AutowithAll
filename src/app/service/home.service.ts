@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class HomeService {
 
   releventAd;
+  releventImg;
 
   constructor() { }
 
@@ -14,5 +15,11 @@ export class HomeService {
   }
   getId(){
     return this.releventAd;
+  }
+  setImg(data){
+    this.releventImg = data;
+  }
+  getImg(){
+    return this.releventImg;
   }
 }

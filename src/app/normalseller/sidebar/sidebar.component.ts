@@ -19,6 +19,7 @@ export class SellerSidebarComponent {
       shareReplay()
     );
   user: any;
+  isLoading = true;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -32,6 +33,8 @@ export class SellerSidebarComponent {
     this.authService.getCurrentUser().subscribe((res) => {
       this.user = res;
     });
+    this.isLoading = false;
+
   }
   logout() {
     console.log('logout');

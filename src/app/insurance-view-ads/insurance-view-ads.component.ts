@@ -4,6 +4,7 @@ import { TokenStorageService } from '../service/token-storage.service';
 import { AdDetails } from '../models/ad.model';
 import { UserService } from '../service/user.service';
 import { PostInsurancePlanDialogComponent } from '../post-insurance-plan-dialog/post-insurance-plan-dialog.component';
+import { HomeService } from '../service/home.service';
 
 @Component({
   selector: 'app-insurance-view-ads',
@@ -15,7 +16,7 @@ export class InsuranceViewAdsComponent implements OnInit {
   adDetails : any = <any>{};
   
 
-  constructor(public dialog:MatDialog , private userService : UserService) { }
+  constructor(public dialog:MatDialog , private userService : UserService ,private  homeService : HomeService) { }
   
 
   PostInsurancePlanDialog(){
@@ -29,6 +30,11 @@ export class InsuranceViewAdsComponent implements OnInit {
       this.adDetails = res;
     })
     
+  }
+
+  viewAds(item){
+    
+    this.homeService.setId(item);
   }
 
 }

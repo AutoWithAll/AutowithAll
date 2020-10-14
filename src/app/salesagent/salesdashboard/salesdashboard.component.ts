@@ -28,9 +28,8 @@ export class SalesdashboardComponent implements OnInit {
     public dialog: MatDialog,
     private userService: UserService
   ) {
-    this.authService.getCurrentUser().subscribe((res)=>{
-      this.user =res;
-    })
+    
+    
   }
 
   ngOnInit(): void {
@@ -40,9 +39,9 @@ export class SalesdashboardComponent implements OnInit {
       this.wait = false;
     });
 
-    this.packService.isExistAgent().subscribe(res => {
-      this.curPackDetail = res;
-    })
+    // this.packService.isExistAgent().subscribe(res => {
+    //   this.curPackDetail = res;
+    // })
 
     this.packService.remainAdCount().subscribe((res) => {
       console.log(res);
